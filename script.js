@@ -1,8 +1,8 @@
-let isAnagram = ["listen", "silent"];
-let check1 = isAnagram[0].split("").sort().join("");
-let check2 = isAnagram[1].split("").sort().join("");
-console.log(check1 === check2);
-
+const cart = [
+  { name: "Shirt", price: 500, quantity: 2 },
+  { name: "Pants", price: 1200, quantity: 1 },
+  { name: "Socks", price: 150, quantity: 4 }
+];
 
 
 
