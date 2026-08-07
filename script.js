@@ -1,8 +1,9 @@
-let name = "Shuvo"
-console.log(name);
+const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-let age = 20;
-console.log(age);
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
 
 
 
