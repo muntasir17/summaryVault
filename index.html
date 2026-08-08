@@ -7,15 +7,16 @@
     <title>Summary Vault</title>
     <link rel="icon" href="summaryValut.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <!-- <link href="./output.css" rel="stylesheet"> -->
      <script src="https://cdn.tailwindcss.com"></script>
+     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
      <script>
-    tailwind.config = {
+tailwind.config = {
             darkMode: 'class',
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        sans: ['"Hind Siliguri"', '"Plus Jakarta Sans"', 'sans-serif'],
                     }
                 }
             }
@@ -23,98 +24,386 @@
      </script>
 </head>
 <!-- npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch -->
-<body class="m-0 y-0 flex flex-col justify-center items-center gap-[10px]">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-        body {
-            font-family: "Poppins", sans-serif;
-        }
+<body class="bg-[#0B0F17] text-slate-100 font-sans antialiased overflow-x-hidden selection:bg-amber-400 selection:text-slate-950">
+<style>
 .glass-card {
-            background: rgba(15, 23, 42, 0.7);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-        .glow-effect:hover {
-            box-shadow: 0 0 25px -5px rgba(245, 158, 11, 0.3);
-        }
-    </style>
+background: rgba(15, 23, 42, 0.7);
+backdrop-filter: blur(16px);
+-webkit-backdrop-filter: blur(16px);
+border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.glow-effect:hover {
+ box-shadow: 0 0 25px -5px rgba(245, 158, 11, 0.3);
+}
+.reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: opacity, transform;
+    }
+
+    /* স্ক্রোলে দেখার সাথে সাথে সুন্দরভাবে ভেসে উঠবে */
+    .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+</style>
 <br>
 
-<header class="fixed top-0 left-0 right-0 z-50 p-4 lg:p-6 transition-all duration-300">
-<div class="max-w-7xl mx-auto">
-<nav class="glass-card rounded-2xl px-5 py-3 flex items-center justify-between shadow-2xl shadow-black/50 transition-all duration-300 border border-white/10 hover:border-white/20">
-                
-<!-- Brand / Logo Section -->
-<a href="#" class="flex items-center gap-3 group">
-<div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 via-amber-400 to-yellow-200 flex items-center justify-center text-slate-950 font-black text-xl shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform duration-300">SV</div>
-<div class="flex flex-col">
-  <span class="text-lg font-extrabold tracking-tight text-white group-hover:text-amber-400 transition-colors">Summary<span class="text-amber-400">Vault</span>
-</span>
-<span class="text-[10px] uppercase font-semibold text-slate-400 tracking-widest -mt-1">Bengali Summaries</span>
-</div>
-</a>
-<!-- Desktop Navigation Links (4 Primary Items) -->
-<ul class="hidden lg:flex items-center gap-1 bg-white/[0.03] border border-white/5 p-1.5 rounded-xl backdrop-blur-md">
-<li>
-<a href="#home" class="relative px-4 py-2 text-sm font-semibold text-white bg-white/10 rounded-lg shadow-inner transition-all duration-200 block">
-Home </a>
-</li>
-<li>
-<a href="#books" class="relative px-4 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200 block group">Books
-<span class="absolute bottom-1 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-amber-400 rounded-full group-hover:w-1/2 transition-all duration-300"></span>
-</a>
-</li>
-<li>
-<a href="#vault" class="relative px-4 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200 block group flex items-center gap-1.5">
-Vault
-<span class="px-1.5 py-0.5 text-[10px] font-bold bg-amber-400/10 text-amber-400 border border-amber-400/20 rounded-md">PRO</span>
-</a>
-</li>
-<li>
-<a href="#about" class="relative px-4 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-all duration-200 block group">About
-<span class="absolute bottom-1 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-amber-400 rounded-full group-hover:w-1/2 transition-all duration-300"></span>
-</a>
-</li>
-</ul>
-<!-- Right Side Interactive Actions -->
-<div class="hidden md:flex items-center gap-3"> 
-<div class="relative flex items-center">
-<svg class="w-4 h-4 absolute left-3 text-slate-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-</svg>
-<input type="text" id="search-input" placeholder="Search books..." 
-class="w-44 focus:w-60 transition-all duration-300 pl-9 pr-4 py-2 bg-white/5 text-xs text-slate-100 placeholder-slate-400 rounded-xl border border-white/10 focus:outline-none focus:border-amber-400/60 focus:bg-slate-900/90 focus:ring-1 focus:ring-amber-400/50"/></div>
-<button class="glow-effect relative px-5 py-2 text-xs font-bold text-slate-950 bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-400 rounded-xl transition-all duration-300 hover:scale-105 active:scale-95 shadow-md shadow-amber-500/10 whitespace-nowrap">
- Search
-</button>
-</div>
+<header class="fixed top-0 left-0 right-0 z-50 p-3 sm:p-4 lg:p-6 transition-all duration-300">
+    <div class="max-w-7xl mx-auto">
+        <nav class="glass-card rounded-2xl px-4 sm:px-5 py-3 flex items-center justify-between shadow-2xl shadow-black/50 border border-white/10 hover:border-white/20">
+            
+            <!-- 1. Brand / Logo -->
+            <a href="#" class="flex items-center gap-2.5 sm:gap-3 group">
+                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-amber-500 via-amber-400 to-yellow-200 flex items-center justify-center text-slate-950 font-black text-lg sm:text-xl shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform duration-300">
+                    SV
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-base sm:text-lg font-extrabold tracking-tight text-white group-hover:text-amber-400 transition-colors leading-tight">
+                        Summary<span class="text-amber-400">Vault</span>
+                    </span>
+                    <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-slate-400 tracking-widest -mt-0.5">
+                        Bengali Summaries
+                    </span>
+                </div>
+            </a>
 
-  <!-- Mobile Menu Button -->
-<button id="mobile-toggle" class="md:hidden p-2 rounded-xl text-slate-300 hover:text-white hover:bg-white/10 focus:outline-none transition-colors" aria-label="Toggle Navigation">
-<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-</svg>
-</button>
-</nav>
-<div id="mobile-menu" class="hidden md:hidden mt-3 glass-card rounded-2xl p-5 border border-white/10 shadow-2xl transition-all">
+            <!-- 2. Navigation Links (Desktop: >= 1024px) -->
+            <ul class="hidden lg:flex items-center gap-1 bg-white/[0.03] border border-white/5 p-1.5 rounded-xl backdrop-blur-md">
+                <li>
+                    <a href="#home" class="px-4 py-2 text-sm font-semibold text-white bg-white/10 rounded-lg shadow-inner block">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#books" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-all block">
+                        Books
+                    </a>
+                </li>
+                <li>
+                    <a href="#vault" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-all flex items-center gap-1.5">
+                        Vault
+                        <span class="px-1.5 py-0.5 text-[10px] font-bold bg-amber-400/10 text-amber-400 border border-amber-400/20 rounded-md">PRO</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#about" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-all block">
+                        About
+                    </a>
+                </li>
+            </ul>
 
-<div class="flex flex-col space-y-2">
-   <a href="#home" class="px-4 py-2.5 rounded-xl text-sm font-semibold text-white bg-white/10 block">Home</a>
-<a href="#books" class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 block">Books</a>
-<a href="#vault" class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 flex items-center justify-between"> Vault
-<span class="px-2 py-0.5 text-[10px] font-bold bg-amber-400/10 text-amber-400 border border-amber-400/20 rounded-md">PRO</span>
-</a>
-<a href="#about" class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 block">About</a>
-</div>            
-</div>
-</div>
+            <!-- 3. Right Action Area (Search + CTA) -->
+            <div class="flex items-center gap-2.5 sm:gap-3">
+                <!-- Search Input (Tablet & Desktop) -->
+                <div class="relative hidden sm:flex items-center">
+                    <svg class="w-4 h-4 absolute left-3 text-slate-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                    <input 
+                        type="text" 
+                        placeholder="Search books..." 
+                        class="w-32 md:w-40 lg:w-48 focus:w-56 transition-all duration-300 pl-9 pr-3 py-2 bg-white/5 text-xs text-slate-100 placeholder-slate-400 rounded-xl border border-white/10 focus:outline-none focus:border-amber-400/60 focus:bg-slate-900"
+                    />
+                </div>
+
+                <!-- CTA Button -->
+                <a href="index.html" class="glow-effect px-3.5 sm:px-5 py-2 text-xs font-bold text-slate-950 bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-400 rounded-xl transition-all duration-300 hover:scale-105 active:scale-95 shadow-md shadow-amber-500/10 whitespace-nowrap">
+                    Get Started
+            </a>
+
+                <!-- 4. Mobile & Tablet Menu Toggle Button (< 1024px) -->
+                <button id="mobile-toggle" class="lg:hidden p-2 rounded-xl text-slate-300 hover:text-white hover:bg-white/10 focus:outline-none transition-colors" aria-label="Toggle Navigation">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+
+        <!-- 5. Mobile & Tablet Drawer Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden mt-3 glass-card rounded-2xl p-5 border border-white/10 shadow-2xl transition-all">
+
+            <!-- Navigation Links -->
+            <div class="flex flex-col space-y-2">
+                <a href="index.html" class="px-4 py-2.5 rounded-xl text-sm font-semibold text-white bg-white/10 block">Home</a>
+                <a href="#books" class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 block">Books</a>
+                <a href="#vault" class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 flex items-center justify-between">
+                    Vault
+                    <span class="px-2 py-0.5 text-[10px] font-bold bg-amber-400/10 text-amber-400 border border-amber-400/20 rounded-md">PRO</span>
+                </a>
+                <a href="#about" class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 block">About</a>
+            </div>
+        </div>
+    </div>
 </header>
-  
 
 
+<main id="home" class=" relative pt-36 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        
+        <!-- Background Glowing Orbs -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-amber-500/10 blur-[140px] rounded-full pointer-events-none"></div>
+        <div class="absolute top-1/3 right-10 w-[300px] h-[300px] bg-blue-500/10 blur-[120px] rounded-full pointer-events-none"></div>
 
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Side Text Content -->
+                <div class="reveal lg:col-span-7 text-center lg:text-left space-y-6">
+                    
+                    <div class="sr-title inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-card border border-amber-400/20 text-amber-400 text-xs font-semibold">
+                        <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                        <span>বিশ্ববিখ্যাত সব বইয়ের বাংলা ভল্ট</span>
+                    </div>
+
+                    <h1 class="sr-title text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
+                        বইয়ের মূলভাব, এখন <br class="hidden sm:inline"/>
+                        <span class="bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-500 bg-clip-text text-transparent text-glow">
+                            সহজ বাংলায় হাতের মুঠোয়
+                        </span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        কঠিন কনসেপ্ট আর ঘণ্টার পর ঘণ্টা সময় নষ্ট না করে অল্প সময়ে জেনে নিন পৃথিবীর সেরা সেলফ-হেল্প, বিজনেস ও ফিলোসফি বইগুলোর নির্যাস।
+                    </p>
+
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#books" class="px-7 py-3.5 text-sm font-bold text-slate-950 bg-gradient-to-r from-amber-400 to-yellow-400 rounded-xl hover:scale-105 active:scale-95 transition-all shadow-lg shadow-amber-500/20">
+                            সারসংক্ষেপ এক্সপ্লোর করুন
+                        </a>
+                        <a href="#about" class="px-7 py-3.5 text-sm font-semibold text-slate-200 glass-card rounded-xl hover:bg-white/10 hover:text-white transition-all border border-white/10">
+                            আমাদের উদ্দেশ্য
+                        </a>
+                    </div>
+
+                    <div class="pt-8 border-t border-white/10 grid grid-cols-3 gap-4 max-w-md mx-auto lg:mx-0 text-center lg:text-left">
+                        <div>
+                            <span class="block text-2xl font-extrabold text-white">১০০%</span>
+                            <span class="text-xs text-slate-400 font-medium">সহজ বাংলা</span>
+                        </div>
+                        <div>
+                            <span class="block text-2xl font-extrabold text-amber-400">৫ মিনিট</span>
+                            <span class="text-xs text-slate-400 font-medium">পড়ার সময়</span>
+                        </div>
+                        <div>
+                            <span class="block text-2xl font-extrabold text-white">ফ্রি</span>
+                            <span class="text-xs text-slate-400 font-medium">এক্সেস</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right Side Preview Card -->
+                <div class="lg:col-span-5 reveal">
+                    <div class="relative group">
+                        <div class="sr-title absolute -inset-1 bg-gradient-to-r from-amber-500 to-yellow-600 rounded-3xl blur-xl opacity-25 group-hover:opacity-40 transition duration-500"></div>
+
+                        <div class="relative glass-card rounded-3xl p-6 sm:p-8 space-y-5 border border-white/10 shadow-2xl">
+                            <div class="flex items-center justify-between">
+                                <span class="px-3 py-1 bg-amber-400/10 text-amber-400 text-xs font-bold rounded-lg border border-amber-400/20">
+                                    আজকের ফিচার্ড সামারি
+                                </span>
+                                <span class="text-xs text-slate-400">⏱ ৫ মিনিট পাঠ</span>
+                            </div>
+
+                            <div class="space-y-1">
+                                <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-amber-400 transition-colors">
+                                    Atomic Habits (অ্যাটমিক হ্যাবিটস)
+                                </h3>
+                                <p class="text-xs text-slate-400 font-medium">মূল লেখক: James Clear</p>
+                            </div>
+
+                            <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/5 text-sm text-slate-300 italic leading-relaxed">
+                                "প্রতিদিন মাত্র ১% উন্নতি আপনাকে বছর শেষে ৩৭ গুণ এগিয়ে নিয়ে যেতে পারে। ছোট ছোট অভ্যাসই বড় পরিবর্তনের মূল চাবিকাঠি।"
+                            </div>
+
+                            <div class="pt-2 flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-xs font-bold text-amber-400">
+                                        SV
+                                    </div>
+                                    <span class="text-xs text-slate-300 font-medium">SummaryVault Verified</span>
+                                </div>
+                                <a href="#" class="text-xs font-bold text-amber-400 hover:text-amber-300 flex items-center gap-1">
+                                    পড়া শুরু করুন &rarr;
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+</main>
+
+<!-- ========================================== -->
+<!-- ULTRA-MODERN ABOUT & MISSION SECTION      -->
+<!-- ========================================== -->
+<section id="about" class="relative py-24 lg:py-36 bg-[#0B0F17] text-slate-100 overflow-hidden">
+    
+    <!-- Ambient Background Lighting -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-500/10 blur-[160px] rounded-full pointer-events-none"></div>
+    <div class="absolute bottom-10 left-10 w-[400px] h-[400px] bg-blue-500/10 blur-[140px] rounded-full pointer-events-none"></div>
+    <div class="absolute top-2/3 right-10 w-[350px] h-[350px] bg-amber-400/5 blur-[120px] rounded-full pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-24">
+        
+        <!-- ========================================== -->
+        <!-- 1. HERO HEADER & STORY + STATS GRID        -->
+        <!-- ========================================== -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Left Side: Brand Story -->
+            <div class="lg:col-span-7 space-y-6 reveal">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-card border border-amber-400/20 text-amber-400 text-xs font-bold tracking-wide">
+                    <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+                    <span>আমাদের পথচলা ও দর্শন</span>
+                </div>
+                
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
+                    বইয়ের পাতা থেকে জ্ঞান, <br/>
+                    <span class="bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-500 bg-clip-text text-transparent">
+                        রূপান্তর হোক আপনার জীবনের সাফল্য
+                    </span>
+                </h2>
+
+                <p class="text-slate-300 text-base sm:text-lg leading-relaxed font-normal">
+                    আজকের ব্যস্ত পৃথিবীতে শেখার আগ্রহ থাকলেও সময়ের অভাবে অধিকাংশ মানসম্পন্ন বই পড়া হয়ে ওঠে না। <strong class="text-amber-400 font-semibold">SummaryVault</strong> কোনো সংক্ষিপ্ত অনুবাদ নয়—এটি বিশ্বসেরা সাহিত্য, বিজনেস ও জীবন বদলানোর বইগুলোর মূল নির্যাসের একটি ডিজিটাল ভল্ট।
+                </p>
+
+                <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+                    আমরা বিশ্বাস করি, একটি সঠিক আইডিয়া একজন মানুষের চিন্তাধারা পুরোপুরি বদলে দিতে পারে। আমাদের উদ্দেশ্য প্রতিটি বাঙালি পাঠকের কাছে সেই জীবনমুখী চিন্তাগুলোকে সহজ ও প্রাঞ্জল ভাষায় পৌঁছে দেওয়া।
+                </p>
+            </div>
+
+            <!-- Right Side: 4 Glass Stats Cards -->
+            <div class="lg:col-span-5 grid grid-cols-2 gap-4 reveal">
+                <div class="glass-card p-6 rounded-3xl border border-white/10 hover:border-amber-400/30 transition-all duration-300 text-center space-y-1">
+                    <span class="block text-3xl sm:text-4xl font-black text-amber-400">১০০+</span>
+                    <span class="text-xs text-slate-300 font-semibold">কিউরেটেড বই</span>
+                </div>
+                <div class="glass-card p-6 rounded-3xl border border-white/10 hover:border-amber-400/30 transition-all duration-300 text-center space-y-1">
+                    <span class="block text-3xl sm:text-4xl font-black text-white">৫-১০</span>
+                    <span class="text-xs text-slate-400 font-medium">মিনিট পড়ার সময়</span>
+                </div>
+                <div class="glass-card p-6 rounded-3xl border border-white/10 hover:border-amber-400/30 transition-all duration-300 text-center space-y-1">
+                    <span class="block text-3xl sm:text-4xl font-black text-white">১০০%</span>
+                    <span class="text-xs text-slate-400 font-medium">সহজ বাংলা</span>
+                </div>
+                <div class="glass-card p-6 rounded-3xl border border-white/10 hover:border-amber-400/30 transition-all duration-300 text-center space-y-1">
+                    <span class="block text-3xl sm:text-4xl font-black text-amber-400">০৳</span>
+                    <span class="text-xs text-slate-300 font-semibold">ফ্রি এক্সেস</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ========================================== -->
+        <!-- 2. CORE PILLARS / VALUES GRID (4 CARDS)   -->
+        <!-- ========================================== -->
+        <div class="space-y-10">
+            <div class="text-center max-w-2xl mx-auto space-y-3 reveal">
+                <span class="text-xs font-bold text-amber-400 uppercase tracking-widest">কেন SummaryVault অনন্য</span>
+                <h3 class="text-2xl sm:text-4xl font-extrabold text-white">আমাদের ৪টি মূল ভিত্তি</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Card 1 -->
+                <div class="reveal glass-card rounded-3xl p-7 border border-white/10 hover:border-amber-400/50 transition-all duration-300 group hover:-translate-y-2 relative overflow-hidden">
+                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-amber-500/20 to-amber-400/10 border border-amber-400/30 flex items-center justify-center text-amber-400 mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-2 group-hover:text-amber-400 transition-colors">শার্প কনসেপ্ট</h4>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">অপ্রয়োজনীয় পাতা বাদ দিয়ে বইয়ের মূল মেসেজ ও সেরা পয়েন্টগুলো নিখুঁতভাবে তুলে ধরা হয়।</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="reveal glass-card rounded-3xl p-7 border border-white/10 hover:border-amber-400/50 transition-all duration-300 group hover:-translate-y-2 relative overflow-hidden">
+                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-amber-500/20 to-amber-400/10 border border-amber-400/30 flex items-center justify-center text-amber-400 mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/></svg>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-2 group-hover:text-amber-400 transition-colors">প্রাণবন্ত বাংলা</h4>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">কোনো আক্ষরিক বা রোট অনুবাদ নয়, আপনার প্রাত্যহিক জীবনের সাথে মিলিয়ে চটপটে ভাষায় লেখা।</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="reveal glass-card rounded-3xl p-7 border border-white/10 hover:border-amber-400/50 transition-all duration-300 group hover:-translate-y-2 relative overflow-hidden">
+                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-amber-500/20 to-amber-400/10 border border-amber-400/30 flex items-center justify-center text-amber-400 mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-2 group-hover:text-amber-400 transition-colors">অ্যাকশনেবল গাইড</h4>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">শুধু পড়লেই হবে না, বইয়ের শিক্ষা কীভাবে নিজের কাজে প্রয়োগ করবেন তা সহজ ধাপে শিখিয়ে দেওয়া হয়।</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="reveal glass-card rounded-3xl p-7 border border-white/10 hover:border-amber-400/50 transition-all duration-300 group hover:-translate-y-2 relative overflow-hidden">
+                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-amber-500/20 to-amber-400/10 border border-amber-400/30 flex items-center justify-center text-amber-400 mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-2 group-hover:text-amber-400 transition-colors">যেকোনো ডিভাইসে</h4>
+                    <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">মোবাইল, ট্যাবলেট কিংবা ল্যাপটপ—যেকোনো স্ক্রিনে স্মুথ ও আই-ফ্রেন্ডলি রিডিং এক্সপেরিয়েন্স।</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- 3. HOW IT WORKS (3-STEP PROCESS)          -->
+        <!-- ========================================== -->
+        <div class="glass-card rounded-3xl p-8 sm:p-12 border border-white/10 reveal space-y-10">
+            <div class="text-center space-y-2">
+                <span class="text-xs font-bold text-amber-400 uppercase tracking-widest">সহজ প্রক্রিয়া</span>
+                <h3 class="text-2xl sm:text-3xl font-extrabold text-white">কিভাবে কাজ করে SummaryVault?</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+                
+                <!-- Step 1 -->
+                <div class="space-y-3 relative z-10 text-center md:text-left">
+                    <span class="text-4xl font-black bg-gradient-to-r from-amber-400 to-yellow-500 bg-clip-text text-transparent">01</span>
+                    <h5 class="text-lg font-bold text-white">বই সিলেক্ট করুন</h5>
+                    <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">ক্যাটাগরি বা সার্চ বার থেকে আপনার পছন্দের সেলফ-হেল্প, বিজনেস বা ফিলোসফি বইটি খুঁজুন।</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="space-y-3 relative z-10 text-center md:text-left">
+                    <span class="text-4xl font-black bg-gradient-to-r from-amber-400 to-yellow-500 bg-clip-text text-transparent">02</span>
+                    <h5 class="text-lg font-bold text-white">৫ মিনিটে সামারি পড়ুন</h5>
+                    <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">কঠিন ভাষা ছাড়াই ৩-৪ পাতার ঝরঝরে বাংলায় লেখা মূল পয়েন্টগুলো অল্প সময়ে আয়ত্ত করুন।</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="space-y-3 relative z-10 text-center md:text-left">
+                    <span class="text-4xl font-black bg-gradient-to-r from-amber-400 to-yellow-500 bg-clip-text text-transparent">03</span>
+                    <h5 class="text-lg font-bold text-white">জীবনে প্রয়োগ করুন</h5>
+                    <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">অর্জিত জ্ঞান ও গাইডলাইন অনুযায়ী আপনার অভ্যাস, ক্যারিয়ার ও চিন্তাভাবনায় আনুন পজিটিভ পরিবর্তন।</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- 4. MANIFESTO / VISIONARY BANNER           -->
+        <!-- ========================================== -->
+        <div class="relative rounded-3xl p-8 sm:p-12 overflow-hidden border border-amber-400/20 bg-gradient-to-r from-amber-500/10 via-slate-900/90 to-slate-900/90 backdrop-blur-xl reveal">
+            <div class="absolute top-0 right-0 -mt-10 -mr-10 w-72 h-72 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="relative z-10 max-w-3xl space-y-4">
+                <span class="text-xs font-bold text-amber-400 uppercase tracking-widest">আমাদের ওয়াদা</span>
+                <blockquote class="text-xl sm:text-3xl font-extrabold text-white leading-snug">
+                    "একবার পড়া শুরু করলে জ্ঞান অর্জনের এই ভল্ট আর কখনোই বন্ধ হবে না।"
+                </blockquote>
+                <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                    আমরা প্রতিনিয়ত ভল্টে নতুন নতুন সেরা বইয়ের সারসংক্ষেপ যুক্ত করছি। আপনার শেখার পথকে মসৃণ করাই SummaryVault-এর একমাত্র লক্ষ্য।
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
 
 
 
@@ -140,6 +429,8 @@ class="w-44 focus:w-60 transition-all duration-300 pl-9 pr-4 py-2 bg-white/5 tex
 
 
     <script src="script.js"></script>
+
+<script src="https://unpkg.com/scrollreveal"></script>
 </body>
 
 </html>
