@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Summary Vault</title>
+        <title>Summary Vault</title>
     <link rel="icon" href="summaryValut.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
      <script src="https://cdn.tailwindcss.com"></script>
@@ -23,6 +23,7 @@ tailwind.config = {
      </script>
 </head>
 <body class="bg-[#080C14] text-slate-100 font-sans antialiased selection:bg-amber-400 selection:text-slate-950 min-h-screen relative overflow-x-hidden">
+    
    <style>
 .glass-card {
 background: rgba(15, 23, 42, 0.7);
@@ -127,11 +128,12 @@ border: 1px solid rgba(255, 255, 255, 0.08);
 </header>
 <br>
 
-<section id="eat-that-frog-summary" class="relative py-12 lg:py-20 bg-[#080C14] text-slate-100 overflow-hidden">
+
+<section id="ikigai-summary" class="relative py-12 lg:py-20 bg-[#080C14] text-slate-100 overflow-hidden">
     
     <!-- Background Ambient Glows -->
-    <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-amber-500/10 blur-[180px] rounded-full pointer-events-none"></div>
-    <div class="absolute bottom-20 right-10 w-[400px] h-[400px] bg-emerald-500/10 blur-[150px] rounded-full pointer-events-none"></div>
+    <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-teal-500/10 blur-[180px] rounded-full pointer-events-none"></div>
+    <div class="absolute bottom-20 right-10 w-[400px] h-[400px] bg-amber-500/10 blur-[150px] rounded-full pointer-events-none"></div>
 
     <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 space-y-12">
         
@@ -146,8 +148,8 @@ border: 1px solid rgba(255, 255, 255, 0.08);
                 <span class="px-3 py-1 bg-amber-400/10 text-amber-400 text-xs font-bold rounded-lg border border-amber-400/20">
                     ⏱️ ৫ মিনিট পূর্ণাঙ্গ পাঠ
                 </span>
-                <span class="px-3 py-1 bg-emerald-500/10 text-emerald-300 text-xs font-bold rounded-lg border border-emerald-500/20">
-                    ★ ৪.৭ রেটিং
+                <span class="px-3 py-1 bg-teal-500/10 text-teal-300 text-xs font-bold rounded-lg border border-teal-500/20">
+                    ★ ৪.৮ রেটিং
                 </span>
             </div>
         </div>
@@ -158,28 +160,28 @@ border: 1px solid rgba(255, 255, 255, 0.08);
                 
                 <!-- Book Title & Meta -->
                 <div class="space-y-3 text-center sm:text-left flex-1">
-                    <span class="text-xs font-bold uppercase tracking-widest text-amber-400">প্রোডাক্টিভিটির কালজয়ী বই</span>
+                    <span class="text-xs font-bold uppercase tracking-widest text-amber-400">আন্তর্জাতিক বেস্টসেলার</span>
                     <h1 class="text-3xl sm:text-4xl font-black text-white tracking-tight leading-tight">
-                        ইট দ্যাট ফ্রগ! <br class="hidden sm:inline"/>
-                        <span class="text-slate-400 font-normal text-2xl sm:text-3xl">(Eat That Frog!)</span>
+                        ইকিগাই <br class="hidden sm:inline"/>
+                        <span class="text-slate-400 font-normal text-2xl sm:text-3xl">(Ikigai: The Japanese Secret)</span>
                     </h1>
                     <p class="text-sm text-slate-300 font-medium">
-                        মূল লেখক: <span class="text-white font-semibold">Brian Tracy (ব্রায়ান ট্রেসি)</span>
+                        মূল লেখক: <span class="text-white font-semibold">Héctor García & Francesc Miralles</span>
                     </p>
                     
                     <!-- Category Tags -->
                     <div class="flex flex-wrap justify-center sm:justify-start gap-2 pt-2">
-                        <span class="px-3 py-1 rounded-md text-[11px] font-bold bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">প্রোডাক্টিভিটি</span>
-                        <span class="px-3.5 py-1 rounded-md text-[11px] font-bold bg-amber-500/10 text-amber-300 border border-amber-500/20">সময় ব্যবস্থাপনা</span>
-                        <span class="px-3.5 py-1 rounded-md text-[11px] font-bold bg-blue-500/10 text-blue-300 border border-blue-500/20">ক্যারিয়ার উন্নয়ন</span>
+                        <span class="px-3 py-1 rounded-md text-[11px] font-bold bg-teal-500/10 text-teal-300 border border-teal-500/20">সেলফ-হেল্প</span>
+                        <span class="px-3.5 py-1 rounded-md text-[11px] font-bold bg-purple-500/10 text-purple-300 border border-purple-500/20">ফিলোসফি</span>
+                        <span class="px-3.5 py-1 rounded-md text-[11px] font-bold bg-rose-500/10 text-rose-300 border border-rose-500/20">দীর্ঘায়ু ও সুখ</span>
                     </div>
                 </div>
             </div>
 
             <!-- THE HOOK BANNER -->
-            <div class="p-5 rounded-2xl bg-gradient-to-r from-amber-500/10 via-amber-400/5 to-transparent border border-amber-400/20">
-                <p class="text-sm sm:text-base text-amber-200 font-semibold italic leading-relaxed text-center sm:text-left">
-                    "দিনের শুরুতেই যদি আপনাকে একটা জ্যান্ত ব্যাঙ খেতে বলা হয়, তবে পুরো দিনে আপনার সাথে এরচেয়ে খারাপ কিছু আর ঘটতে পারে না! ব্রায়ান ট্রেসির এই ব্যাঙ খাওয়ার নীতি কীভাবে আপনার আলসেমি দূর করে সফলতার দুয়ার খুলে দেবে?"
+            <div class="p-5 rounded-2xl bg-gradient-to-r from-teal-500/10 via-amber-400/5 to-transparent border border-teal-400/20">
+                <p class="text-sm sm:text-base text-teal-200 font-semibold italic leading-relaxed text-center sm:text-left">
+                    "জাপানের ওকিনাওয়া দ্বীপের মানুষরা কেন ১০০ বছরেরও বেশি বাঁচেন এবং শেষ দিন পর্যন্ত তরুণ ও আনন্দিত থাকেন? তাদের রোগহীন দীর্ঘায়ু ও চিরসুখী জীবনের মূল চাবিকাঠি—‘ইকিগাই’ (Ikigai) খুঁজে পাওয়ার গোপন সূত্রটি কী?"
                 </p>
             </div>
         </div>
@@ -187,66 +189,68 @@ border: 1px solid rgba(255, 255, 255, 0.08);
         <!-- 3. DETAILED STORYLINE BREAKDOWN (৪টি অধ্যায়ে বিস্তারিত সামারি) -->
         <div class="space-y-8">
             <h2 class="text-2xl sm:text-3xl font-extrabold text-white flex items-center gap-3 border-b border-white/10 pb-4">
-                <span class="text-amber-400">📖</span> মূল বিষয়বস্তু ও অধ্যায়ভিত্তিক আলোচনা
+                <span class="text-amber-400">📖</span> মূল বিষয়বস্তু ও দীর্ঘায়ুর গোপন রহস্য
             </h2>
 
             <!-- PART 1 -->
             <div class="glass-card rounded-3xl p-6 sm:p-8 border border-white/10 space-y-4">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-400/10 text-amber-400 text-xs font-bold">
-                    পর্ব ১: আসল 'ব্যাঙ' (Frog) আসলে কী?
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-teal-400/10 text-teal-300 text-xs font-bold">
+                    পর্ব ১: 'ইকিগাই' (Ikigai) আসলে কী?
                 </div>
-                <h3 class="text-xl font-bold text-white">সবচেয়ে কঠিন কিন্তু গুরুত্বপূর্ণ কাজটি চিহ্নিত করা</h3>
+                <h3 class="text-xl font-bold text-white">প্রতিদিন সকালে ঘুম থেকে ওঠার আসল কারণ</h3>
                 <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
-                    বইটির নাম শুনে অদ্ভুত মনে হলেও, এখানে <strong>'ব্যাঙ' (Frog)</strong> বলতে বোঝানো হয়েছে আপনার দিনের সবচেয়ে গুরুত্বপূর্ণ এবং কঠিন কাজটিকে—যেটি শেষ করলে আপনার জীবনে সবচেয়ে বড় ধনাত্মক প্রভাব পড়বে, অথচ কাজটি করার কথা ভাবলেই আপনার আলসেমি লাগে এবং আপনি তা ফেলে রাখেন।
+                    জাপানি শব্দ <strong class="text-teal-300">'ইকি' (Iki)</strong> মানে জীবন এবং <strong class="text-amber-400">'গাই' (Gai)</strong> মানে মূল্য বা অর্থ। অর্থাৎ ‘ইকিগাই’ হলো জীবনের এমন একটি মূল উদ্দেশ্য যা আপনাকে প্রতিদিন সকালে বিছানা ছেড়ে আনন্দের সাথে উঠতে প্রেরণা দেয়।
                 </p>
                 <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
-                    ব্রায়ান ট্রেসি বলেন, সফল মানুষেরা প্রতিদিন সকালে উঠে প্রথমেই সেই বড় ‘ব্যাঙটি খেয়ে নেন’ (অর্থাৎ সবচেয়ে গুরুত্বপূর্ণ কাজটি আগে শেষ করেন)। আর সাধারণ মানুষেরা সারাদিন ছোটখাটো সহজ কাজ করে ব্যস্ততা দেখায়, কিন্তু মূল কাজটি জমিয়ে রেখে মানসিক চাপে ভোগে।
+                    আপনার ইকিগাই খুঁজে পেতে হলে ৪টি প্রশ্নের সংযোগস্থল মেলাতে হয়:
                 </p>
+                <ul class="space-y-2 text-xs sm:text-sm text-slate-300 pl-4 border-l-2 border-teal-400/30">
+                    <li><strong class="text-white">১. আপনি কী করতে ভালোবাসেন? (Passion)</strong></li>
+                    <li><strong class="text-white">২. আপনি কোন কাজে সবচেয়ে দক্ষ? (Profession)</strong></li>
+                    <li><strong class="text-white">৩. পৃথিবীর মানুষের এখন কী প্রয়োজন? (Mission)</strong></li>
+                    <li><strong class="text-white">৪. কোন কাজের বিনিময়ে আপনি অর্থ উপার্জন করতে পারবেন? (Vocation)</strong></li>
+                </ul>
             </div>
 
             <!-- PART 2 -->
             <div class="glass-card rounded-3xl p-6 sm:p-8 border border-white/10 space-y-4">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-400/10 text-amber-400 text-xs font-bold">
-                    পর্ব ২: ৮০/২০ নিয়ম এবং লক্ষ্যের স্পষ্টতা
+                    পর্ব ২: 'hara hachi bu' এবং ওকিনাওয়ানদের খাবার অভ্যাসে গোপন কৌশল
                 </div>
-                <h3 class="text-xl font-bold text-white">স্বচ্ছ চিন্তা ও প্যারেটো প্রিন্সিপাল</h3>
+                <h3 class="text-xl font-bold text-white">৮০% পেট ভরে খাওয়ার নীতি ও নীল অঞ্চল (Blue Zone)</h3>
                 <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
-                    কাজের ক্ষেত্রে আলসেমি আসার প্রধান কারণ হলো লক্ষ্য স্পষ্ট না থাকা। ব্রায়ান ট্রেসি একটি ৩-ধাপের সূত্র দিয়েছেন: <strong>চিন্তা করুন কাগজে-কলমে (Think on paper)</strong>। আপনি কী চান তা খাতায় লিখে ফেলুন, একটি নির্দিষ্ট ডেডলাইন দিন এবং কাজগুলোকে ছোট ছোট ধাপে ভাগ করুন।
+                    জাপানের ওকিনাওয়া শহরটিকে বলা হয় বিশ্বের অন্যতম <strong>'ব্লু জোন' (Blue Zone)</strong>, যেখানে শতবর্ষী মানুষের সংখ্যা পৃথিবীর যেকোনো জায়গার চেয়ে বেশি। তারা কখনো অতিরিক্ত খাওয়া দাওয়া করেন না। খাওয়ার সময় তারা প্রাচীন নীতি মেনে চলেন: <strong class="text-amber-400 font-semibold">'হারা হাচি বু' (Hara Hachi Bu)</strong>।
                 </p>
                 <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
-                    এখানে তিনি <strong class="text-amber-400 font-semibold">Pareto Principle (৮০/২০ নিয়ম)</strong> প্রয়োগ করতে বলেছেন। আপনার টু-ডু লিস্টের ১০টি কাজের মধ্যে কেবল ২টি কাজ (২০%) এমন থাকে যা আপনার ফল বা সফলতার ৮০% এনে দেয়। ওই ২০% মূল কাজের ওপর মনোযোগ দিন, বাকি ৮০% ছোটখাটো কাজে সময় নষ্ট করবেন না।
+                    এর অর্থ হলো পেট পুরোপুরি ৮০% ভরলে খাওয়া থামিয়ে দেওয়া। এতে শরীরের পরিপাকতন্ত্রের ওপর অতিরিক্ত চাপ পড়ে না, কোশগুলো দ্রুত বুড়িয়ে যায় না এবং বয়সের ছাপ দূর হয়ে মানুষ দীর্ঘকাল সুস্থ থাকে।
                 </p>
             </div>
 
             <!-- PART 3 -->
             <div class="glass-card rounded-3xl p-6 sm:p-8 border border-white/10 space-y-4">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-400/10 text-amber-400 text-xs font-bold">
-                    পর্ব ৩: কাজের অগ্রাধিকারের 'ABCDE' মেথড
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-teal-400/10 text-teal-300 text-xs font-bold">
+                    পর্ব ৩: ফ্লো স্টেইট (Flow State) ও মানসিক প্রশান্তি
                 </div>
-                <h3 class="text-xl font-bold text-white">কোন কাজ আগে এবং কোনটা পরে করবেন?</h3>
+                <h3 class="text-xl font-bold text-white">কাজে নিমগ্ন থাকা এবং অবসর গ্রহণ না করা</h3>
                 <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
-                    আপনার কাজগুলোকে ক্যাটাগরি অনুযায়ী সাজাতে ব্রায়ান ট্রেসি কালজয়ী <strong>ABCDE মেথড</strong> ব্যবহার করার পরামর্শ দিয়েছেন:
+                    জাপানি সংস্কৃতিতে প্রথাগত <strong class="text-slate-100">'অবসর' (Retirement)</strong> বলে কোনো শব্দ নেই! তারা জীবনের শেষ দিন পর্যন্ত কোনো না কোনো ছোটখাটো কাজের সাথে যুক্ত থাকেন—যেমন বাগান করা, চা বানানো বা হস্তশিল্প তৈরি করা।
                 </p>
-                <ul class="space-y-2 text-xs sm:text-sm text-slate-300 pl-4 border-l-2 border-amber-400/30">
-                    <li><strong class="text-white">A (অবশ্যই করতে হবে):</strong> এমন কাজ যা না করলে বড় ক্ষতি হবে (আপনার আসল ব্যাঙ)।</li>
-                    <li><strong class="text-white">B (করা উচিত):</strong> গুরুত্বপূর্ণ, তবে না করলে তাৎক্ষণিক কোনো বড় ক্ষতি হবে না।</li>
-                    <li><strong class="text-white">C (করলে ভালো হয়):</strong> যেমন সহকর্মীর সাথে গল্প করা বা ইমেইল চেক করা।</li>
-                    <li><strong class="text-white">D (অন্যকে দিয়ে করানো / Delegate):</strong> যে কাজগুলো অন্য কেউ করতে পারে, তা অন্যকে দিয়ে করিয়ে নিন।</li>
-                    <li><strong class="text-white">E (বাদ দেওয়া / Eliminate):</strong> যে কাজগুলোর এখন কোনো প্রয়োজনই নেই, তা তালিকা থেকে কেটে ফেলুন।</li>
-                </ul>
+                <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+                    যখন আপনি কোনো প্রিয় কাজ করার সময় সময় বা অতীতের চিন্তা ভুলে পুরোপুরি সেই মুহূর্তের মধ্যে ডুবে যান, তাকে বলে <strong class="text-teal-300 font-semibold">'Flow State'</strong>। এই ফ্লো স্টেইট মস্তিষ্কের দুশ্চিন্তা ও মানসিক চাপ (Stress) কমিয়ে মানুষকে দীর্ঘজীবী হতে সাহায্য করে।
+                </p>
             </div>
 
             <!-- PART 4 -->
             <div class="glass-card rounded-3xl p-6 sm:p-8 border border-white/10 space-y-4">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-400/10 text-amber-400 text-xs font-bold">
-                    পর্ব ৪: একমুখী ফোকাস ও স্লাইস-অ্যান্ড-ডাইস
+                    পর্ব ৪: মৈ (Moai) বা সুদৃঢ় সামাজিক বন্ধন ও ওয়াবি-সাবি
                 </div>
-                <h3 class="text-xl font-bold text-white">একক মনোযোগ এবং বিশাল কাজকে ছোট করার টেকনিক</h3>
+                <h3 class="text-xl font-bold text-white">একাকীত্ব দূরীকরণ ও অপূর্ণতার সৌন্দর্য</h3>
                 <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
-                    যখন আপনি কোনো একটি 'A' ক্যাটাগরির কাজ শুরু করবেন, তখন ১০০% ফোকাস দিয়ে সেই কাজটি সম্পূর্ণ শেষ না হওয়া পর্যন্ত অন্য কোনো কাজে মন দেবেন না। এটাকে বলা হয় <strong class="text-slate-100">Single Handling</strong>। বারবার মনোযোগ সরালে কাজের সময় দ্বিগুণ লেগে যায়।
+                    ওকিনাওয়ার মানুষদের দীর্ঘ জীবনের অন্যতম রহস্য হলো তাদের সামাজিক গোষ্ঠী, যাকে বলা হয় <strong class="text-white">'মৈ' (Moai)</strong>। ছোটবেলা থেকেই তারা ৪-৫ জন বন্ধুর এমন দল গঠন করেন যারা আজীবন একে অপরের আর্থিক, মানসিক ও সামাজিক বিপদে পাশে দাঁড়ান।
                 </p>
                 <p class="text-sm sm:text-base text-slate-300 leading-relaxed font-semibold text-slate-200">
-                    যদি ব্যাঙটি অনেক বড় হয় (কাজটি বিশাল ও কঠিন মনে হয়), তবে <strong>'Salami Slice' (সালামি স্লাইস)</strong> টেকনিক ব্যবহার করুন। অর্থাৎ পুরো কাজটি একবারে না ভেবে সেটিকে ছোট ছোট টুকরোতে কেটে ফেলুন এবং একটি একটি করে স্লাইস শেষ করতে থাকুন।
+                    এছাড়াও তারা <strong>'ওয়াবি-সাবি' (Wabi-Sabi)</strong> ফিলোসফিতে বিশ্বাস করেন—অর্থাৎ জগতের কোনো কিছুই নিখুঁত বা চিরস্থায়ী নয়। জীবনের অপূর্ণতা ও পরিবর্তনকে সহাস্যবদনে মেনে নেওয়াই হলো প্রকৃত শান্তির পথ।
                 </p>
             </div>
         </div>
@@ -254,7 +258,7 @@ border: 1px solid rgba(255, 255, 255, 0.08);
         <!-- 4. DEEP LESSONS / MAIN TAKEAWAYS (গভীর শিক্ষা) -->
         <div class="space-y-6">
             <h2 class="text-xl sm:text-2xl font-extrabold text-white flex items-center gap-2">
-                <span class="text-amber-400">💡</span> এই বইয়ের ৪টি মূল টেকঅ্যাওয়ে
+                <span class="text-amber-400">💡</span> এই বইয়ের ৪টি মূল জীবনদর্শন
             </h2>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -262,44 +266,44 @@ border: 1px solid rgba(255, 255, 255, 0.08);
                 <!-- Lesson 1 -->
                 <div class="glass-card p-6 rounded-2xl border border-white/10 hover:border-amber-400/40 transition-all space-y-2">
                     <div class="flex items-center gap-3">
-                        <span class="w-8 h-8 rounded-xl bg-amber-400/10 text-amber-400 font-black flex items-center justify-center text-sm border border-amber-400/20">১</span>
-                        <h3 class="font-bold text-white text-base sm:text-lg">সবচেয়ে কঠিন কাজ আগে</h3>
+                        <span class="w-8 h-8 rounded-xl bg-teal-400/10 text-teal-300 font-black flex items-center justify-center text-sm border border-teal-400/20">১</span>
+                        <h3 class="font-bold text-white text-base sm:text-lg">সবসময় সক্রিয় থাকুন</h3>
                     </div>
                     <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
-                        দিনের শুরুতেই শক্তির পরিমাণ বেশি থাকে। তাই সকালে উঠে কঠিন ও গুরুত্বপূর্ণ কাজটি শেষ করে ফেললে সারাদিন এক অদ্ভুত আত্মবিশ্বাস বজায় থাকে।
+                        কখনো কাজ থেকে সম্পূর্ণ অবসর নেবেন না। শরীর ও মনকে কোনো প্রিয় ও দরকারী কাজে সবসময় যুক্ত রাখুন।
                     </p>
                 </div>
 
                 <!-- Lesson 2 -->
                 <div class="glass-card p-6 rounded-2xl border border-white/10 hover:border-amber-400/40 transition-all space-y-2">
                     <div class="flex items-center gap-3">
-                        <span class="w-8 h-8 rounded-xl bg-amber-400/10 text-amber-400 font-black flex items-center justify-center text-sm border border-amber-400/20">২</span>
-                        <h3 class="font-bold text-white text-base sm:text-lg">কাগজে প্ল্যান তৈরি করা</h3>
+                        <span class="w-8 h-8 rounded-xl bg-teal-400/10 text-teal-300 font-black flex items-center justify-center text-sm border border-teal-400/20">২</span>
+                        <h3 class="font-bold text-white text-base sm:text-lg">হারা হাচি বু (৮০% নীতি)</h3>
                     </div>
                     <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
-                        মাথার ভেতর চিন্তা না রেখে খাতায় সব লিখে ফেলুন। কাজের তালিকা লিখিত থাকলে ব্রেইন ফোকাসড থাকে এবং বিভ্রান্তি দূর হয়।
+                        পেট পুরোপুরি ভরে খাওয়ার আগেই খাওয়া থামিয়ে দিন। পরিমিত আহার দীর্ঘায়ু ও সুস্থ শরীরের মূল ভিত্তি।
                     </p>
                 </div>
 
                 <!-- Lesson 3 -->
                 <div class="glass-card p-6 rounded-2xl border border-white/10 hover:border-amber-400/40 transition-all space-y-2">
                     <div class="flex items-center gap-3">
-                        <span class="w-8 h-8 rounded-xl bg-amber-400/10 text-amber-400 font-black flex items-center justify-center text-sm border border-amber-400/20">৩</span>
-                        <h3 class="font-bold text-white text-base sm:text-lg">প্রস্তুতিই সফলতার চাবিকাঠি</h3>
+                        <span class="w-8 h-8 rounded-xl bg-teal-400/10 text-teal-300 font-black flex items-center justify-center text-sm border border-teal-400/20">৩</span>
+                        <h3 class="font-bold text-white text-base sm:text-lg">বন্ধুদের সাথে যুক্ত থাকুন</h3>
                     </div>
                     <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
-                        কাজ শুরুর আগে প্রয়োজনীয় সব তথ্য, ফাইল বা টুলস টেবিল সাজিয়ে নিন। এতে কাজ শুরুর পর বারবার উঠতে হয় না এবং ফ্লো নষ্ট হয় না।
+                        ভালো বন্ধু ও সামাজিক মেলবন্ধন দুশ্চিন্তা কমায় এবং একাকীত্বের অনুভূতি দূর করে আয়ু বৃদ্ধি করে।
                     </p>
                 </div>
 
                 <!-- Lesson 4 -->
                 <div class="glass-card p-6 rounded-2xl border border-white/10 hover:border-amber-400/40 transition-all space-y-2">
                     <div class="flex items-center gap-3">
-                        <span class="w-8 h-8 rounded-xl bg-amber-400/10 text-amber-400 font-black flex items-center justify-center text-sm border border-amber-400/20">৪</span>
-                        <h3 class="font-bold text-white text-base sm:text-lg">প্রযুক্তির দাস নয়, মালিক হন</h3>
+                        <span class="w-8 h-8 rounded-xl bg-teal-400/10 text-teal-300 font-black flex items-center justify-center text-sm border border-teal-400/20">৪</span>
+                        <h3 class="font-bold text-white text-base sm:text-lg">প্রকৃতির সাথে সময় কাটান</h3>
                     </div>
                     <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
-                        মোবাইল নোটিফিকেশন ও সোশ্যাল মিডিয়া মানুষের মনোযোগ নষ্ট করার প্রধান কারণ। গুরুত্বপূর্ণ কাজ করার সময় নোটিফিকেশন অফ রাখুন।
+                        প্রতিদিন কিছু সময় খোলা বাতাসে হাঁটাহাঁটি করা এবং রোদে সময় কাটানো মানুষের মেজাজ ভালো রাখে।
                     </p>
                 </div>
 
@@ -307,44 +311,39 @@ border: 1px solid rgba(255, 255, 255, 0.08);
         </div>
 
         <!-- 5. ACTIONABLE TAKEAWAY (বাস্তব জীবনে প্রয়োগ) -->
-        <div class="glass-card rounded-3xl p-6 sm:p-8 border border-amber-400/30 bg-gradient-to-r from-amber-500/10 via-slate-900/90 to-slate-900/90 space-y-4">
-            <h2 class="text-lg sm:text-xl font-bold text-amber-400 flex items-center gap-2">
-                <span>🎯</span> আগামীকাল সকাল থেকেই যা প্রয়োগ করবেন:
+        <div class="glass-card rounded-3xl p-6 sm:p-8 border border-teal-400/30 bg-gradient-to-r from-teal-500/10 via-slate-900/90 to-slate-900/90 space-y-4">
+            <h2 class="text-lg sm:text-xl font-bold text-teal-300 flex items-center gap-2">
+                <span>🎯</span> দৈনন্দিন জীবনে যেভাবে প্রয়োগ করবেন:
             </h2>
             <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
                 <li class="flex items-start gap-2.5">
-                    <span class="w-2 h-2 rounded-full bg-amber-400 mt-1.5 flex-shrink-0"></span>
-                    <span><strong>ঘুমানোর আগে কালকের লিস্ট বানান:</strong> প্রতি রাতে ঘুমানোর আগে পরের দিনের কাজের একটি তালিকা প্রস্তুত করুন।</span>
+                    <span class="w-2 h-2 rounded-full bg-teal-400 mt-1.5 flex-shrink-0"></span>
+                    <span><strong>প্রতিদিন অল্প শারীরিক কসরত করুন:</strong> ভারী জিম না করলেও প্রতিদিন অন্তত ২০ মিনিট হাঁটা বা হালকা ফ্রি-হ্যান্ড এক্সারসাইজ করুন।</span>
                 </li>
                 <li class="flex items-start gap-2.5">
-                    <span class="w-2 h-2 rounded-full bg-amber-400 mt-1.5 flex-shrink-0"></span>
-                    <span><strong>ব্যাঙ চিহ্নিত করুন:</strong> ওই তালিকার পাশে 'A' চিহ্ন দিয়ে দিন যেটি আপনার সবচেয়ে গুরুত্বপূর্ণ কাজ।</span>
+                    <span class="w-2 h-2 rounded-full bg-teal-400 mt-1.5 flex-shrink-0"></span>
+                    <span><strong>হাসি দিয়ে দিন শুরু করুন:</strong> ছোট ছোট বিষয়ে হাসুন এবং চারপাশের মানুষের প্রতি কৃতজ্ঞতা প্রকাশ করুন।</span>
                 </li>
                 <li class="flex items-start gap-2.5">
-                    <span class="w-2 h-2 rounded-full bg-amber-400 mt-1.5 flex-shrink-0"></span>
-                    <span><strong>সকালে উঠেই শুরু করুন:</strong> সকালে অন্য কিছু (সোশ্যাল মিডিয়া/খবর) না দেখে সরাসরি সেই 'A' কাজটি শেষ না হওয়া পর্যন্ত কাজ করুন।</span>
+                    <span class="w-2 h-2 rounded-full bg-teal-400 mt-1.5 flex-shrink-0"></span>
+                    <span><strong>বর্তমান মুহূর্তে বাঁচুন:</strong> অতীত বা ভবিষ্যতের দুশ্চিন্তা ছেড়ে বর্তমানের কাজটিকে ভালোবাসতে শিখুন।</span>
                 </li>
             </ul>
         </div>
 
         <!-- 6. FINAL CONCLUSION / QUOTE BANNER -->
         <div class="p-6 sm:p-8 rounded-3xl bg-slate-900/80 border border-white/10 text-center space-y-3 shadow-2xl">
-            <span class="text-xs font-bold uppercase tracking-widest text-amber-400">বইয়ের কালজয়ী উক্তি</span>
+            <span class="text-xs font-bold uppercase tracking-widest text-teal-300">বইয়ের মূল উপদেশ</span>
             <blockquote class="text-lg sm:text-2xl font-extrabold text-white italic leading-snug max-w-2xl mx-auto">
-                "If you have to eat two frogs, eat the ugliest one first."
+                "Only staying active will make you want to live a hundred years."
             </blockquote>
             <p class="text-xs sm:text-sm text-slate-400">
-                — ব্রায়ান ট্রেসি (ইট দ্যাট ফ্রগ!)
+                — জাপানি প্রবাদ (ইকিগাই)
             </p>
         </div>
 
     </div>
 </section>
-
-
-
-
-
 
 
 
@@ -457,7 +456,6 @@ border: 1px solid rgba(255, 255, 255, 0.08);
 
     </div>
 </footer>
-
 
 </body>
 </html>

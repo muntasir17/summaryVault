@@ -17,7 +17,9 @@
     --color-yellow-600: oklch(0.681 0.162 75.834);
     --color-emerald-300: oklch(0.845 0.143 164.978);
     --color-emerald-500: oklch(0.696 0.17 162.48);
+    --color-teal-200: oklch(0.91 0.096 180.426);
     --color-teal-300: oklch(0.855 0.138 181.071);
+    --color-teal-400: oklch(0.777 0.152 181.912);
     --color-teal-500: oklch(0.704 0.14 182.503);
     --color-cyan-300: oklch(0.865 0.127 207.078);
     --color-cyan-500: oklch(0.715 0.143 215.221);
@@ -25,6 +27,10 @@
     --color-blue-500: oklch(0.623 0.214 259.815);
     --color-indigo-300: oklch(0.785 0.115 274.713);
     --color-indigo-500: oklch(0.585 0.233 277.117);
+    --color-violet-200: oklch(0.894 0.057 293.283);
+    --color-violet-300: oklch(0.811 0.111 293.571);
+    --color-violet-400: oklch(0.702 0.183 293.541);
+    --color-violet-500: oklch(0.606 0.25 292.717);
     --color-purple-300: oklch(0.827 0.119 306.383);
     --color-purple-500: oklch(0.627 0.265 303.9);
     --color-pink-300: oklch(0.823 0.12 346.018);
@@ -1590,11 +1596,35 @@
   .border-rose-500\/20 {
     border-color: color-mix(in oklab, var(--color-rose-500) 20%, transparent);
   }
+  .border-teal-400 {
+    border-color: var(--color-teal-400);
+  }
+  .border-teal-400\/20 {
+    border-color: color-mix(in oklab, var(--color-teal-400) 20%, transparent);
+  }
+  .border-teal-400\/30 {
+    border-color: color-mix(in oklab, var(--color-teal-400) 30%, transparent);
+  }
   .border-teal-500 {
     border-color: var(--color-teal-500);
   }
   .border-teal-500\/20 {
     border-color: color-mix(in oklab, var(--color-teal-500) 20%, transparent);
+  }
+  .border-violet-400 {
+    border-color: var(--color-violet-400);
+  }
+  .border-violet-400\/20 {
+    border-color: color-mix(in oklab, var(--color-violet-400) 20%, transparent);
+  }
+  .border-violet-400\/30 {
+    border-color: color-mix(in oklab, var(--color-violet-400) 30%, transparent);
+  }
+  .border-violet-500 {
+    border-color: var(--color-violet-500);
+  }
+  .border-violet-500\/20 {
+    border-color: color-mix(in oklab, var(--color-violet-500) 20%, transparent);
   }
   .border-white {
     border-color: var(--color-white);
@@ -1716,11 +1746,29 @@
   .bg-slate-950\/60 {
     background-color: color-mix(in oklab, var(--color-slate-950) 60%, transparent);
   }
+  .bg-teal-400 {
+    background-color: var(--color-teal-400);
+  }
+  .bg-teal-400\/10 {
+    background-color: color-mix(in oklab, var(--color-teal-400) 10%, transparent);
+  }
   .bg-teal-500 {
     background-color: var(--color-teal-500);
   }
   .bg-teal-500\/10 {
     background-color: color-mix(in oklab, var(--color-teal-500) 10%, transparent);
+  }
+  .bg-violet-400 {
+    background-color: var(--color-violet-400);
+  }
+  .bg-violet-400\/10 {
+    background-color: color-mix(in oklab, var(--color-violet-400) 10%, transparent);
+  }
+  .bg-violet-500 {
+    background-color: var(--color-violet-500);
+  }
+  .bg-violet-500\/10 {
+    background-color: color-mix(in oklab, var(--color-violet-500) 10%, transparent);
   }
   .bg-white {
     background-color: var(--color-white);
@@ -1774,6 +1822,22 @@
   }
   .from-amber-500\/20 {
     --tw-gradient-from: color-mix(in oklab, var(--color-amber-500) 20%, transparent);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .from-teal-500 {
+    --tw-gradient-from: var(--color-teal-500);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .from-teal-500\/10 {
+    --tw-gradient-from: color-mix(in oklab, var(--color-teal-500) 10%, transparent);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .from-violet-500 {
+    --tw-gradient-from: var(--color-violet-500);
+    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .from-violet-500\/10 {
+    --tw-gradient-from: color-mix(in oklab, var(--color-violet-500) 10%, transparent);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
   .via-amber-300 {
@@ -2371,11 +2435,20 @@
   .text-slate-950 {
     color: var(--color-slate-950);
   }
+  .text-teal-200 {
+    color: var(--color-teal-200);
+  }
   .text-teal-300 {
     color: var(--color-teal-300);
   }
   .text-transparent {
     color: transparent;
+  }
+  .text-violet-200 {
+    color: var(--color-violet-200);
+  }
+  .text-violet-300 {
+    color: var(--color-violet-300);
   }
   .text-white {
     color: var(--color-white);
