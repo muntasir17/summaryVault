@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Summary Vault</title>
+    <link rel="icon" href="summaryValut.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+     <script src="https://cdn.tailwindcss.com"></script>
+     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+     <script>
+tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Hind Siliguri"', '"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+     </script>
+</head>
+<body class="bg-[#080C14] text-slate-100 font-sans antialiased selection:bg-amber-400 selection:text-slate-950 min-h-screen relative overflow-x-hidden">
+    <style>
+.glass-card {
+background: rgba(15, 23, 42, 0.7);
+backdrop-filter: blur(16px);
+-webkit-backdrop-filter: blur(16px);
+border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.glow-effect:hover {
+ box-shadow: 0 0 25px -5px rgba(245, 158, 11, 0.3);
+}
+.reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: opacity, transform;
+    }
+
+    /* স্ক্রোলে দেখার সাথে সাথে সুন্দরভাবে ভেসে উঠবে */
+    .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+</style>
+
+<br>
+
+<header class="fixed top-0 left-0 right-0 z-50 p-3 sm:p-4 lg:p-6 transition-all duration-300">
+    <div class="max-w-7xl mx-auto">
+        <nav class="glass-card rounded-2xl px-4 sm:px-5 py-3 flex items-center justify-between shadow-2xl shadow-black/50 border border-white/10 hover:border-white/20">
+            
+            <!-- 1. Brand / Logo -->
+            <a href="#" class="flex items-center gap-2.5 sm:gap-3 group">
+                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-amber-500 via-amber-400 to-yellow-200 flex items-center justify-center text-slate-950 font-black text-lg sm:text-xl shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform duration-300">
+                    SV
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-base sm:text-lg font-extrabold tracking-tight text-white group-hover:text-amber-400 transition-colors leading-tight">
+                        Summary<span class="text-amber-400">Vault</span>
+                    </span>
+                    <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-slate-400 tracking-widest -mt-0.5">
+                        Bengali Summaries
+                    </span>
+                </div>
+            </a>
+
+            <!-- 2. Navigation Links (Desktop: >= 1024px) -->
+            <ul class="hidden lg:flex items-center gap-1 bg-white/[0.03] border border-white/5 p-1.5 rounded-xl backdrop-blur-md">
+                <li>
+                    <a href="index.html" class="px-4 py-2 text-sm font-semibold text-white bg-white/10 rounded-lg shadow-inner block">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="bookpage.html" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-all block">
+                        Books
+                    </a>
+                </li>
+                <li>
+                    <a href="#vault" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-all flex items-center gap-1.5">
+                    Hot 
+                        <span class="px-1.5 py-0.5 text-[10px] font-bold bg-amber-400/10 text-amber-400 border border-amber-400/20 rounded-md">🔥</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#about" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-all block">
+                        About
+                    </a>
+                </li>
+            </ul>
+
+            <!-- 3. Right Action Area (Search + CTA) -->
+            <div class="flex items-center gap-2.5 sm:gap-3">
+                <!-- CTA Button -->
+                <a href="index.html" class="glow-effect px-3.5 sm:px-5 py-2 text-xs font-bold text-slate-950 bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-400 rounded-xl transition-all duration-300 hover:scale-105 active:scale-95 shadow-md shadow-amber-500/10 whitespace-nowrap">
+                    Get Started
+            </a>
+
+                <!-- 4. Mobile & Tablet Menu Toggle Button (< 1024px) -->
+                <button id="mobile-toggle" class="lg:hidden p-2 rounded-xl text-slate-300 hover:text-white hover:bg-white/10 focus:outline-none transition-colors" aria-label="Toggle Navigation">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+
+        <!-- 5. Mobile & Tablet Drawer Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden mt-3 glass-card rounded-2xl p-5 border border-white/10 shadow-2xl transition-all">
+
+            <!-- Navigation Links -->
+            <div class="flex flex-col space-y-2">
+                <a href="index.html" class="px-4 py-2.5 rounded-xl text-sm font-semibold text-white bg-white/10 block">Home</a>
+                <a href="bookpage.html" class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 block">Books</a>
+                <a href="#vault" class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 flex items-center justify-between">
+                    Vault
+                    <span class="px-2 py-0.5 text-[10px] font-bold bg-amber-400/10 text-amber-400 border border-amber-400/20 rounded-md">PRO</span>
+                </a>
+                <a href="#about" class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 block">About</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<br>
+<section id="the-alchemist-summary" class="relative py-12 lg:py-20 text-slate-100 overflow-hidden">
+    
+    <!-- Background Ambient Glows -->
+    <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-amber-500/10 blur-[180px] rounded-full pointer-events-none"></div>
+    <div class="absolute bottom-20 right-10 w-[400px] h-[400px] bg-indigo-500/10 blur-[150px] rounded-full pointer-events-none"></div>
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 space-y-12">
+        
+        <!-- 1. BACK BUTTON & TOP BADGES -->
+        <div class="flex items-center justify-between gap-4">
+            <a href="bookpage.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl glass-card text-xs sm:text-sm font-semibold text-slate-300 hover:text-amber-400 border border-white/10 hover:border-amber-400/30 transition-all">
+                <span>&larr;</span>
+                <span>সকল বইয়ে ফিরে যান</span>
+            </a>
+
+            <div class="flex items-center gap-2">
+                <span class="px-3 py-1 bg-amber-400/10 text-amber-400 text-xs font-bold rounded-lg border border-amber-400/20">
+                    ⏱️ ৫ মিনিট পূর্ণাঙ্গ পাঠ
+                </span>
+                <span class="px-3 py-1 bg-indigo-500/10 text-indigo-300 text-xs font-bold rounded-lg border border-indigo-500/20">
+                    ★ ৪.৮ রেটিং
+                </span>
+            </div>
+        </div>
+
+        <!-- 2. BOOK HERO HEADER -->
+        <div class="glass-card rounded-3xl p-6 sm:p-10 border border-white/10 relative overflow-hidden space-y-6">
+            <div class="flex flex-col sm:flex-row gap-6 items-center sm:items-start">
+                
+                <!-- Book Title & Meta -->
+                <div class="space-y-3 text-center sm:text-left flex-1">
+                    <span class="text-xs font-bold uppercase tracking-widest text-amber-400">বিশ্ববিখ্যাত মাস্টারপিস</span>
+                    <h1 class="text-3xl sm:text-4xl font-black text-white tracking-tight leading-tight">
+                        দ্যা অ্যালকেমিস্ট <br class="hidden sm:inline"/>
+                        <span class="text-slate-400 font-normal text-2xl sm:text-3xl">(The Alchemist)</span>
+                    </h1>
+                    <p class="text-sm text-slate-300 font-medium">
+                        মূল লেখক: <span class="text-white font-semibold">Paulo Coelho (পাওলো কোয়েলহো)</span>
+                    </p>
+                    
+                    <!-- Category Tags -->
+                    <div class="flex flex-wrap justify-center sm:justify-start gap-2 pt-2">
+                        <span class="px-3 py-1 rounded-md text-[11px] font-bold bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">অ্যাডভেঞ্চার</span>
+                        <span class="px-3.5 py-1 rounded-md text-[11px] font-bold bg-purple-500/10 text-purple-300 border border-purple-500/20">ফিলোসফি</span>
+                        <span class="px-3.5 py-1 rounded-md text-[11px] font-bold bg-amber-500/10 text-amber-300 border border-amber-500/20">জীবনমুখী</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- THE HOOK BANNER -->
+            <div class="p-5 rounded-2xl bg-gradient-to-r from-amber-500/10 via-amber-400/5 to-transparent border border-amber-400/20">
+                <p class="text-sm sm:text-base text-amber-200 font-semibold italic leading-relaxed text-center sm:text-left">
+                    "ভাবুন তো, আপনার স্বপ্নের জন্য আপনি কি চেনা আরামদায়ক জীবন ছেড়ে অজানা কোনো অভিযানে নেমে পড়ার সাহস রাখেন? যখন আপনি সত্যি কিছু চান, পুরো বিশ্ব আপনাকে তা পাইয়ে দিতে সাহায্য করে!"
+                </p>
+            </div>
+        </div>
+
+        <!-- 3. DETAILED STORYLINE BREAKDOWN (৪টি ধাপে বিস্তারিত গল্প) -->
+        <div class="space-y-8">
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white flex items-center gap-3 border-b border-white/10 pb-4">
+                <span class="text-amber-400">📖</span> গল্পের পূর্ণাঙ্গ সারসংক্ষেপ
+            </h2>
+
+            <!-- PART 1 -->
+            <div class="glass-card rounded-3xl p-6 sm:p-8 border border-white/10 space-y-4">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-400/10 text-amber-400 text-xs font-bold">
+                    পর্ব ১: মেষপালক সান্তিয়াগো ও স্বপ্নের ডাক
+                </div>
+                <h3 class="text-xl font-bold text-white">চেনা কমফোর্ট জোন ছেড়ে অজানার উদ্দেশ্যে যাত্রা</h3>
+                <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+                    গল্পের মূল চরিত্র <strong class="text-slate-100">সান্তিয়াগো</strong>—স্পেনের একজন সাধারণ মেষপালক ছেলে। সে চাইলে চার্চের ফাদার হয়ে সাধারণ জীবন কাটাতে পারত, কিন্তু তার ইচ্ছা ছিল বিশ্ব ঘুরে দেখার। তাই সে ভেড়ার পাল নিয়ে মাঠে মাঠে ঘুরে বেড়াত। একদিন এক পরিত্যক্ত চার্চের নিচে ঘুমিয়ে সে অদ্ভুত এক স্বপ্ন দেখে—মিসরের পিরামিডের কাছে নাকি তার জন্য এক বিশাল গুপ্তধন অপেক্ষা করছে!
+                </p>
+                <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+                    স্বপ্নের অর্থ বুঝতে সে এক জিপসি নারীর কাছে যায় এবং পরবর্তীতে তার সাথে দেখা হয় এক রহস্যময় বৃদ্ধের, যিনি নিজেকে সালেমের রাজা 'মেলকিজেদেক' বলে পরিচয় দেন। বৃদ্ধ তাকে শেখান <strong class="text-amber-400 font-semibold">'Personal Legend' (ব্যক্তিগত স্বপ্ন)</strong>-এর ধারণা। তিনি বলেন, মানুষের জীবনের সবচেয়ে বড় সত্য হলো তার নিজস্ব স্বপ্নকে বাস্তবায়ন করা। সান্তিয়াগো তার ভেড়ার পাল বিক্রি করে দেয় এবং গুপ্তধনের খোঁজে আফ্রিকার উদ্দেশ্যে রওনা হয়।
+                </p>
+            </div>
+
+            <!-- PART 2 -->
+            <div class="glass-card rounded-3xl p-6 sm:p-8 border border-white/10 space-y-4">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-400/10 text-amber-400 text-xs font-bold">
+                    পর্ব ২: প্রথম ধাক্কা ও ক্রিস্টালের দোকান
+                </div>
+                <h3 class="text-xl font-bold text-white">সর্বস্ব হারিয়ে ঘুরে দাঁড়ানোর গল্প</h3>
+                <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+                    মরক্কোর তাঞ্জিয়ার শহরে পৌঁছানোর পর পরই সান্তিয়াগো এক প্রতারকের খপ্পরে পড়ে তার জমানো সব টাকা হারিয়ে ফেলে। অচেনা দেশ, অচেনা ভাষা, আর পকেটে এক ফুটো পয়সাও নেই! যে কেউ এই পরিস্থিতিতে ভেঙে পড়ে দেশে ফিরে যেত, কিন্তু সান্তিয়াগো সিদ্ধান্ত নেয় সে কাজ করবে।
+                </p>
+                <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+                    সে এক পাহাড়ি ক্রিস্টালের দোকানে চাকরি নেয়। সান্তিয়াগোর নতুন নতুন বুদ্ধি ও কঠোর পরিশ্রমে বুড়ো দোকানদারের ব্যবসা রাতারাতি বদলে যায়। সেখানে প্রায় এক বছর কাজ করে সান্তিয়াগো প্রচুর টাকা জমায়। সে চাইলে আবার স্পেনে ফিরে গিয়ে দ্বিগুণ ভেড়া কিনতে পারত, কিন্তু সে তার আসল স্বপ্ন—'পিরামিড ও গুপ্তধন'-এর কথা ভুলে যায়নি। টাকা জমিয়ে সে আবারও মরুভূমির ক্যারাভানে যুক্ত হয়।
+                </p>
+            </div>
+
+            <!-- PART 3 -->
+            <div class="glass-card rounded-3xl p-6 sm:p-8 border border-white/10 space-y-4">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-400/10 text-amber-400 text-xs font-bold">
+                    পর্ব ৩: সাহারা মরুভূমি, ভালোবাসা ও কিমিয়াবিদ
+                </div>
+                <h3 class="text-xl font-bold text-white">মরুভূমির নীরবতা ও হৃদয়ের ভাষা শেখা</h3>
+                <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+                    সাহারার বিষাক্ত ও বিশাল মরুভূমির মধ্য দিয়ে যাওয়ার সময় সান্তিয়াগোর পরিচয় হয় এক ইংরেজ পণ্ডিতের সাথে, যিনি একজন 'অ্যালকেমিস্ট' বা কিমিয়াবিদের সন্ধানে ঘুরছেন (যিনি সাধারণ ধাতুকে সোনায় রূপান্তর করতে পারেন)। ক্যারাভান যখন 'আল-ফায়ুম' মরূদ্যানে পৌঁছায়, সেখানে সান্তিয়াগোর দেখা হয় <strong class="text-slate-100">ফাতিমা</strong> নামের এক মরুভূমির কন্যার সাথে। সান্তিয়াগো তার প্রেমে পড়ে যায়।
+                </p>
+                <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+                    সেখানে অবশেষে সান্তিয়াগোর দেখা হয় সেই আসল শক্তিশালী <strong class="text-amber-400 font-semibold">অ্যালকেমিস্টের (The Alchemist)</strong> সাথে। অ্যালকেমিস্ট তাকে বোঝান যে ভালোবাসা কখনো মানুষের স্বপ্নের পথে বাধা হতে পারে না। সত্যিকারের ভালোবাসা মানুষকে আরও এগিয়ে দেয়। অ্যালকেমিস্ট সান্তিয়াগোকে সাথে নিয়ে পিরামিডের দিকে যাত্রা শুরু করেন এবং তাকে শেখান কীভাবে প্রকৃতির সংকেত পড়তে হয় এবং নিজের হৃদয়ের কথা শুনতে হয়।
+                </p>
+            </div>
+
+            <!-- PART 4 -->
+            <div class="glass-card rounded-3xl p-6 sm:p-8 border border-white/10 space-y-4">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-400/10 text-amber-400 text-xs font-bold">
+                    পর্ব ৪: পিরামিডের মোড় ও আসল গুপ্তধন
+                </div>
+                <h3 class="text-xl font-bold text-white">যেখানে শুরু সেখানেই শেষ: চরম সত্যের আবিষ্কার</h3>
+                <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+                    যাত্রাপথে উপজাতিদের যুদ্ধে তারা বন্দি হয়। সেখানে নিজের প্রাণ বাঁচাতে সান্তিয়াগোকে প্রমান করতে হয় যে সে বাতাসের সাথে কথা বলে নিজেকে তুফানে রূপান্তর করতে পারে! নিজের ভেতরের আত্মবিশ্বাস ও হৃদয়ের শক্তির জোরে সে সেই অসম্ভবকে সম্ভব করে দেখায়।
+                </p>
+                <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+                    অবশেষে সান্তিয়াগো মিসরের পিরামিডের সামনে পৌঁছায়। খুশিতে আত্মহারা হয়ে সে বালু খুঁড়তে শুরু করে। কিন্তু সেখানে কয়েকজন ডাকাত এসে তাকে বেদম মারধর করে এবং তার বাকি টাকা কেড়ে নেয়। যাওয়ার সময় ডাকাত দলের সর্দার উপহাস করে বলে—<em class="text-amber-200">"আমিও তো একসময় স্বপ্ন দেখেছিলাম স্পেনের এক পরিত্যক্ত চার্চের নিচে গাছের গোড়ায় গুপ্তধন পোঁতা আছে! কিন্তু আমি তোর মতো বোকা নই যে স্বপ্নের পিছে ছুটে এখানে আসব!"</em>
+                </p>
+                <p class="text-sm sm:text-base text-slate-300 leading-relaxed font-semibold text-slate-200">
+                    সান্তিয়াগো হেসে ফেলে। সে বুজতে পারে আসল গুপ্তধন কোথায় ছিল! সে ফিরে যায় স্পেনের সেই চেনা চার্চের নিচে এবং মাটি খুঁড়ে পেয়ে যায় এক ভর্তি সোনা ও রত্নের সিন্দুক। সে অনুধাবন করে, গুপ্তধন পাওয়ার চেয়েও বড় বিষয় ছিল পুরো যাত্রাপথে তার অর্জিত জ্ঞান, অভিজ্ঞতা এবং আত্মউপলব্ধি।
+                </p>
+            </div>
+        </div>
+
+        <!-- 4. DEEP LESSONS / MAIN TAKEAWAYS (গভীর শিক্ষা) -->
+        <div class="space-y-6">
+            <h2 class="text-xl sm:text-2xl font-extrabold text-white flex items-center gap-2">
+                <span class="text-amber-400">💡</span> এই বইয়ের ৫টি মূল জীবনদর্শন
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                
+                <!-- Lesson 1 -->
+                <div class="glass-card p-6 rounded-2xl border border-white/10 hover:border-amber-400/40 transition-all space-y-2">
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-xl bg-amber-400/10 text-amber-400 font-black flex items-center justify-center text-sm border border-amber-400/20">১</span>
+                        <h3 class="font-bold text-white text-base sm:text-lg">Personal Legend (নিজের উদ্দেশ্য)</h3>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                        প্রত্যেক মানুষের পৃথিবীতে আসার একটি উদ্দেশ্য থাকে। আমরা যখন ছোট থাকি তখন তা পরিষ্কার বুঝি, বড় হওয়ার সাথে সাথে সমাজের চাপে তা ভুলে যাই। নিজের স্বপ্ন পূরণ করাই জীবনের মূল কাজ।
+                    </p>
+                </div>
+
+                <!-- Lesson 2 -->
+                <div class="glass-card p-6 rounded-2xl border border-white/10 hover:border-amber-400/40 transition-all space-y-2">
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-xl bg-amber-400/10 text-amber-400 font-black flex items-center justify-center text-sm border border-amber-400/20">২</span>
+                        <h3 class="font-bold text-white text-base sm:text-lg">Omens (প্রকৃতির সংকেত)</h3>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                        ঈশ্বর বা প্রকৃতি আমাদের সবসময় সঠিক পথ দেখানোর জন্য ছোট ছোট সুযোগ বা সংকেত পাঠায়। আমাদের সচেতন হয়ে সেই সংকেতগুলো পড়তে ও বুঝতে শিখতে হবে।
+                    </p>
+                </div>
+
+                <!-- Lesson 3 -->
+                <div class="glass-card p-6 rounded-2xl border border-white/10 hover:border-amber-400/40 transition-all space-y-2">
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-xl bg-amber-400/10 text-amber-400 font-black flex items-center justify-center text-sm border border-amber-400/20">৩</span>
+                        <h3 class="font-bold text-white text-base sm:text-lg">ব্যর্থতার ভয়ই আসল বাধা</h3>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                        "ব্যর্থতার যন্ত্রণার চেয়ে ব্যর্থ হওয়ার ভয়টা মানুষ বেশি পায়।" অধিকাংশ মানুষ হারের ভয়েই কখনো কাজ শুরুই করে না। ভয়কে জয় করাই সফলতার প্রথম চাবিকাঠি।
+                    </p>
+                </div>
+
+                <!-- Lesson 4 -->
+                <div class="glass-card p-6 rounded-2xl border border-white/10 hover:border-amber-400/40 transition-all space-y-2">
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-xl bg-amber-400/10 text-amber-400 font-black flex items-center justify-center text-sm border border-amber-400/20">৪</span>
+                        <h3 class="font-bold text-white text-base sm:text-lg">যাত্রাপথই আসল সম্পদ</h3>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                        সান্তিয়াগো যদি পিরামিডে না যেত, তবে সে মরক্কোর অভিজ্ঞতা, ক্রিস্টালের দোকানের দক্ষতা, মরুভূমির শক্তি এবং ফাতিমার ভালোবাসা কোনোটাই পেত না। গন্তব্যের চেয়ে জার্নি বেশি মূল্যবান।
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 5. ACTIONABLE TAKEAWAY (বাস্তব জীবনে প্রয়োগ) -->
+        <div class="glass-card rounded-3xl p-6 sm:p-8 border border-amber-400/30 bg-gradient-to-r from-amber-500/10 via-slate-900/90 to-slate-900/90 space-y-4">
+            <h2 class="text-lg sm:text-xl font-bold text-amber-400 flex items-center gap-2">
+                <span>🎯</span> আপনার জীবনে যেভাবে প্রয়োগ করবেন:
+            </h2>
+            <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
+                <li class="flex items-start gap-2.5">
+                    <span class="w-2 h-2 rounded-full bg-amber-400 mt-1.5 flex-shrink-0"></span>
+                    <span><strong>নিজের লক্ষ্য স্পষ্ট করুন:</strong> অন্য কে কী ভাবল তা বাদ দিয়ে চিন্তা করুন আপনার ভেতরের আসল প্যাশন বা স্বপ্ন কোনটি।</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                    <span class="w-2 h-2 rounded-full bg-amber-400 mt-1.5 flex-shrink-0"></span>
+                    <span><strong>আরামদায়ক এলাকা (Comfort Zone) ছাড়ুন:</strong> নতুন কিছু পেতে হলে পুরোনো অভ্যস্ত জীবন থেকে বের হওয়ার ঝুঁকি নিতে হবে।</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                    <span class="w-2 h-2 rounded-full bg-amber-400 mt-1.5 flex-shrink-0"></span>
+                    <span><strong>পতনকে শিক্ষা হিসেবে নিন:</strong> সান্তিয়াগো সর্বস্ব হারিয়েও দমে যায়নি। জীবনের প্রতি বাধা আপনাকে নতুন কোনো দক্ষতার দিকে নিয়ে যায়।</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 6. FINAL CONCLUSION / QUOTE BANNER -->
+        <div class="p-6 sm:p-8 rounded-3xl bg-slate-900/80 border border-white/10 text-center space-y-3 shadow-2xl">
+            <span class="text-xs font-bold uppercase tracking-widest text-amber-400">বইয়ের অমর উক্তি</span>
+            <blockquote class="text-lg sm:text-2xl font-extrabold text-white italic leading-snug max-w-2xl mx-auto">
+                "When you want something, all the universe conspires in helping you to achieve it."
+            </blockquote>
+            <p class="text-xs sm:text-sm text-slate-400">
+                — পাওলো কোয়েলহো (দ্যা অ্যালকেমিস্ট)
+            </p>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+
+
+<br>
+<footer class="relative bg-[#070A11] text-slate-100 pt-16 pb-10 border-t border-white/10 overflow-hidden">
+    
+    <!-- Ambient Background Glow -->
+    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[250px] bg-amber-500/5 blur-[140px] rounded-full pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16">
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+            
+            <!-- Brand Info & Social Icons -->
+            <div class="lg:col-span-2 space-y-4">
+                <a href="#" class="flex items-center gap-3 group ">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 via-amber-400 to-yellow-200 flex items-center justify-center text-slate-950 font-black text-xl shadow-lg shadow-amber-500/20">
+                        SV
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-lg font-extrabold text-white group-hover:text-amber-400 transition-colors">
+                            Summary<span class="text-amber-400">Vault</span>
+                        </span>
+                        <span class="text-[10px] uppercase font-semibold text-slate-400 tracking-widest -mt-1">
+                            Bengali Summaries
+                        </span>
+                    </div>
+                </a>
+
+                <p class="text-xs sm:text-sm text-slate-400 leading-relaxed pr-2">
+                    বিশ্ববিখ্যাত বইগুলোর মূলভাব সহজ ও প্রাঞ্জল বাংলায় সবার কাছে পৌঁছে দেওয়ার একটি আধুনিক ডিজিটাল প্ল্যাটফর্ম।
+                </p>
+
+                <!-- FIXED SOCIAL ICONS (Complete SVG Paths) -->
+                <div class="flex items-center gap-2.5 pt-1">
+                    <!-- Facebook -->
+                    <a href="#" class="w-9 h-9 rounded-xl glass-card flex items-center justify-center text-slate-400 hover:text-amber-400 hover:border-amber-400/40 transition-all">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                    <!-- X / Twitter -->
+                    <a href="#" class="w-9 h-9 rounded-xl glass-card flex items-center justify-center text-slate-400 hover:text-amber-400 hover:border-amber-400/40 transition-all">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                    <!-- Instagram -->
+                    <a href="#" class="w-9 h-9 rounded-xl glass-card flex items-center justify-center text-slate-400 hover:text-amber-400 hover:border-amber-400/40 transition-all">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <!-- LinkedIn -->
+                    <a href="#" class="w-9 h-9 rounded-xl glass-card flex items-center justify-center text-slate-400 hover:text-amber-400 hover:border-amber-400/40 transition-all">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="space-y-3">
+                <h4 class="text-sm font-bold text-white uppercase tracking-wider">দ্রুত নেভিগেশন</h4>
+                <ul class="space-y-2 text-xs sm:text-sm text-slate-400">
+                    <li><a href="index.html" class="hover:text-amber-400 transition-colors">হোমপেজ</a></li>
+                    <li><a href="bookpage.html" class="hover:text-amber-400 transition-colors">সকল বই</a></li>
+                    <li><a href="#vault" class="hover:text-amber-400 transition-colors inline-flex items-center gap-1.5">হট <span class="px-1.5 py-0.5 text-[9px] font-bold bg-amber-400/10 text-amber-400 rounded border border-amber-400/20">🔥</span></a></li>
+                    <li><a href="#about" class="hover:text-amber-400 transition-colors">আমাদের সম্পর্কে</a></li>
+                </ul>
+            </div>
+
+            <!-- Categories -->
+            <div class="space-y-3">
+                <h4 class="text-sm font-bold text-white uppercase tracking-wider">ক্যাটাগরি</h4>
+                <ul class="space-y-2 text-xs sm:text-sm text-slate-400">
+                    <li><a href="#" class="hover:text-amber-400 transition-colors">সেলফ হেল্প</a></li>
+                    <li><a href="#" class="hover:text-amber-400 transition-colors">বিজনেস ও কেরিয়ার</a></li>
+                    <li><a href="#" class="hover:text-amber-400 transition-colors">সাইকোলজি</a></li>
+                    <li><a href="#" class="hover:text-amber-400 transition-colors">প্রোডাক্টিভিটি</a></li>
+                </ul>
+            </div>
+
+            <!-- Policy & Terms -->
+            <div class="space-y-3">
+                <h4 class="text-sm font-bold text-white uppercase tracking-wider">সহায়তা ও নীতি</h4>
+                <ul class="space-y-2 text-xs sm:text-sm text-slate-400">
+                    <li><a href="#" class="hover:text-amber-400 transition-colors">প্রাইভেসি পলিসি</a></li>
+                    <li><a href="#" class="hover:text-amber-400 transition-colors">টার্মস অব সার্ভিস</a></li>
+                    <li><a href="#" class="hover:text-amber-400 transition-colors">যোগাযোগ</a></li>
+                    <li><a href="#" class="hover:text-amber-400 transition-colors">FAQ / প্রশ্নাবলী</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- 3. BOTTOM COPYRIGHT BAR -->
+        <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+            <p>© 2026 <strong class="text-slate-200">SummaryVault</strong>. সর্বস্বত্ব সংরক্ষিত।</p>
+            
+            <p class="flex items-center gap-1">
+                Crafted with <span class="text-red-500">❤️</span> for Bengali Readers
+            </p>
+
+            <!-- Working Back to Top Button -->
+            <button 
+                onclick="window.scrollTo({top: 0, behavior: 'smooth'})" 
+                class="glass-card px-3.5 py-1.5 rounded-xl border border-white/10 hover:border-amber-400/40 text-slate-300 hover:text-amber-400 transition-all flex items-center gap-1.5"
+            >
+                <span>উপরে যান</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+            </button>
+        </div>
+
+    </div>
+</footer>
+
+
+</body>
+</html>
