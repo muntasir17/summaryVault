@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Summary Vault</title>
+    <title>Summary Vault</title>
     <link rel="icon" href="summaryValut.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
      <script src="https://cdn.tailwindcss.com"></script>
@@ -23,7 +23,7 @@ tailwind.config = {
      </script>
 </head>
 <body class="bg-[#080C14] text-slate-100 font-sans antialiased selection:bg-amber-400 selection:text-slate-950 min-h-screen relative overflow-x-hidden">
-    <style>
+   <style>
 .glass-card {
 background: rgba(15, 23, 42, 0.7);
 backdrop-filter: blur(16px);
@@ -126,18 +126,20 @@ border: 1px solid rgba(255, 255, 255, 0.08);
     </div>
 </header>
 
-<br>
-<section id="the-alchemist-summary" class="relative py-12 lg:py-20 text-slate-100 overflow-hidden">
+<!-- ========================================== -->
+<!-- BOOK SUMMARY DETAIL SECTION: EAT THAT FROG!-->
+<!-- ========================================== -->
+<section id="eat-that-frog-summary" class="relative py-12 lg:py-20 bg-[#080C14] text-slate-100 overflow-hidden">
     
     <!-- Background Ambient Glows -->
     <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-amber-500/10 blur-[180px] rounded-full pointer-events-none"></div>
-    <div class="absolute bottom-20 right-10 w-[400px] h-[400px] bg-indigo-500/10 blur-[150px] rounded-full pointer-events-none"></div>
+    <div class="absolute bottom-20 right-10 w-[400px] h-[400px] bg-emerald-500/10 blur-[150px] rounded-full pointer-events-none"></div>
 
     <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 space-y-12">
         
         <!-- 1. BACK BUTTON & TOP BADGES -->
         <div class="flex items-center justify-between gap-4">
-            <a href="bookpage.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl glass-card text-xs sm:text-sm font-semibold text-slate-300 hover:text-amber-400 border border-white/10 hover:border-amber-400/30 transition-all">
+            <a href="#books" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl glass-card text-xs sm:text-sm font-semibold text-slate-300 hover:text-amber-400 border border-white/10 hover:border-amber-400/30 transition-all">
                 <span>&larr;</span>
                 <span>সকল বইয়ে ফিরে যান</span>
             </a>
@@ -146,8 +148,8 @@ border: 1px solid rgba(255, 255, 255, 0.08);
                 <span class="px-3 py-1 bg-amber-400/10 text-amber-400 text-xs font-bold rounded-lg border border-amber-400/20">
                     ⏱️ ৫ মিনিট পূর্ণাঙ্গ পাঠ
                 </span>
-                <span class="px-3 py-1 bg-indigo-500/10 text-indigo-300 text-xs font-bold rounded-lg border border-indigo-500/20">
-                    ★ ৪.৮ রেটিং
+                <span class="px-3 py-1 bg-emerald-500/10 text-emerald-300 text-xs font-bold rounded-lg border border-emerald-500/20">
+                    ★ ৪.৭ রেটিং
                 </span>
             </div>
         </div>
@@ -158,20 +160,20 @@ border: 1px solid rgba(255, 255, 255, 0.08);
                 
                 <!-- Book Title & Meta -->
                 <div class="space-y-3 text-center sm:text-left flex-1">
-                    <span class="text-xs font-bold uppercase tracking-widest text-amber-400">বিশ্ববিখ্যাত মাস্টারপিস</span>
+                    <span class="text-xs font-bold uppercase tracking-widest text-amber-400">প্রোডাক্টিভিটির কালজয়ী বই</span>
                     <h1 class="text-3xl sm:text-4xl font-black text-white tracking-tight leading-tight">
-                        দ্যা অ্যালকেমিস্ট <br class="hidden sm:inline"/>
-                        <span class="text-slate-400 font-normal text-2xl sm:text-3xl">(The Alchemist)</span>
+                        ইট দ্যাট ফ্রগ! <br class="hidden sm:inline"/>
+                        <span class="text-slate-400 font-normal text-2xl sm:text-3xl">(Eat That Frog!)</span>
                     </h1>
                     <p class="text-sm text-slate-300 font-medium">
-                        মূল লেখক: <span class="text-white font-semibold">Paulo Coelho (পাওলো কোয়েলহো)</span>
+                        মূল লেখক: <span class="text-white font-semibold">Brian Tracy (ব্রায়ান ট্রেসি)</span>
                     </p>
                     
                     <!-- Category Tags -->
                     <div class="flex flex-wrap justify-center sm:justify-start gap-2 pt-2">
-                        <span class="px-3 py-1 rounded-md text-[11px] font-bold bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">অ্যাডভেঞ্চার</span>
-                        <span class="px-3.5 py-1 rounded-md text-[11px] font-bold bg-purple-500/10 text-purple-300 border border-purple-500/20">ফিলোসফি</span>
-                        <span class="px-3.5 py-1 rounded-md text-[11px] font-bold bg-amber-500/10 text-amber-300 border border-amber-500/20">জীবনমুখী</span>
+                        <span class="px-3 py-1 rounded-md text-[11px] font-bold bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">প্রোডাক্টিভিটি</span>
+                        <span class="px-3.5 py-1 rounded-md text-[11px] font-bold bg-amber-500/10 text-amber-300 border border-amber-500/20">সময় ব্যবস্থাপনা</span>
+                        <span class="px-3.5 py-1 rounded-md text-[11px] font-bold bg-blue-500/10 text-blue-300 border border-blue-500/20">ক্যারিয়ার উন্নয়ন</span>
                     </div>
                 </div>
             </div>
@@ -179,73 +181,74 @@ border: 1px solid rgba(255, 255, 255, 0.08);
             <!-- THE HOOK BANNER -->
             <div class="p-5 rounded-2xl bg-gradient-to-r from-amber-500/10 via-amber-400/5 to-transparent border border-amber-400/20">
                 <p class="text-sm sm:text-base text-amber-200 font-semibold italic leading-relaxed text-center sm:text-left">
-                    "ভাবুন তো, আপনার স্বপ্নের জন্য আপনি কি চেনা আরামদায়ক জীবন ছেড়ে অজানা কোনো অভিযানে নেমে পড়ার সাহস রাখেন? যখন আপনি সত্যি কিছু চান, পুরো বিশ্ব আপনাকে তা পাইয়ে দিতে সাহায্য করে!"
+                    "দিনের শুরুতেই যদি আপনাকে একটা জ্যান্ত ব্যাঙ খেতে বলা হয়, তবে পুরো দিনে আপনার সাথে এরচেয়ে খারাপ কিছু আর ঘটতে পারে না! ব্রায়ান ট্রেসির এই ব্যাঙ খাওয়ার নীতি কীভাবে আপনার আলসেমি দূর করে সফলতার দুয়ার খুলে দেবে?"
                 </p>
             </div>
         </div>
 
-        <!-- 3. DETAILED STORYLINE BREAKDOWN (৪টি ধাপে বিস্তারিত গল্প) -->
+        <!-- 3. DETAILED STORYLINE BREAKDOWN (৪টি অধ্যায়ে বিস্তারিত সামারি) -->
         <div class="space-y-8">
             <h2 class="text-2xl sm:text-3xl font-extrabold text-white flex items-center gap-3 border-b border-white/10 pb-4">
-                <span class="text-amber-400">📖</span> গল্পের পূর্ণাঙ্গ সারসংক্ষেপ
+                <span class="text-amber-400">📖</span> মূল বিষয়বস্তু ও অধ্যায়ভিত্তিক আলোচনা
             </h2>
 
             <!-- PART 1 -->
             <div class="glass-card rounded-3xl p-6 sm:p-8 border border-white/10 space-y-4">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-400/10 text-amber-400 text-xs font-bold">
-                    পর্ব ১: মেষপালক সান্তিয়াগো ও স্বপ্নের ডাক
+                    পর্ব ১: আসল 'ব্যাঙ' (Frog) আসলে কী?
                 </div>
-                <h3 class="text-xl font-bold text-white">চেনা কমফোর্ট জোন ছেড়ে অজানার উদ্দেশ্যে যাত্রা</h3>
+                <h3 class="text-xl font-bold text-white">সবচেয়ে কঠিন কিন্তু গুরুত্বপূর্ণ কাজটি চিহ্নিত করা</h3>
                 <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
-                    গল্পের মূল চরিত্র <strong class="text-slate-100">সান্তিয়াগো</strong>—স্পেনের একজন সাধারণ মেষপালক ছেলে। সে চাইলে চার্চের ফাদার হয়ে সাধারণ জীবন কাটাতে পারত, কিন্তু তার ইচ্ছা ছিল বিশ্ব ঘুরে দেখার। তাই সে ভেড়ার পাল নিয়ে মাঠে মাঠে ঘুরে বেড়াত। একদিন এক পরিত্যক্ত চার্চের নিচে ঘুমিয়ে সে অদ্ভুত এক স্বপ্ন দেখে—মিসরের পিরামিডের কাছে নাকি তার জন্য এক বিশাল গুপ্তধন অপেক্ষা করছে!
+                    বইটির নাম শুনে অদ্ভুত মনে হলেও, এখানে <strong>'ব্যাঙ' (Frog)</strong> বলতে বোঝানো হয়েছে আপনার দিনের সবচেয়ে গুরুত্বপূর্ণ এবং কঠিন কাজটিকে—যেটি শেষ করলে আপনার জীবনে সবচেয়ে বড় ধনাত্মক প্রভাব পড়বে, অথচ কাজটি করার কথা ভাবলেই আপনার আলসেমি লাগে এবং আপনি তা ফেলে রাখেন।
                 </p>
                 <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
-                    স্বপ্নের অর্থ বুঝতে সে এক জিপসি নারীর কাছে যায় এবং পরবর্তীতে তার সাথে দেখা হয় এক রহস্যময় বৃদ্ধের, যিনি নিজেকে সালেমের রাজা 'মেলকিজেদেক' বলে পরিচয় দেন। বৃদ্ধ তাকে শেখান <strong class="text-amber-400 font-semibold">'Personal Legend' (ব্যক্তিগত স্বপ্ন)</strong>-এর ধারণা। তিনি বলেন, মানুষের জীবনের সবচেয়ে বড় সত্য হলো তার নিজস্ব স্বপ্নকে বাস্তবায়ন করা। সান্তিয়াগো তার ভেড়ার পাল বিক্রি করে দেয় এবং গুপ্তধনের খোঁজে আফ্রিকার উদ্দেশ্যে রওনা হয়।
+                    ব্রায়ান ট্রেসি বলেন, সফল মানুষেরা প্রতিদিন সকালে উঠে প্রথমেই সেই বড় ‘ব্যাঙটি খেয়ে নেন’ (অর্থাৎ সবচেয়ে গুরুত্বপূর্ণ কাজটি আগে শেষ করেন)। আর সাধারণ মানুষেরা সারাদিন ছোটখাটো সহজ কাজ করে ব্যস্ততা দেখায়, কিন্তু মূল কাজটি জমিয়ে রেখে মানসিক চাপে ভোগে।
                 </p>
             </div>
 
             <!-- PART 2 -->
             <div class="glass-card rounded-3xl p-6 sm:p-8 border border-white/10 space-y-4">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-400/10 text-amber-400 text-xs font-bold">
-                    পর্ব ২: প্রথম ধাক্কা ও ক্রিস্টালের দোকান
+                    পর্ব ২: ৮০/২০ নিয়ম এবং লক্ষ্যের স্পষ্টতা
                 </div>
-                <h3 class="text-xl font-bold text-white">সর্বস্ব হারিয়ে ঘুরে দাঁড়ানোর গল্প</h3>
+                <h3 class="text-xl font-bold text-white">স্বচ্ছ চিন্তা ও প্যারেটো প্রিন্সিপাল</h3>
                 <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
-                    মরক্কোর তাঞ্জিয়ার শহরে পৌঁছানোর পর পরই সান্তিয়াগো এক প্রতারকের খপ্পরে পড়ে তার জমানো সব টাকা হারিয়ে ফেলে। অচেনা দেশ, অচেনা ভাষা, আর পকেটে এক ফুটো পয়সাও নেই! যে কেউ এই পরিস্থিতিতে ভেঙে পড়ে দেশে ফিরে যেত, কিন্তু সান্তিয়াগো সিদ্ধান্ত নেয় সে কাজ করবে।
+                    কাজের ক্ষেত্রে আলসেমি আসার প্রধান কারণ হলো লক্ষ্য স্পষ্ট না থাকা। ব্রায়ান ট্রেসি একটি ৩-ধাপের সূত্র দিয়েছেন: <strong>চিন্তা করুন কাগজে-কলমে (Think on paper)</strong>। আপনি কী চান তা খাতায় লিখে ফেলুন, একটি নির্দিষ্ট ডেডলাইন দিন এবং কাজগুলোকে ছোট ছোট ধাপে ভাগ করুন।
                 </p>
                 <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
-                    সে এক পাহাড়ি ক্রিস্টালের দোকানে চাকরি নেয়। সান্তিয়াগোর নতুন নতুন বুদ্ধি ও কঠোর পরিশ্রমে বুড়ো দোকানদারের ব্যবসা রাতারাতি বদলে যায়। সেখানে প্রায় এক বছর কাজ করে সান্তিয়াগো প্রচুর টাকা জমায়। সে চাইলে আবার স্পেনে ফিরে গিয়ে দ্বিগুণ ভেড়া কিনতে পারত, কিন্তু সে তার আসল স্বপ্ন—'পিরামিড ও গুপ্তধন'-এর কথা ভুলে যায়নি। টাকা জমিয়ে সে আবারও মরুভূমির ক্যারাভানে যুক্ত হয়।
+                    এখানে তিনি <strong class="text-amber-400 font-semibold">Pareto Principle (৮০/২০ নিয়ম)</strong> প্রয়োগ করতে বলেছেন। আপনার টু-ডু লিস্টের ১০টি কাজের মধ্যে কেবল ২টি কাজ (২০%) এমন থাকে যা আপনার ফল বা সফলতার ৮০% এনে দেয়। ওই ২০% মূল কাজের ওপর মনোযোগ দিন, বাকি ৮০% ছোটখাটো কাজে সময় নষ্ট করবেন না।
                 </p>
             </div>
 
             <!-- PART 3 -->
             <div class="glass-card rounded-3xl p-6 sm:p-8 border border-white/10 space-y-4">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-400/10 text-amber-400 text-xs font-bold">
-                    পর্ব ৩: সাহারা মরুভূমি, ভালোবাসা ও কিমিয়াবিদ
+                    পর্ব ৩: কাজের অগ্রাধিকারের 'ABCDE' মেথড
                 </div>
-                <h3 class="text-xl font-bold text-white">মরুভূমির নীরবতা ও হৃদয়ের ভাষা শেখা</h3>
+                <h3 class="text-xl font-bold text-white">কোন কাজ আগে এবং কোনটা পরে করবেন?</h3>
                 <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
-                    সাহারার বিষাক্ত ও বিশাল মরুভূমির মধ্য দিয়ে যাওয়ার সময় সান্তিয়াগোর পরিচয় হয় এক ইংরেজ পণ্ডিতের সাথে, যিনি একজন 'অ্যালকেমিস্ট' বা কিমিয়াবিদের সন্ধানে ঘুরছেন (যিনি সাধারণ ধাতুকে সোনায় রূপান্তর করতে পারেন)। ক্যারাভান যখন 'আল-ফায়ুম' মরূদ্যানে পৌঁছায়, সেখানে সান্তিয়াগোর দেখা হয় <strong class="text-slate-100">ফাতিমা</strong> নামের এক মরুভূমির কন্যার সাথে। সান্তিয়াগো তার প্রেমে পড়ে যায়।
+                    আপনার কাজগুলোকে ক্যাটাগরি অনুযায়ী সাজাতে ব্রায়ান ট্রেসি কালজয়ী <strong>ABCDE মেথড</strong> ব্যবহার করার পরামর্শ দিয়েছেন:
                 </p>
-                <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
-                    সেখানে অবশেষে সান্তিয়াগোর দেখা হয় সেই আসল শক্তিশালী <strong class="text-amber-400 font-semibold">অ্যালকেমিস্টের (The Alchemist)</strong> সাথে। অ্যালকেমিস্ট তাকে বোঝান যে ভালোবাসা কখনো মানুষের স্বপ্নের পথে বাধা হতে পারে না। সত্যিকারের ভালোবাসা মানুষকে আরও এগিয়ে দেয়। অ্যালকেমিস্ট সান্তিয়াগোকে সাথে নিয়ে পিরামিডের দিকে যাত্রা শুরু করেন এবং তাকে শেখান কীভাবে প্রকৃতির সংকেত পড়তে হয় এবং নিজের হৃদয়ের কথা শুনতে হয়।
-                </p>
+                <ul class="space-y-2 text-xs sm:text-sm text-slate-300 pl-4 border-l-2 border-amber-400/30">
+                    <li><strong class="text-white">A (অবশ্যই করতে হবে):</strong> এমন কাজ যা না করলে বড় ক্ষতি হবে (আপনার আসল ব্যাঙ)।</li>
+                    <li><strong class="text-white">B (করা উচিত):</strong> গুরুত্বপূর্ণ, তবে না করলে তাৎক্ষণিক কোনো বড় ক্ষতি হবে না।</li>
+                    <li><strong class="text-white">C (করলে ভালো হয়):</strong> যেমন সহকর্মীর সাথে গল্প করা বা ইমেইল চেক করা।</li>
+                    <li><strong class="text-white">D (অন্যকে দিয়ে করানো / Delegate):</strong> যে কাজগুলো অন্য কেউ করতে পারে, তা অন্যকে দিয়ে করিয়ে নিন।</li>
+                    <li><strong class="text-white">E (বাদ দেওয়া / Eliminate):</strong> যে কাজগুলোর এখন কোনো প্রয়োজনই নেই, তা তালিকা থেকে কেটে ফেলুন।</li>
+                </ul>
             </div>
 
             <!-- PART 4 -->
             <div class="glass-card rounded-3xl p-6 sm:p-8 border border-white/10 space-y-4">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-400/10 text-amber-400 text-xs font-bold">
-                    পর্ব ৪: পিরামিডের মোড় ও আসল গুপ্তধন
+                    পর্ব ৪: একমুখী ফোকাস ও স্লাইস-অ্যান্ড-ডাইস
                 </div>
-                <h3 class="text-xl font-bold text-white">যেখানে শুরু সেখানেই শেষ: চরম সত্যের আবিষ্কার</h3>
+                <h3 class="text-xl font-bold text-white">একক মনোযোগ এবং বিশাল কাজকে ছোট করার টেকনিক</h3>
                 <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
-                    যাত্রাপথে উপজাতিদের যুদ্ধে তারা বন্দি হয়। সেখানে নিজের প্রাণ বাঁচাতে সান্তিয়াগোকে প্রমান করতে হয় যে সে বাতাসের সাথে কথা বলে নিজেকে তুফানে রূপান্তর করতে পারে! নিজের ভেতরের আত্মবিশ্বাস ও হৃদয়ের শক্তির জোরে সে সেই অসম্ভবকে সম্ভব করে দেখায়।
-                </p>
-                <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
-                    অবশেষে সান্তিয়াগো মিসরের পিরামিডের সামনে পৌঁছায়। খুশিতে আত্মহারা হয়ে সে বালু খুঁড়তে শুরু করে। কিন্তু সেখানে কয়েকজন ডাকাত এসে তাকে বেদম মারধর করে এবং তার বাকি টাকা কেড়ে নেয়। যাওয়ার সময় ডাকাত দলের সর্দার উপহাস করে বলে—<em class="text-amber-200">"আমিও তো একসময় স্বপ্ন দেখেছিলাম স্পেনের এক পরিত্যক্ত চার্চের নিচে গাছের গোড়ায় গুপ্তধন পোঁতা আছে! কিন্তু আমি তোর মতো বোকা নই যে স্বপ্নের পিছে ছুটে এখানে আসব!"</em>
+                    যখন আপনি কোনো একটি 'A' ক্যাটাগরির কাজ শুরু করবেন, তখন ১০০% ফোকাস দিয়ে সেই কাজটি সম্পূর্ণ শেষ না হওয়া পর্যন্ত অন্য কোনো কাজে মন দেবেন না। এটাকে বলা হয় <strong class="text-slate-100">Single Handling</strong>। বারবার মনোযোগ সরালে কাজের সময় দ্বিগুণ লেগে যায়।
                 </p>
                 <p class="text-sm sm:text-base text-slate-300 leading-relaxed font-semibold text-slate-200">
-                    সান্তিয়াগো হেসে ফেলে। সে বুজতে পারে আসল গুপ্তধন কোথায় ছিল! সে ফিরে যায় স্পেনের সেই চেনা চার্চের নিচে এবং মাটি খুঁড়ে পেয়ে যায় এক ভর্তি সোনা ও রত্নের সিন্দুক। সে অনুধাবন করে, গুপ্তধন পাওয়ার চেয়েও বড় বিষয় ছিল পুরো যাত্রাপথে তার অর্জিত জ্ঞান, অভিজ্ঞতা এবং আত্মউপলব্ধি।
+                    যদি ব্যাঙটি অনেক বড় হয় (কাজটি বিশাল ও কঠিন মনে হয়), তবে <strong>'Salami Slice' (সালামি স্লাইস)</strong> টেকনিক ব্যবহার করুন। অর্থাৎ পুরো কাজটি একবারে না ভেবে সেটিকে ছোট ছোট টুকরোতে কেটে ফেলুন এবং একটি একটি করে স্লাইস শেষ করতে থাকুন।
                 </p>
             </div>
         </div>
@@ -253,7 +256,7 @@ border: 1px solid rgba(255, 255, 255, 0.08);
         <!-- 4. DEEP LESSONS / MAIN TAKEAWAYS (গভীর শিক্ষা) -->
         <div class="space-y-6">
             <h2 class="text-xl sm:text-2xl font-extrabold text-white flex items-center gap-2">
-                <span class="text-amber-400">💡</span> এই বইয়ের ৪টি মূল জীবনদর্শন
+                <span class="text-amber-400">💡</span> এই বইয়ের ৪টি মূল টেকঅ্যাওয়ে
             </h2>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -262,10 +265,10 @@ border: 1px solid rgba(255, 255, 255, 0.08);
                 <div class="glass-card p-6 rounded-2xl border border-white/10 hover:border-amber-400/40 transition-all space-y-2">
                     <div class="flex items-center gap-3">
                         <span class="w-8 h-8 rounded-xl bg-amber-400/10 text-amber-400 font-black flex items-center justify-center text-sm border border-amber-400/20">১</span>
-                        <h3 class="font-bold text-white text-base sm:text-lg">Personal Legend (নিজের উদ্দেশ্য)</h3>
+                        <h3 class="font-bold text-white text-base sm:text-lg">সবচেয়ে কঠিন কাজ আগে</h3>
                     </div>
                     <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
-                        প্রত্যেক মানুষের পৃথিবীতে আসার একটি উদ্দেশ্য থাকে। আমরা যখন ছোট থাকি তখন তা পরিষ্কার বুঝি, বড় হওয়ার সাথে সাথে সমাজের চাপে তা ভুলে যাই। নিজের স্বপ্ন পূরণ করাই জীবনের মূল কাজ।
+                        দিনের শুরুতেই শক্তির পরিমাণ বেশি থাকে। তাই সকালে উঠে কঠিন ও গুরুত্বপূর্ণ কাজটি শেষ করে ফেললে সারাদিন এক অদ্ভুত আত্মবিশ্বাস বজায় থাকে।
                     </p>
                 </div>
 
@@ -273,10 +276,10 @@ border: 1px solid rgba(255, 255, 255, 0.08);
                 <div class="glass-card p-6 rounded-2xl border border-white/10 hover:border-amber-400/40 transition-all space-y-2">
                     <div class="flex items-center gap-3">
                         <span class="w-8 h-8 rounded-xl bg-amber-400/10 text-amber-400 font-black flex items-center justify-center text-sm border border-amber-400/20">২</span>
-                        <h3 class="font-bold text-white text-base sm:text-lg">Omens (প্রকৃতির সংকেত)</h3>
+                        <h3 class="font-bold text-white text-base sm:text-lg">কাগজে প্ল্যান তৈরি করা</h3>
                     </div>
                     <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
-                        ঈশ্বর বা প্রকৃতি আমাদের সবসময় সঠিক পথ দেখানোর জন্য ছোট ছোট সুযোগ বা সংকেত পাঠায়। আমাদের সচেতন হয়ে সেই সংকেতগুলো পড়তে ও বুঝতে শিখতে হবে।
+                        মাথার ভেতর চিন্তা না রেখে খাতায় সব লিখে ফেলুন। কাজের তালিকা লিখিত থাকলে ব্রেইন ফোকাসড থাকে এবং বিভ্রান্তি দূর হয়।
                     </p>
                 </div>
 
@@ -284,10 +287,10 @@ border: 1px solid rgba(255, 255, 255, 0.08);
                 <div class="glass-card p-6 rounded-2xl border border-white/10 hover:border-amber-400/40 transition-all space-y-2">
                     <div class="flex items-center gap-3">
                         <span class="w-8 h-8 rounded-xl bg-amber-400/10 text-amber-400 font-black flex items-center justify-center text-sm border border-amber-400/20">৩</span>
-                        <h3 class="font-bold text-white text-base sm:text-lg">ব্যর্থতার ভয়ই আসল বাধা</h3>
+                        <h3 class="font-bold text-white text-base sm:text-lg">প্রস্তুতিই সফলতার চাবিকাঠি</h3>
                     </div>
                     <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
-                        "ব্যর্থতার যন্ত্রণার চেয়ে ব্যর্থ হওয়ার ভয়টা মানুষ বেশি পায়।" অধিকাংশ মানুষ হারের ভয়েই কখনো কাজ শুরুই করে না। ভয়কে জয় করাই সফলতার প্রথম চাবিকাঠি।
+                        কাজ শুরুর আগে প্রয়োজনীয় সব তথ্য, ফাইল বা টুলস টেবিল সাজিয়ে নিন। এতে কাজ শুরুর পর বারবার উঠতে হয় না এবং ফ্লো নষ্ট হয় না।
                     </p>
                 </div>
 
@@ -295,10 +298,10 @@ border: 1px solid rgba(255, 255, 255, 0.08);
                 <div class="glass-card p-6 rounded-2xl border border-white/10 hover:border-amber-400/40 transition-all space-y-2">
                     <div class="flex items-center gap-3">
                         <span class="w-8 h-8 rounded-xl bg-amber-400/10 text-amber-400 font-black flex items-center justify-center text-sm border border-amber-400/20">৪</span>
-                        <h3 class="font-bold text-white text-base sm:text-lg">যাত্রাপথই আসল সম্পদ</h3>
+                        <h3 class="font-bold text-white text-base sm:text-lg">প্রযুক্তির দাস নয়, মালিক হন</h3>
                     </div>
                     <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
-                        সান্তিয়াগো যদি পিরামিডে না যেত, তবে সে মরক্কোর অভিজ্ঞতা, ক্রিস্টালের দোকানের দক্ষতা, মরুভূমির শক্তি এবং ফাতিমার ভালোবাসা কোনোটাই পেত না। গন্তব্যের চেয়ে জার্নি বেশি মূল্যবান।
+                        মোবাইল নোটিফিকেশন ও সোশ্যাল মিডিয়া মানুষের মনোযোগ নষ্ট করার প্রধান কারণ। গুরুত্বপূর্ণ কাজ করার সময় নোটিফিকেশন অফ রাখুন।
                     </p>
                 </div>
 
@@ -308,37 +311,42 @@ border: 1px solid rgba(255, 255, 255, 0.08);
         <!-- 5. ACTIONABLE TAKEAWAY (বাস্তব জীবনে প্রয়োগ) -->
         <div class="glass-card rounded-3xl p-6 sm:p-8 border border-amber-400/30 bg-gradient-to-r from-amber-500/10 via-slate-900/90 to-slate-900/90 space-y-4">
             <h2 class="text-lg sm:text-xl font-bold text-amber-400 flex items-center gap-2">
-                <span>🎯</span> আপনার জীবনে যেভাবে প্রয়োগ করবেন:
+                <span>🎯</span> আগামীকাল সকাল থেকেই যা প্রয়োগ করবেন:
             </h2>
             <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
                 <li class="flex items-start gap-2.5">
                     <span class="w-2 h-2 rounded-full bg-amber-400 mt-1.5 flex-shrink-0"></span>
-                    <span><strong>নিজের লক্ষ্য স্পষ্ট করুন:</strong> অন্য কে কী ভাবল তা বাদ দিয়ে চিন্তা করুন আপনার ভেতরের আসল প্যাশন বা স্বপ্ন কোনটি।</span>
+                    <span><strong>ঘুমানোর আগে কালকের লিস্ট বানান:</strong> প্রতি রাতে ঘুমানোর আগে পরের দিনের কাজের একটি তালিকা প্রস্তুত করুন।</span>
                 </li>
                 <li class="flex items-start gap-2.5">
                     <span class="w-2 h-2 rounded-full bg-amber-400 mt-1.5 flex-shrink-0"></span>
-                    <span><strong>আরামদায়ক এলাকা (Comfort Zone) ছাড়ুন:</strong> নতুন কিছু পেতে হলে পুরোনো অভ্যস্ত জীবন থেকে বের হওয়ার ঝুঁকি নিতে হবে।</span>
+                    <span><strong>ব্যাঙ চিহ্নিত করুন:</strong> ওই তালিকার পাশে 'A' চিহ্ন দিয়ে দিন যেটি আপনার সবচেয়ে গুরুত্বপূর্ণ কাজ।</span>
                 </li>
                 <li class="flex items-start gap-2.5">
                     <span class="w-2 h-2 rounded-full bg-amber-400 mt-1.5 flex-shrink-0"></span>
-                    <span><strong>পতনকে শিক্ষা হিসেবে নিন:</strong> সান্তিয়াগো সর্বস্ব হারিয়েও দমে যায়নি। জীবনের প্রতি বাধা আপনাকে নতুন কোনো দক্ষতার দিকে নিয়ে যায়।</span>
+                    <span><strong>সকালে উঠেই শুরু করুন:</strong> সকালে অন্য কিছু (সোশ্যাল মিডিয়া/খবর) না দেখে সরাসরি সেই 'A' কাজটি শেষ না হওয়া পর্যন্ত কাজ করুন।</span>
                 </li>
             </ul>
         </div>
 
         <!-- 6. FINAL CONCLUSION / QUOTE BANNER -->
         <div class="p-6 sm:p-8 rounded-3xl bg-slate-900/80 border border-white/10 text-center space-y-3 shadow-2xl">
-            <span class="text-xs font-bold uppercase tracking-widest text-amber-400">বইয়ের অমর উক্তি</span>
+            <span class="text-xs font-bold uppercase tracking-widest text-amber-400">বইয়ের কালজয়ী উক্তি</span>
             <blockquote class="text-lg sm:text-2xl font-extrabold text-white italic leading-snug max-w-2xl mx-auto">
-                "When you want something, all the universe conspires in helping you to achieve it."
+                "If you have to eat two frogs, eat the ugliest one first."
             </blockquote>
             <p class="text-xs sm:text-sm text-slate-400">
-                — পাওলো কোয়েলহো (দ্যা অ্যালকেমিস্ট)
+                — ব্রায়ান ট্রেসি (ইট দ্যাট ফ্রগ!)
             </p>
         </div>
 
     </div>
 </section>
+
+
+
+
+
 
 
 
