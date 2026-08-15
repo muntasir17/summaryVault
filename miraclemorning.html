@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Summary Vault</title>
+    <title>Summary Vault</title>
     <link rel="icon" href="summaryValut.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
      <script src="https://cdn.tailwindcss.com"></script>
@@ -22,37 +22,12 @@ tailwind.config = {
         }
      </script>
 </head>
-<body class="bg-[#080C14] text-slate-100 font-sans antialiased selection:bg-amber-400 selection:text-slate-950 min-h-screen relative overflow-x-hidden">
+<body class="bg-[#0B0F17] text-slate-100 font-sans antialiased overflow-x-hidden selection:bg-amber-400 selection:text-slate-950">
     
-   <style>
-.glass-card {
-background: rgba(15, 23, 42, 0.7);
-backdrop-filter: blur(16px);
--webkit-backdrop-filter: blur(16px);
-border: 1px solid rgba(255, 255, 255, 0.08);
-}
-.glow-effect:hover {
- box-shadow: 0 0 25px -5px rgba(245, 158, 11, 0.3);
-}
-.reveal {
-        opacity: 0;
-        transform: translateY(40px);
-        transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        will-change: opacity, transform;
-    }
-
-    /* স্ক্রোলে দেখার সাথে সাথে সুন্দরভাবে ভেসে উঠবে */
-    .reveal.active {
-        opacity: 1;
-        transform: translateY(0);
-    }
-</style>
-
-<br>
 
 <header class="fixed top-0 left-0 right-0 z-50 p-3 sm:p-4 lg:p-6 transition-all duration-300">
     <div class="max-w-7xl mx-auto">
-        <nav class="glass-card rounded-2xl px-4 sm:px-5 py-3 flex items-center justify-between shadow-2xl shadow-black/50 border border-white/10 hover:border-white/20">
+        <nav class="glass-card rounded-2xl px-4 sm:px-5 py-3 flex items-center justify-between shadow-2xl shadow-black/60 border border-white/10 hover:border-white/20 bg-[#080C14]/80 backdrop-blur-xl">
             
             <!-- 1. Brand / Logo -->
             <a href="#" class="flex items-center gap-2.5 sm:gap-3 group">
@@ -83,7 +58,7 @@ border: 1px solid rgba(255, 255, 255, 0.08);
                 </li>
                 <li>
                     <a href="index.html" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-all flex items-center gap-1.5">
-                    Hot 
+                        Hot 
                         <span class="px-1.5 py-0.5 text-[10px] font-bold bg-amber-400/10 text-amber-400 border border-amber-400/20 rounded-md">🔥</span>
                     </a>
                 </li>
@@ -99,14 +74,14 @@ border: 1px solid rgba(255, 255, 255, 0.08);
                 </li>
             </ul>
 
-            <!-- 3. Right Action Area (Search + CTA) -->
+            <!-- 3. Right Action Area (CTA + Mobile Toggle) -->
             <div class="flex items-center gap-2.5 sm:gap-3">
                 <!-- CTA Button -->
                 <a href="index.html" class="glow-effect px-3.5 sm:px-5 py-2 text-xs font-bold text-slate-950 bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-400 rounded-xl transition-all duration-300 hover:scale-105 active:scale-95 shadow-md shadow-amber-500/10 whitespace-nowrap">
                     Get Started
-            </a>
+                </a>
 
-                <!-- 4. Mobile & Tablet Menu Toggle Button (< 1024px) -->
+                <!-- Mobile Menu Toggle Button -->
                 <button id="mobile-toggle" class="lg:hidden p-2 rounded-xl text-slate-300 hover:text-white hover:bg-white/10 focus:outline-none transition-colors" aria-label="Toggle Navigation">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
@@ -115,14 +90,12 @@ border: 1px solid rgba(255, 255, 255, 0.08);
             </div>
         </nav>
 
-        <!-- 5. Mobile & Tablet Drawer Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden mt-3 glass-card rounded-2xl p-5 border border-white/10 shadow-2xl transition-all">
-
-            <!-- Navigation Links -->
+        <!-- 4. Mobile & Tablet Drawer Menu (Fixed Overlap Issue) -->
+        <div id="mobile-menu" class="hidden lg:hidden mt-3 bg-[#080C14]/95 backdrop-blur-2xl rounded-2xl p-5 border border-white/10 shadow-2xl transition-all">
             <div class="flex flex-col space-y-2">
                 <a href="index.html" class="px-4 py-2.5 rounded-xl text-sm font-semibold text-white bg-white/10 block">Home</a>
                 <a href="bookpage.html" class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 block">Books</a>
-       
+    
                 <a href="index.html" class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 block">About</a>
                 <a href="blog.html" class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 block">Blog</a>
             </div>
@@ -130,19 +103,21 @@ border: 1px solid rgba(255, 255, 255, 0.08);
     </div>
 </header>
 <br>
+<br>
 
 
-<section id="ikigai-summary" class="relative py-12 lg:py-20 bg-[#080C14] text-slate-100 overflow-hidden">
+
+<section id="miracle-morning-summary" class="relative pt-16 pb-12 sm:pt-32 lg:py-20 bg-[#080C14] text-slate-100 overflow-hidden">
     
     <!-- Background Ambient Glows -->
-    <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-teal-500/10 blur-[180px] rounded-full pointer-events-none"></div>
+    <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-orange-500/10 blur-[180px] rounded-full pointer-events-none"></div>
     <div class="absolute bottom-20 right-10 w-[400px] h-[400px] bg-amber-500/10 blur-[150px] rounded-full pointer-events-none"></div>
 
     <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 space-y-12">
         
         <!-- 1. BACK BUTTON & TOP BADGES -->
         <div class="flex items-center justify-between gap-4">
-            <a href="bookpage.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl glass-card text-xs sm:text-sm font-semibold text-slate-300 hover:text-amber-400 border border-white/10 hover:border-amber-400/30 transition-all">
+            <a href="#books" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl glass-card text-xs sm:text-sm font-semibold text-slate-300 hover:text-amber-400 border border-white/10 hover:border-amber-400/30 transition-all">
                 <span>&larr;</span>
                 <span>সকল বইয়ে ফিরে যান</span>
             </a>
@@ -151,8 +126,8 @@ border: 1px solid rgba(255, 255, 255, 0.08);
                 <span class="px-3 py-1 bg-amber-400/10 text-amber-400 text-xs font-bold rounded-lg border border-amber-400/20">
                     ⏱️ ৫ মিনিট পূর্ণাঙ্গ পাঠ
                 </span>
-                <span class="px-3 py-1 bg-teal-500/10 text-teal-300 text-xs font-bold rounded-lg border border-teal-500/20">
-                    ★ ৪.৮ রেটিং
+                <span class="px-3 py-1 bg-orange-500/10 text-orange-300 text-xs font-bold rounded-lg border border-orange-500/20">
+                    ★ ৪.৭ রেটিং
                 </span>
             </div>
         </div>
@@ -163,28 +138,28 @@ border: 1px solid rgba(255, 255, 255, 0.08);
                 
                 <!-- Book Title & Meta -->
                 <div class="space-y-3 text-center sm:text-left flex-1">
-                    <span class="text-xs font-bold uppercase tracking-widest text-amber-400">আন্তর্জাতিক বেস্টসেলার</span>
+                    <span class="text-xs font-bold uppercase tracking-widest text-amber-400">বিশ্ববিখ্যাত জীবন পরিবর্তনকারী বই</span>
                     <h1 class="text-3xl sm:text-4xl font-black text-white tracking-tight leading-tight">
-                        ইকিগাই <br class="hidden sm:inline"/>
-                        <span class="text-slate-400 font-normal text-2xl sm:text-3xl">(Ikigai: The Japanese Secret)</span>
+                        দ্যা মিরাকেল মর্নিং <br class="hidden sm:inline"/>
+                        <span class="text-slate-400 font-normal text-2xl sm:text-3xl">(The Miracle Morning)</span>
                     </h1>
                     <p class="text-sm text-slate-300 font-medium">
-                        মূল লেখক: <span class="text-white font-semibold">Héctor García & Francesc Miralles</span>
+                        মূল লেখক: <span class="text-white font-semibold">Hal Elrod (হ্যাল এলরড)</span>
                     </p>
                     
                     <!-- Category Tags -->
                     <div class="flex flex-wrap justify-center sm:justify-start gap-2 pt-2">
-                        <span class="px-3 py-1 rounded-md text-[11px] font-bold bg-teal-500/10 text-teal-300 border border-teal-500/20">সেলফ-হেল্প</span>
-                        <span class="px-3.5 py-1 rounded-md text-[11px] font-bold bg-purple-500/10 text-purple-300 border border-purple-500/20">ফিলোসফি</span>
-                        <span class="px-3.5 py-1 rounded-md text-[11px] font-bold bg-rose-500/10 text-rose-300 border border-rose-500/20">দীর্ঘায়ু ও সুখ</span>
+                        <span class="px-3 py-1 rounded-md text-[11px] font-bold bg-amber-500/10 text-amber-300 border border-amber-500/20">প্রোডাক্টিভিটি</span>
+                        <span class="px-3.5 py-1 rounded-md text-[11px] font-bold bg-orange-500/10 text-orange-300 border border-orange-500/20">সেলফ-হেল্প</span>
+                        <span class="px-3.5 py-1 rounded-md text-[11px] font-bold bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">সকালের অভ্যাস</span>
                     </div>
                 </div>
             </div>
 
             <!-- THE HOOK BANNER -->
-            <div class="p-5 rounded-2xl bg-gradient-to-r from-teal-500/10 via-amber-400/5 to-transparent border border-teal-400/20">
-                <p class="text-sm sm:text-base text-teal-200 font-semibold italic leading-relaxed text-center sm:text-left">
-                    "জাপানের ওকিনাওয়া দ্বীপের মানুষরা কেন ১০০ বছরেরও বেশি বাঁচেন এবং শেষ দিন পর্যন্ত তরুণ ও আনন্দিত থাকেন? তাদের রোগহীন দীর্ঘায়ু ও চিরসুখী জীবনের মূল চাবিকাঠি—‘ইকিগাই’ (Ikigai) খুঁজে পাওয়ার গোপন সূত্রটি কী?"
+            <div class="p-5 rounded-2xl bg-gradient-to-r from-orange-500/10 via-amber-400/5 to-transparent border border-orange-400/20">
+                <p class="text-sm sm:text-base text-orange-200 font-semibold italic leading-relaxed text-center sm:text-left">
+                    "ভাবুন তো, সকাল ৮টা বাজার আগেই যদি আপনি সারাদিনের সবচেয়ে গুরুত্বপূর্ণ ব্যক্তিগত কাজগুলো শেষ করে ফেলতে পারেন? কীভাবে প্রতিদিনের প্রথম ১ ঘণ্টা আপনার স্বাস্থ্য, সম্পদ ও সফলতার লেভেল বহুগুণ বাড়িয়ে দিতে পারে?"
                 </p>
             </div>
         </div>
@@ -192,68 +167,83 @@ border: 1px solid rgba(255, 255, 255, 0.08);
         <!-- 3. DETAILED STORYLINE BREAKDOWN (৪টি অধ্যায়ে বিস্তারিত সামারি) -->
         <div class="space-y-8">
             <h2 class="text-2xl sm:text-3xl font-extrabold text-white flex items-center gap-3 border-b border-white/10 pb-4">
-                <span class="text-amber-400">📖</span> মূল বিষয়বস্তু ও দীর্ঘায়ুর গোপন রহস্য
+                <span class="text-amber-400">📖</span> মূল বিষয়বস্তু ও অধ্যায়ভিত্তিক আলোচনা
             </h2>
 
             <!-- PART 1 -->
             <div class="glass-card rounded-3xl p-6 sm:p-8 border border-white/10 space-y-4">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-teal-400/10 text-teal-300 text-xs font-bold">
-                    পর্ব ১: 'ইকিগাই' (Ikigai) আসলে কী?
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-orange-400/10 text-orange-300 text-xs font-bold">
+                    পর্ব ১: হ্যাল এলরডের ঘুরে দাঁড়ানোর গল্প
                 </div>
-                <h3 class="text-xl font-bold text-white">প্রতিদিন সকালে ঘুম থেকে ওঠার আসল কারণ</h3>
+                <h3 class="text-xl font-bold text-white">মৃত্যুর মুখ থেকে মিরাকেল মর্নিং-এর জন্ম</h3>
                 <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
-                    জাপানি শব্দ <strong class="text-teal-300">'ইকি' (Iki)</strong> মানে জীবন এবং <strong class="text-amber-400">'গাই' (Gai)</strong> মানে মূল্য বা অর্থ। অর্থাৎ ‘ইকিগাই’ হলো জীবনের এমন একটি মূল উদ্দেশ্য যা আপনাকে প্রতিদিন সকালে বিছানা ছেড়ে আনন্দের সাথে উঠতে প্রেরণা দেয়।
+                    ২০ বছর বয়সে লেখক <strong class="text-slate-100">হ্যাল এলরড</strong> এক ভয়াবহ সড়ক দুর্ঘটনার শিকার হন। তার গাড়িকে এক মদ্যপ ট্রাক ড্রাইভার ধাক্কা দেয়। হ্যালের শরীরের ১১টি হাড় ভেঙে যায়, তিনি ৬ দিনের জন্য কোর্মায় চলে যান এবং চিকিৎসকেরা জানান তিনি আর কোনোদিন হাঁটতে পারবেন না। কিন্তু মানসিকভাবে শক্ত থেকে তিনি আবারও হেঁটে দেখান।
                 </p>
                 <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
-                    আপনার ইকিগাই খুঁজে পেতে হলে ৪টি প্রশ্নের সংযোগস্থল মেলাতে হয়:
+                    পরবর্তীতে ২০০৮ সালের অর্থনৈতিক মন্দায় তিনি আবারও সর্বস্ব হারিয়ে ডিপ্রেশনে পড়েন। তখন তার এক বন্ধু তাকে সকালে উঠে দৌড়াতে পরামর্শ দেন। হ্যাল অনুধাবন করেন: <strong class="text-amber-400">"আমাদের জীবনের সাফল্যের লেভেল কখনোই আমাদের ব্যক্তিগত উন্নতির (Personal Development) লেভেলকে অতিক্রম করতে পারে না।"</strong> নিজের ভাগ্য বদলাতে তিনি সকালে ১ ঘণ্টা আগে ঘুম থেকে উঠে ৬টি অভ্যাস চর্চা করা শুরু করেন—যা তার জীবন রাতারাতি বদলে দেয়।
                 </p>
-                <ul class="space-y-2 text-xs sm:text-sm text-slate-300 pl-4 border-l-2 border-teal-400/30">
-                    <li><strong class="text-white">১. আপনি কী করতে ভালোবাসেন? (Passion)</strong></li>
-                    <li><strong class="text-white">২. আপনি কোন কাজে সবচেয়ে দক্ষ? (Profession)</strong></li>
-                    <li><strong class="text-white">৩. পৃথিবীর মানুষের এখন কী প্রয়োজন? (Mission)</strong></li>
-                    <li><strong class="text-white">৪. কোন কাজের বিনিময়ে আপনি অর্থ উপার্জন করতে পারবেন? (Vocation)</strong></li>
-                </ul>
             </div>
 
             <!-- PART 2 -->
             <div class="glass-card rounded-3xl p-6 sm:p-8 border border-white/10 space-y-4">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-400/10 text-amber-400 text-xs font-bold">
-                    পর্ব ২: 'hara hachi bu' এবং ওকিনাওয়ানদের খাবার অভ্যাসে গোপন কৌশল
+                    পর্ব ২: অ্যালার্মের 'স্নুজ' বাটন ও ৫-ধাপের জাগরণ কৌশল
                 </div>
-                <h3 class="text-xl font-bold text-white">৮০% পেট ভরে খাওয়ার নীতি ও নীল অঞ্চল (Blue Zone)</h3>
+                <h3 class="text-xl font-bold text-white">সহজেই সকালে ওঠার বিজ্ঞানসম্মত উপায়</h3>
                 <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
-                    জাপানের ওকিনাওয়া শহরটিকে বলা হয় বিশ্বের অন্যতম <strong>'ব্লু জোন' (Blue Zone)</strong>, যেখানে শতবর্ষী মানুষের সংখ্যা পৃথিবীর যেকোনো জায়গার চেয়ে বেশি। তারা কখনো অতিরিক্ত খাওয়া দাওয়া করেন না। খাওয়ার সময় তারা প্রাচীন নীতি মেনে চলেন: <strong class="text-amber-400 font-semibold">'হারা হাচি বু' (Hara Hachi Bu)</strong>।
+                    আমরা যখন অ্যালার্ম বাজার পর 'Snooze' বাটন চাপি, তখন আমরা আসলে অবচেতনভাবে মহাবিশ্বকে বলি—<em class="text-amber-200">"আমি আমার দিনকে মুখোমুখি করতে চাই না!"</em> এই অভ্যাস আলসেমির জন্ম দেয়। সকালে ঘুম থেকে ওঠা সহজ করতে হ্যাল ৫টি ধাপের কৌশল দিয়েছেন:
                 </p>
-                <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
-                    এর অর্থ হলো পেট পুরোপুরি ৮০% ভরলে খাওয়া থামিয়ে দেওয়া। এতে শরীরের পরিপাকতন্ত্রের ওপর অতিরিক্ত চাপ পড়ে না, কোশগুলো দ্রুত বুড়িয়ে যায় না এবং বয়সের ছাপ দূর হয়ে মানুষ দীর্ঘকাল সুস্থ থাকে।
-                </p>
+                <ul class="space-y-2 text-xs sm:text-sm text-slate-300 pl-4 border-l-2 border-orange-400/30">
+                    <li><strong class="text-white">১. ঘুমানোর আগেই রাতে পজিটিভ চিন্তা করুন:</strong> কাল সকালে চমৎকার একটা দিন শুরু হবে এই মনোভাব নিয়ে ঘুমান।</li>
+                    <li><strong class="text-white">২. অ্যালার্ম ঘড়ি দূরে রাখুন:</strong> যাতে বন্ধ করার জন্য হলেও বিছানা থেকে উঠে দাঁড়াতে হয়।</li>
+                    <li><strong class="text-white">৩. দাঁত ব্রাশ করুন:</strong> ঘুম ঘুম ভাব কাটাতে সকালে সরাসরি বাথরুমে গিয়ে মুখ ধুয়ে নিন।</li>
+                    <li><strong class="text-white">৪. এক গ্লাস পানি পান করুন:</strong> সারারাত ঘুমানোর পর শরীর পানিশূন্য থাকে, পানি পানে শরীর দ্রুত চাঙ্গা হয়।</li>
+                    <li><strong class="text-white">৫. ওয়ার্কআউট ড্রেস পরুন:</strong> সকালের অনুশীলনের জন্য প্রস্তুত হয়ে নিন।</li>
+                </ul>
             </div>
 
             <!-- PART 3 -->
             <div class="glass-card rounded-3xl p-6 sm:p-8 border border-white/10 space-y-4">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-teal-400/10 text-teal-300 text-xs font-bold">
-                    পর্ব ৩: ফ্লো স্টেইট (Flow State) ও মানসিক প্রশান্তি
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-orange-400/10 text-orange-300 text-xs font-bold">
+                    পর্ব ৩: SAVERS মেথড (সকালের ৬টি জাদুকরী অভ্যাস)
                 </div>
-                <h3 class="text-xl font-bold text-white">কাজে নিমগ্ন থাকা এবং অবসর গ্রহণ না করা</h3>
+                <h3 class="text-xl font-bold text-white">সকালের প্রথম ১ ঘণ্টাকে কাজে লাগানোর মূল ফর্মুলা</h3>
                 <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
-                    জাপানি সংস্কৃতিতে প্রথাগত <strong class="text-slate-100">'অবসর' (Retirement)</strong> বলে কোনো শব্দ নেই! তারা জীবনের শেষ দিন পর্যন্ত কোনো না কোনো ছোটখাটো কাজের সাথে যুক্ত থাকেন—যেমন বাগান করা, চা বানানো বা হস্তশিল্প তৈরি করা।
+                    বইটির মূল প্রাণ হলো <strong class="text-orange-300 font-semibold">S.A.V.E.R.S.</strong> সূত্র। সকালের ১ ঘণ্টাকে ১০ মিনিট করে ৬টি ভাগে ভাগ করে অনুশীলনের পরামর্শ দেওয়া হয়েছে:
                 </p>
-                <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
-                    যখন আপনি কোনো প্রিয় কাজ করার সময় সময় বা অতীতের চিন্তা ভুলে পুরোপুরি সেই মুহূর্তের মধ্যে ডুবে যান, তাকে বলে <strong class="text-teal-300 font-semibold">'Flow State'</strong>। এই ফ্লো স্টেইট মস্তিষ্কের দুশ্চিন্তা ও মানসিক চাপ (Stress) কমিয়ে মানুষকে দীর্ঘজীবী হতে সাহায্য করে।
-                </p>
+                <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
+                    <li class="p-3 bg-white/[0.02] rounded-xl border border-white/5">
+                        <strong class="text-amber-400">S - Silence (নীরবতা / ধ্যান):</strong> চোখ বন্ধ করে ১০ মিনিট নিরবতায় কাটান বা মেডিটেশন করুন। এটি মানসিক স্ট্রেস কমায়।
+                    </li>
+                    <li class="p-3 bg-white/[0.02] rounded-xl border border-white/5">
+                        <strong class="text-amber-400">A - Affirmations (স্ব-স্বীকৃতি):</strong> আত্মবিশ্বাস বাড়াতে পজিটিভ কথা মনে মনে ও মুখে আওড়ান (যেমন: "আমি সফল হব, আমি প্রস্তুত")।
+                    </li>
+                    <li class="p-3 bg-white/[0.02] rounded-xl border border-white/5">
+                        <strong class="text-amber-400">V - Visualization (কল্পনা করা):</strong> আপনার ভবিষ্যৎ লক্ষ্য অর্জন করছেন তা মনের পর্দায় স্পষ্টভাবে স্পষ্ট ছবি আকারে দেখুন।
+                    </li>
+                    <li class="p-3 bg-white/[0.02] rounded-xl border border-white/5">
+                        <strong class="text-amber-400">E - Exercise (শরীরচর্চা):</strong> ১০ মিনিট যোগব্যায়াম, পুশ-আপ বা হালকা কসরত করুন যাতে রক্ত চলাচল বাড়ে।
+                    </li>
+                    <li class="p-3 bg-white/[0.02] rounded-xl border border-white/5">
+                        <strong class="text-amber-400">R - Reading (বই পড়া):</strong> যেকোনো শিক্ষণীয় সেলফ-হেল্প বা নলেজ বইয়ের ৫-১০ পৃষ্ঠা মনোযোগ দিয়ে পড়ুন।
+                    </li>
+                    <li class="p-3 bg-white/[0.02] rounded-xl border border-white/5">
+                        <strong class="text-amber-400">S - Scribing (ডায়েরি লেখা):</strong> নিজের চিন্তা, আজকের কাজ ও কৃতজ্ঞতার কথা খাতায় লিখে ফেলুন।
+                    </li>
+                </ul>
             </div>
 
             <!-- PART 4 -->
             <div class="glass-card rounded-3xl p-6 sm:p-8 border border-white/10 space-y-4">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-400/10 text-amber-400 text-xs font-bold">
-                    পর্ব ৪: মৈ (Moai) বা সুদৃঢ় সামাজিক বন্ধন ও ওয়াবি-সাবি
+                    পর্ব ৪: ৬-মিনিটের ফাস্ট-ট্র্যাক ও ৩০ দিনের চ্যালেঞ্জ
                 </div>
-                <h3 class="text-xl font-bold text-white">একাকীত্ব দূরীকরণ ও অপূর্ণতার সৌন্দর্য</h3>
+                <h3 class="text-xl font-bold text-white">ব্যস্ত দিনেও কীভাবে অভ্যাস বজায় রাখবেন?</h3>
                 <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
-                    ওকিনাওয়ার মানুষদের দীর্ঘ জীবনের অন্যতম রহস্য হলো তাদের সামাজিক গোষ্ঠী, যাকে বলা হয় <strong class="text-white">'মৈ' (Moai)</strong>। ছোটবেলা থেকেই তারা ৪-৫ জন বন্ধুর এমন দল গঠন করেন যারা আজীবন একে অপরের আর্থিক, মানসিক ও সামাজিক বিপদে পাশে দাঁড়ান।
+                    যদি আপনার কোনো দিন ১ ঘণ্টা সময় না থাকে, তবে হ্যাল দেন <strong class="text-white">'৬ মিনিটের মিরাকেল মর্নিং'</strong>। প্রতি ১ মিনিটে SAVERS-এর ১টি করে অভ্যাস পালন করুন!
                 </p>
                 <p class="text-sm sm:text-base text-slate-300 leading-relaxed font-semibold text-slate-200">
-                    এছাড়াও তারা <strong>'ওয়াবি-সাবি' (Wabi-Sabi)</strong> ফিলোসফিতে বিশ্বাস করেন—অর্থাৎ জগতের কোনো কিছুই নিখুঁত বা চিরস্থায়ী নয়। জীবনের অপূর্ণতা ও পরিবর্তনকে সহাস্যবদনে মেনে নেওয়াই হলো প্রকৃত শান্তির পথ।
+                    যেকোনো নতুন অভ্যাস স্থায়ী করতে ৩০ দিন সময় লাগে: প্রথম ১০ দিন অত্যন্ত কষ্টকর মনে হয়, ১১-২০ দিন সাধারণ মনে হতে শুরু করে, এবং ২১-৩০ দিন পর এটি আপনার লাইফস্টাইলের স্থায়ী অংশে পরিণত হয়।
                 </p>
             </div>
         </div>
@@ -261,7 +251,7 @@ border: 1px solid rgba(255, 255, 255, 0.08);
         <!-- 4. DEEP LESSONS / MAIN TAKEAWAYS (গভীর শিক্ষা) -->
         <div class="space-y-6">
             <h2 class="text-xl sm:text-2xl font-extrabold text-white flex items-center gap-2">
-                <span class="text-amber-400">💡</span> এই বইয়ের ৪টি মূল জীবনদর্শন
+                <span class="text-amber-400">💡</span> এই বইয়ের ৪টি মূল টেকঅ্যাওয়ে
             </h2>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -269,44 +259,44 @@ border: 1px solid rgba(255, 255, 255, 0.08);
                 <!-- Lesson 1 -->
                 <div class="glass-card p-6 rounded-2xl border border-white/10 hover:border-amber-400/40 transition-all space-y-2">
                     <div class="flex items-center gap-3">
-                        <span class="w-8 h-8 rounded-xl bg-teal-400/10 text-teal-300 font-black flex items-center justify-center text-sm border border-teal-400/20">১</span>
-                        <h3 class="font-bold text-white text-base sm:text-lg">সবসময় সক্রিয় থাকুন</h3>
+                        <span class="w-8 h-8 rounded-xl bg-orange-400/10 text-orange-300 font-black flex items-center justify-center text-sm border border-orange-400/20">১</span>
+                        <h3 class="font-bold text-white text-base sm:text-lg">দিন কীভাবে শুরু করছেন তা জরুরি</h3>
                     </div>
                     <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
-                        কখনো কাজ থেকে সম্পূর্ণ অবসর নেবেন না। শরীর ও মনকে কোনো প্রিয় ও দরকারী কাজে সবসময় যুক্ত রাখুন।
+                        সকালের মেজাজ পুরো দিনের মোমেন্টাম তৈরি করে। সকালে অলসতা দিয়ে দিন শুরু করলে সারাদিন ঢিলেঢালা কাটে।
                     </p>
                 </div>
 
                 <!-- Lesson 2 -->
                 <div class="glass-card p-6 rounded-2xl border border-white/10 hover:border-amber-400/40 transition-all space-y-2">
                     <div class="flex items-center gap-3">
-                        <span class="w-8 h-8 rounded-xl bg-teal-400/10 text-teal-300 font-black flex items-center justify-center text-sm border border-teal-400/20">২</span>
-                        <h3 class="font-bold text-white text-base sm:text-lg">হারা হাচি বু (৮০% নীতি)</h3>
+                        <span class="w-8 h-8 rounded-xl bg-orange-400/10 text-orange-300 font-black flex items-center justify-center text-sm border border-orange-400/20">২</span>
+                        <h3 class="font-bold text-white text-base sm:text-lg">ব্যক্তিগত উন্নয়নই প্রথম</h3>
                     </div>
                     <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
-                        পেট পুরোপুরি ভরে খাওয়ার আগেই খাওয়া থামিয়ে দিন। পরিমিত আহার দীর্ঘায়ু ও সুস্থ শরীরের মূল ভিত্তি।
+                        ক্যারিয়ার বা ব্যবসায় সাফল্য পেতে হলে আগে নিজের মানসিক ও শারীরিক বিকাশ ঘটানো বাধ্যতামূলক।
                     </p>
                 </div>
 
                 <!-- Lesson 3 -->
                 <div class="glass-card p-6 rounded-2xl border border-white/10 hover:border-amber-400/40 transition-all space-y-2">
                     <div class="flex items-center gap-3">
-                        <span class="w-8 h-8 rounded-xl bg-teal-400/10 text-teal-300 font-black flex items-center justify-center text-sm border border-teal-400/20">৩</span>
-                        <h3 class="font-bold text-white text-base sm:text-lg">বন্ধুদের সাথে যুক্ত থাকুন</h3>
+                        <span class="w-8 h-8 rounded-xl bg-orange-400/10 text-orange-300 font-black flex items-center justify-center text-sm border border-orange-400/20">৩</span>
+                        <h3 class="font-bold text-white text-base sm:text-lg">নিয়মিত চর্চাই শক্তি</h3>
                     </div>
                     <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
-                        ভালো বন্ধু ও সামাজিক মেলবন্ধন দুশ্চিন্তা কমায় এবং একাকীত্বের অনুভূতি দূর করে আয়ু বৃদ্ধি করে।
+                        একদিনের বড় অর্জনের চেয়ে প্রতিদিন অল্প অল্প করে SAVERS চর্চা করা আপনাকে দীর্ঘমেয়াদে সফল করবে।
                     </p>
                 </div>
 
                 <!-- Lesson 4 -->
                 <div class="glass-card p-6 rounded-2xl border border-white/10 hover:border-amber-400/40 transition-all space-y-2">
                     <div class="flex items-center gap-3">
-                        <span class="w-8 h-8 rounded-xl bg-teal-400/10 text-teal-300 font-black flex items-center justify-center text-sm border border-teal-400/20">৪</span>
-                        <h3 class="font-bold text-white text-base sm:text-lg">প্রকৃতির সাথে সময় কাটান</h3>
+                        <span class="w-8 h-8 rounded-xl bg-orange-400/10 text-orange-300 font-black flex items-center justify-center text-sm border border-orange-400/20">৪</span>
+                        <h3 class="font-bold text-white text-base sm:text-lg">ঘুমের পরিমাণের চেয়ে মানসিকতা মুখ্য</h3>
                     </div>
                     <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
-                        প্রতিদিন কিছু সময় খোলা বাতাসে হাঁটাহাঁটি করা এবং রোদে সময় কাটানো মানুষের মেজাজ ভালো রাখে।
+                        কত ঘণ্টা ঘুমালেন তার চেয়ে গুরুত্বপূর্ণ হলো ঘুমাতে যাওয়ার আগে আপনি নিজের মনকে কী নির্দেশ দিচ্ছেন।
                     </p>
                 </div>
 
@@ -314,34 +304,34 @@ border: 1px solid rgba(255, 255, 255, 0.08);
         </div>
 
         <!-- 5. ACTIONABLE TAKEAWAY (বাস্তব জীবনে প্রয়োগ) -->
-        <div class="glass-card rounded-3xl p-6 sm:p-8 border border-teal-400/30 bg-gradient-to-r from-teal-500/10 via-slate-900/90 to-slate-900/90 space-y-4">
-            <h2 class="text-lg sm:text-xl font-bold text-teal-300 flex items-center gap-2">
-                <span>🎯</span> দৈনন্দিন জীবনে যেভাবে প্রয়োগ করবেন:
+        <div class="glass-card rounded-3xl p-6 sm:p-8 border border-orange-400/30 bg-gradient-to-r from-orange-500/10 via-slate-900/90 to-slate-900/90 space-y-4">
+            <h2 class="text-lg sm:text-xl font-bold text-orange-300 flex items-center gap-2">
+                <span>🎯</span> আপনার লাইফস্টাইলে যেভাবে প্রয়োগ করবেন:
             </h2>
             <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
                 <li class="flex items-start gap-2.5">
-                    <span class="w-2 h-2 rounded-full bg-teal-400 mt-1.5 flex-shrink-0"></span>
-                    <span><strong>প্রতিদিন অল্প শারীরিক কসরত করুন:</strong> ভারী জিম না করলেও প্রতিদিন অন্তত ২০ মিনিট হাঁটা বা হালকা ফ্রি-হ্যান্ড এক্সারসাইজ করুন।</span>
+                    <span class="w-2 h-2 rounded-full bg-orange-400 mt-1.5 flex-shrink-0"></span>
+                    <span><strong>১ ঘণ্টা আগে অ্যালার্ম দিন:</strong> আপনার স্বাভাবিক ঘুম থেকে ওঠার সময়ের ঠিক ১ ঘণ্টা আগে অ্যালার্ম সেট করুন।</span>
                 </li>
                 <li class="flex items-start gap-2.5">
-                    <span class="w-2 h-2 rounded-full bg-teal-400 mt-1.5 flex-shrink-0"></span>
-                    <span><strong>হাসি দিয়ে দিন শুরু করুন:</strong> ছোট ছোট বিষয়ে হাসুন এবং চারপাশের মানুষের প্রতি কৃতজ্ঞতা প্রকাশ করুন।</span>
+                    <span class="w-2 h-2 rounded-full bg-orange-400 mt-1.5 flex-shrink-0"></span>
+                    <span><strong>SAVERS অনুসরণ করুন:</strong> সকালে উঠে মোবাইল না দেখে সরাসরি ১০ মিনিট মেডিটেশন ও শরীরচর্চা দিয়ে দিন শুরু করুন।</span>
                 </li>
                 <li class="flex items-start gap-2.5">
-                    <span class="w-2 h-2 rounded-full bg-teal-400 mt-1.5 flex-shrink-0"></span>
-                    <span><strong>বর্তমান মুহূর্তে বাঁচুন:</strong> অতীত বা ভবিষ্যতের দুশ্চিন্তা ছেড়ে বর্তমানের কাজটিকে ভালোবাসতে শিখুন।</span>
+                    <span class="w-2 h-2 rounded-full bg-orange-400 mt-1.5 flex-shrink-0"></span>
+                    <span><strong>৩০ দিন লেগে থাকুন:</strong> প্রথম ১০ দিন কষ্ট হলেও হাল ছাড়বেন না, ৩০ দিন পর এটি আপনার স্বাভাবিক অভ্যাসে রূপ নেবে।</span>
                 </li>
             </ul>
         </div>
 
         <!-- 6. FINAL CONCLUSION / QUOTE BANNER -->
         <div class="p-6 sm:p-8 rounded-3xl bg-slate-900/80 border border-white/10 text-center space-y-3 shadow-2xl">
-            <span class="text-xs font-bold uppercase tracking-widest text-teal-300">বইয়ের মূল উপদেশ</span>
+            <span class="text-xs font-bold uppercase tracking-widest text-orange-300">বইয়ের মূল কথা</span>
             <blockquote class="text-lg sm:text-2xl font-extrabold text-white italic leading-snug max-w-2xl mx-auto">
-                "Only staying active will make you want to live a hundred years."
+                "Your level of success will rarely exceed your level of personal development."
             </blockquote>
             <p class="text-xs sm:text-sm text-slate-400">
-                — জাপানি প্রবাদ (ইকিগাই)
+                — হ্যাল এলরড (দ্যা মিরাকেল মর্নিং)
             </p>
         </div>
 
@@ -353,7 +343,7 @@ border: 1px solid rgba(255, 255, 255, 0.08);
 
 
 
-<br>
+
 <footer class="relative bg-[#070A11] text-slate-100 pt-16 pb-10 border-t border-white/10 overflow-hidden">
     
     <!-- Ambient Background Glow -->
@@ -389,9 +379,7 @@ border: 1px solid rgba(255, 255, 255, 0.08);
                     <a href="https://www.facebook.com/profile.php?id=61593334430960" class="w-9 h-9 rounded-xl glass-card flex items-center justify-center text-slate-400 hover:text-amber-400 hover:border-amber-400/40 transition-all">
                         <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                     </a>
-                
-             
-                
+   
                 </div>
             </div>
 
@@ -403,7 +391,7 @@ border: 1px solid rgba(255, 255, 255, 0.08);
                     <li><a href="bookpage.html" class="hover:text-amber-400 transition-colors">সকল বই</a></li>
                     <li><a href="index.html" class="hover:text-amber-400 transition-colors inline-flex items-center gap-1.5">হট <span class="px-1.5 py-0.5 text-[9px] font-bold bg-amber-400/10 text-amber-400 rounded border border-amber-400/20">🔥</span></a></li>
                     <li><a href="index.html" class="hover:text-amber-400 transition-colors">আমাদের সম্পর্কে</a></li>
-                    <li><a href="blog.html" class="hover:text-amber-400 transition-colors">ব্লগ </a></li>
+                    <li><a href="blog.html" class="hover:text-amber-400 transition-colors">ব্লগ  </a></li>
                 </ul>
             </div>
 
@@ -421,7 +409,7 @@ border: 1px solid rgba(255, 255, 255, 0.08);
             <!-- Policy & Terms -->
             <div class="space-y-3">
                 <h4 class="text-sm font-bold text-white uppercase tracking-wider">সহায়তা ও নীতি</h4>
-               <ul class="space-y-2 text-xs sm:text-sm text-slate-400">
+                <ul class="space-y-2 text-xs sm:text-sm text-slate-400">
                     <li><a href="index.html" class="hover:text-amber-400 transition-colors">প্রাইভেসি পলিসি</a></li>
                     <li><a href="index.html" class="hover:text-amber-400 transition-colors">টার্মস অব সার্ভিস</a></li>
                     <li><a href="index.html" class="hover:text-amber-400 transition-colors">যোগাযোগ</a></li>
@@ -452,7 +440,8 @@ border: 1px solid rgba(255, 255, 255, 0.08);
     </div>
 </footer>
 
-  <script src="script.js"></script>
+
+      <script src="script.js"></script>
 <script src="https://unpkg.com/scrollreveal"></script>
 </body>
 </html>
