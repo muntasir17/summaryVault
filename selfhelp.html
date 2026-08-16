@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Summary Vault</title>
+       <title>Summary Vault</title>
     <link rel="icon" href="summaryValut.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
      <script src="https://cdn.tailwindcss.com"></script>
      <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
      <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-<script>
+     <script>
 tailwind.config = {
             darkMode: 'class',
             theme: {
@@ -20,10 +20,10 @@ tailwind.config = {
                 }
             }
         }
-</script>
+     </script>
 </head>
-<body class="bg-[#080c14] text-slate-200 min-h-screen py-10 px-4 sm:px-6 lg:px-8 font-sans antialiased selection:bg-amber-500 selection:text-slate-950">
-<style>
+<body class="bg-[#0B0F17] text-slate-100 font-sans antialiased overflow-x-hidden selection:bg-amber-400 selection:text-slate-950">
+  <style>
 .glass-card {
 background: rgba(15, 23, 42, 0.7);
 backdrop-filter: blur(16px);
@@ -45,7 +45,8 @@ border: 1px solid rgba(255, 255, 255, 0.08);
         opacity: 1;
         transform: translateY(0);
     }
-</style> 
+</style>
+
 
 <header class="fixed top-0 left-0 right-0 z-50 p-3 sm:p-4 lg:p-6 transition-all duration-300">
     <div class="max-w-7xl mx-auto">
@@ -120,147 +121,180 @@ border: 1px solid rgba(255, 255, 255, 0.08);
             </div>
         </div>
     </div>
-</header>
+</header>  
 
 <br>
 <br>
 
-<article class="max-w-3xl mx-auto space-y-10 mt-20">
+<div class="grid grid-cols-1 gap-[5px] md:grid-cols-2 justify-self-center justify-items-center lg:grid-cols-3 xl:grid-cols-4 mt-20">
+<!-- Miracle Moring -->
+<div class="glass-card rounded-3xl p-5 border border-white/10 hover:border-amber-400/50 transition-all duration-500 w-full max-w-[320px] mx-auto flex flex-col gap-4 shadow-2xl relative overflow-hidden group">
     
-    <!-- Article Header -->
-    <header class="space-y-4 text-center sm:text-left border-b border-slate-800/80 pb-8">
-      <!-- Tag & Read Time -->
-      <div class="flex flex-wrap items-center justify-center sm:justify-start gap-3 text-xs font-semibold">
-        <span class="bg-amber-500/10 text-amber-400 border border-amber-500/30 px-3 py-1 rounded-full uppercase tracking-wider font-english">
-          Mindset & Success
+    <!-- Ambient Glow Effect -->
+    <div class="absolute -top-16 -right-16 w-36 h-36 bg-amber-500/10 rounded-full blur-3xl group-hover:bg-amber-400/20 transition-all duration-700 pointer-events-none"></div>
+
+    <!-- 1. BOOK COVER IMAGE -->
+    <div class="w-full h-64 rounded-2xl overflow-hidden shadow-xl border border-white/10 relative group/img cursor-pointer flex-shrink-0">
+        <!-- আপনার ইমেজের লিংক এখানে দিন -->
+        <img 
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReXCPt-KBL43TS7VFl8e6kjPFtfFP7DiljmOq68mPtKao8SjhMEEoMeJ1O&s=10" 
+            alt="The Miracle Morning Cover" 
+            class="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-700 ease-out"
+        />
+        
+        <!-- Reading Time Badge -->
+        <span class="absolute top-3 left-3 px-2.5 py-1 bg-amber-400/90 text-slate-950 text-[10px] font-black uppercase tracking-wider rounded-lg shadow-md backdrop-blur-md">
+            ⏱️ ৫ মিনিট পাঠ
         </span>
-        <span class="text-slate-400 flex items-center gap-1">
-          <span>⏱️</span> ৩ মিনিট পাঠ
+
+        <!-- Hover Overlay -->
+        <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
+            <div class="w-10 h-10 rounded-full bg-amber-400 text-slate-950 flex items-center justify-center font-bold shadow-lg shadow-amber-400/30 transform scale-75 group-hover/img:scale-100 transition-transform duration-300">
+                ➔
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. BOOK DETAILS CONTENT -->
+    <div class="space-y-3 w-full text-left">
+        
+        <!-- Title & Rating -->
+        <div class="flex items-center justify-between gap-2">
+            <h3 class="text-lg font-black text-white tracking-tight group-hover:text-amber-400 transition-colors truncate">
+                The Miracle Morning
+            </h3>
+
+            <!-- Rating Badge -->
+            <div class="flex items-center gap-1 px-2 py-0.5 bg-slate-900/80 border border-amber-400/30 rounded-full text-xs font-extrabold text-amber-400 shadow-inner flex-shrink-0">
+                <svg class="w-3 h-3 fill-amber-400" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <span>4.7</span>
+            </div>
+        </div>
+
+        <!-- Author Name -->
+        <p class="text-xs text-slate-400 font-medium truncate">
+            লেখক: <span class="text-slate-200 font-semibold">Hal Elrod (হ্যাল এলরড)</span>
+        </p>
+
+        <!-- Category Badges -->
+        <div class="flex flex-wrap gap-1.5">
+            <span class="px-2.5 py-0.5 rounded-md text-[10px] font-bold bg-amber-500/10 text-amber-300 border border-amber-500/20">
+               Self-help
+            </span>
+            <span class="px-2.5 py-0.5 rounded-md text-[10px] font-bold bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">
+                Productivity
+            </span>
+            <span class="px-2.5 py-0.5 rounded-md text-[10px] font-bold bg-blue-500/10 text-blue-300 border border-blue-500/20">
+               Philosophy
+            </span>
+        </div>
+
+        <!-- Summary Excerpt -->
+        <p class="text-xs text-slate-300 leading-relaxed italic line-clamp-2 bg-white/[0.02] p-2.5 rounded-xl border border-white/5">
+            "সকাল ৮টার আগেই নিজের জীবন বদলে দেওয়ার ৬টি জাদুকরী অভ্যাস ।"
+        </p>
+
+        <!-- CTA Button -->
+        <div class="pt-1">
+            <a href="miraclemorning.html" class="w-full block text-center py-2.5 rounded-xl bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-400 text-slate-950 text-xs font-bold hover:scale-[1.02] active:scale-95 transition-all shadow-md shadow-amber-500/10">
+                 সারসংক্ষেপ পড়ুন →
+            </a>
+        </div>
+
+    </div>
+</div>
+<!-- Ikigai  -->
+
+<div class="glass-card rounded-3xl p-5 border border-white/10 hover:border-amber-400/50 transition-all duration-500 w-full max-w-[320px] mx-auto flex flex-col gap-4 shadow-2xl relative overflow-hidden group">
+    
+    <!-- Ambient Glow Effect -->
+    <div class="absolute -top-16 -right-16 w-36 h-36 bg-amber-500/10 rounded-full blur-3xl group-hover:bg-amber-400/20 transition-all duration-700 pointer-events-none"></div>
+
+    <!-- 1. BOOK COVER IMAGE -->
+    <div class="w-full h-64 rounded-2xl overflow-hidden shadow-xl border border-white/10 relative group/img cursor-pointer flex-shrink-0">
+        <!-- আপনার ইমেজের লিংক এখানে দিন -->
+        <img 
+            src="https://m.media-amazon.com/images/I/81l3rZK4lnL._AC_UF1000,1000_QL80_.jpg" 
+            alt="Ikigai Cover" 
+            class="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-700 ease-out"
+        />
+        
+        <!-- Reading Time Badge -->
+        <span class="absolute top-3 left-3 px-2.5 py-1 bg-amber-400/90 text-slate-950 text-[10px] font-black uppercase tracking-wider rounded-lg shadow-md backdrop-blur-md">
+            ⏱️ ৫ মিনিট পাঠ
         </span>
-      </div>
 
-      <!-- Main Title -->
-      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight sm:leading-snug tracking-tight">
-        সাধারণের ভিড় থেকে আলাদা হওয়ার <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500">৫টি মূল মানসিকতা</span>
-      </h1>
-    </header>
-
-    <!-- Intro Section -->
-    <section class="space-y-6 text-base sm:text-lg text-slate-300 leading-relaxed sm:leading-loose">
-      <p>
-        আমরা অনেকেই ভাবি অসাধারণ মানুষগুলো বোধহয় অন্য কোনো গ্রহের প্রাণী! কিন্তু আসল সত্যিটা হলো—মহানতা কোনো অলৌকিক জাদু নয়, আবার রাতারাতি ঘটে যাওয়া কোনো গল্পও নয়। 
-      </p>
-
-      <!-- Highlight Quote Box -->
-      <div class="relative bg-slate-900/90 border-l-4 border-amber-400 p-5 sm:p-6 rounded-r-2xl shadow-xl">
-        <p class="text-amber-200 font-medium italic text-lg sm:text-xl leading-relaxed">
-          "প্রতিদিনের নিয়মকানুন আর সঠিক অভ্যাসের নিরবচ্ছিন্ন চক্রবৃদ্ধি ফল (Compound Effect)-ই হলো অসাধারণ হয়ে ওঠার একমাত্র রহস্য।"
-        </p>
-      </div>
-
-      <p class="text-slate-400 font-medium">
-        সাধারণের ভিড় থেকে নিজেকে আলাদা করতে চাইলে ভেতরে এই ৫টি মানসিকতা গড়ে তুলতেই হবে:
-      </p>
-    </section>
-
-    <!-- 5 Rules List Cards -->
-    <section class="space-y-6">
-      
-      <!-- Rule 1 -->
-      <div class="group bg-[#0e1526] hover:bg-[#121b30] border border-slate-800 hover:border-amber-500/40 p-6 rounded-2xl transition-all duration-300 shadow-lg space-y-3">
-        <div class="flex items-center justify-between gap-4">
-          <h2 class="text-xl sm:text-2xl font-bold text-white group-hover:text-amber-400 transition-colors">
-            ১. গভীর ফোকাস
-          </h2>
-          <span class="font-english text-xs font-extrabold text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3 py-1 rounded-lg">
-            Obsessive Focus
-          </span>
+        <!-- Hover Overlay -->
+        <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
+            <div class="w-10 h-10 rounded-full bg-amber-400 text-slate-950 flex items-center justify-center font-bold shadow-lg shadow-amber-400/30 transform scale-75 group-hover/img:scale-100 transition-transform duration-300">
+                ➔
+            </div>
         </div>
-        <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
-          ১০টি আলাদা রাস্তায় অল্প অল্প করে সময় নষ্ট না করে, যেকোনো ১টি কাজ বেছে নিয়ে সেখানে নিজেকে মাস্টার বানান। যে ফিল্ডেই থাকুন না কেন, গভীরে পৌঁছানোর এই জেদটাই আপনাকে অন্যদের চেয়ে আলাদা করবে।
-        </p>
-      </div>
+    </div>
 
-      <!-- Rule 2 -->
-      <div class="group bg-[#0e1526] hover:bg-[#121b30] border border-slate-800 hover:border-amber-500/40 p-6 rounded-2xl transition-all duration-300 shadow-lg space-y-3">
-        <div class="flex items-center justify-between gap-4">
-          <h2 class="text-xl sm:text-2xl font-bold text-white group-hover:text-amber-400 transition-colors">
-            ২. মোটিভেশনের ভরসায় না থাকা
-          </h2>
-          <span class="font-english text-xs font-extrabold text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3 py-1 rounded-lg">
-            Discipline over Motivation
-          </span>
+    <!-- 2. BOOK DETAILS CONTENT -->
+    <div class="space-y-3 w-full text-left">
+        
+        <!-- Title & Rating -->
+        <div class="flex items-center justify-between gap-2">
+            <h3 class="text-lg font-black text-white tracking-tight group-hover:text-amber-400 transition-colors truncate">
+                Ikigai
+            </h3>
+
+            <!-- Rating Badge -->
+            <div class="flex items-center gap-1 px-2 py-0.5 bg-slate-900/80 border border-amber-400/30 rounded-full text-xs font-extrabold text-amber-400 shadow-inner flex-shrink-0">
+                <svg class="w-3 h-3 fill-amber-400" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                <span>4.8</span>
+            </div>
         </div>
-        <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
-          মোটিভেশন দিয়ে বড়জোর ২-৩ দিন টানা যায়, কিন্তু বছরের পর বছর যুদ্ধ জেতে 'ডিসিপ্লিন'। মন ভালো থাকুক বা না থাকুক, ইচ্ছে করুক বা না করুক—নির্ধারিত কাজটি প্রতিদিন শেষ করার অভ্যাসটাই সাধারণ আর অসাধারণের আসল পার্থক্য।
-        </p>
-      </div>
 
-      <!-- Rule 3 -->
-      <div class="group bg-[#0e1526] hover:bg-[#121b30] border border-slate-800 hover:border-amber-500/40 p-6 rounded-2xl transition-all duration-300 shadow-lg space-y-3">
-        <div class="flex items-center justify-between gap-4">
-          <h2 class="text-xl sm:text-2xl font-bold text-white group-hover:text-amber-400 transition-colors">
-            ৩. একঘেয়েমিকে আপন করে নেওয়া
-          </h2>
-          <span class="font-english text-xs font-extrabold text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3 py-1 rounded-lg">
-            Embrace the Grind
-          </span>
+        <!-- Author Name -->
+        <p class="text-xs text-slate-400 font-medium truncate">
+            লেখক: <span class="text-slate-200 font-semibold">Héctor García & F. Miralles</span>
+        </p>
+
+        <!-- Category Badges -->
+        <div class="flex flex-wrap gap-1.5">
+            <span class="px-2.5 py-0.5 rounded-md text-[10px] font-bold bg-teal-500/10 text-teal-300 border border-teal-500/20">
+                Self-help
+            </span>
+            <span class="px-2.5 py-0.5 rounded-md text-[10px] font-bold bg-purple-500/10 text-purple-300 border border-purple-500/20">
+              Philosophy
+            </span>
+            <span class="px-2.5 py-0.5 rounded-md text-[10px] font-bold bg-rose-500/10 text-rose-300 border border-rose-500/20">
+                Long Life
+            </span>
         </div>
-        <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
-          সেরা হওয়ার রাস্তাটা কখনোই রঙিন বা গ্ল্যামারাস হয় না। অধিকাংশ সময় এটি অত্যন্ত একঘেয়ে, ক্লান্তিকর এবং নিঃসঙ্গ। এই বিরক্তি আর ক্লান্তি মেনে নিয়েও প্রতিদিন কাজ চালিয়ে যাওয়ার ধৈর্য যার আছে, জয় তারই।
-        </p>
-      </div>
 
-      <!-- Rule 4 -->
-      <div class="group bg-[#0e1526] hover:bg-[#121b30] border border-slate-800 hover:border-amber-500/40 p-6 rounded-2xl transition-all duration-300 shadow-lg space-y-3">
-        <div class="flex items-center justify-between gap-4">
-          <h2 class="text-xl sm:text-2xl font-bold text-white group-hover:text-amber-400 transition-colors">
-            ৪. ব্যর্থতাকে ফিডব্যাক হিসেবে দেখা
-          </h2>
-          <span class="font-english text-xs font-extrabold text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3 py-1 rounded-lg">
-            Resilience
-          </span>
+        <!-- Summary Excerpt -->
+        <p class="text-xs text-slate-300 leading-relaxed italic line-clamp-2 bg-white/[0.02] p-2.5 rounded-xl border border-white/5">
+            "দীর্ঘ ও আনন্দময় জীবন যাপনের জাপানি গোপন রহস্য এবং জীবনের আসল উদ্দেশ্য খুঁজে বের করার উপায়।"
+        </p>
+
+        <!-- CTA Button -->
+        <div class="pt-1">
+            <a href="ikigai.html" class="w-full block text-center py-2.5 rounded-xl bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-400 text-slate-950 text-xs font-bold hover:scale-[1.02] active:scale-95 transition-all shadow-md shadow-amber-500/10">
+                সারসংক্ষেপ পড়ুন &rarr;
+            </a>
         </div>
-        <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
-          কোনো কাজে হোঁচট খাওয়া মানে আপনি হেরে যাননি—এর অর্থ কেবল আপনার কৌশলটি ভুল ছিল। সফল মানুষরা ব্যর্থ হলে ভেঙে পড়েন না, ভুল থেকে শিখে দ্রুত স্ট্র্যাটেজি বদলে আবার মাঠে নামেন।
-        </p>
-      </div>
 
-      <!-- Rule 5 -->
-      <div class="group bg-[#0e1526] hover:bg-[#121b30] border border-slate-800 hover:border-amber-500/40 p-6 rounded-2xl transition-all duration-300 shadow-lg space-y-3">
-        <div class="flex items-center justify-between gap-4">
-          <h2 class="text-xl sm:text-2xl font-bold text-white group-hover:text-amber-400 transition-colors">
-            ৫. দীর্ঘমেয়াদী চিন্তা
-          </h2>
-          <span class="font-english text-xs font-extrabold text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3 py-1 rounded-lg">
-            Long-term Vision
-          </span>
-        </div>
-        <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
-          ৬ মাস বা ১ বছরের শর্টকাট সাফল্য খোঁজা বন্ধ করুন। আগামী ৫ থেকে ১০ বছরের রূপরেখা মাথায় রেখে এগোতে হবে। লক্ষ্য একটাই—প্রতিদিন অন্তত ১% হলেও নিজেকে আগের দিনের চেয়ে উন্নত করা।
-        </p>
-      </div>
-
-    </section>
-
-    <!-- Conclusion Section Banner -->
-    <footer class="relative overflow-hidden bg-gradient-to-br from-amber-500/20 via-slate-900 to-slate-900 border border-amber-500/30 p-8 rounded-3xl shadow-2xl text-center space-y-4">
-      <div class="absolute -top-12 -right-12 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl"></div>
-      
-      <span class="text-3xl">🚀</span>
-      <h3 class="text-xl sm:text-2xl font-extrabold text-white leading-snug">
-        নিজের ভেতরের অলসতা আর ভয়কে জয় করুন
-      </h3>
-      <p class="text-slate-300 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
-        যে মানুষটি প্রতিদিন নিজের দায়িত্ব শেষ করতে পারে, সাফল্য তার দরজায় এসে কড়া নাড়তে বাধ্য!
-      </p>
-    </footer>
-
-  </article>
+    </div>
+</div>
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+</div>
 
 <footer class="relative bg-[#070A11] text-slate-100 pt-16 pb-10 border-t border-white/10 overflow-hidden">
 
@@ -355,6 +389,7 @@ border: 1px solid rgba(255, 255, 255, 0.08);
 
     </div>
 </footer>
+
 
 
   <script src="script.js"></script>
