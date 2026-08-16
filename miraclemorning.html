@@ -27,7 +27,7 @@ tailwind.config = {
 
 <header class="fixed top-0 left-0 right-0 z-50 p-3 sm:p-4 lg:p-6 transition-all duration-300">
     <div class="max-w-7xl mx-auto">
-        <nav class="glass-card rounded-2xl px-4 sm:px-5 py-3 flex items-center justify-between shadow-2xl shadow-black/60 border border-white/10 hover:border-white/20 bg-[#080C14]/80 backdrop-blur-xl">
+        <nav class="glass-card rounded-2xl px-4 sm:px-5 py-3 flex items-center justify-between shadow-2xl shadow-black/50 border border-white/10 hover:border-white/20">
             
             <!-- 1. Brand / Logo -->
             <a href="#" class="flex items-center gap-2.5 sm:gap-3 group">
@@ -56,12 +56,7 @@ tailwind.config = {
                         Books
                     </a>
                 </li>
-                <li>
-                    <a href="index.html" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-all flex items-center gap-1.5">
-                        Hot 
-                        <span class="px-1.5 py-0.5 text-[10px] font-bold bg-amber-400/10 text-amber-400 border border-amber-400/20 rounded-md">🔥</span>
-                    </a>
-                </li>
+   
                 <li>
                     <a href="index.html" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-all block">
                         About
@@ -72,16 +67,20 @@ tailwind.config = {
                         Blog
                     </a>
                 </li>
+
+
+
+
             </ul>
 
-            <!-- 3. Right Action Area (CTA + Mobile Toggle) -->
+            <!-- 3. Right Action Area (Search + CTA) -->
             <div class="flex items-center gap-2.5 sm:gap-3">
                 <!-- CTA Button -->
                 <a href="index.html" class="glow-effect px-3.5 sm:px-5 py-2 text-xs font-bold text-slate-950 bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-400 rounded-xl transition-all duration-300 hover:scale-105 active:scale-95 shadow-md shadow-amber-500/10 whitespace-nowrap">
                     Get Started
-                </a>
+            </a>
 
-                <!-- Mobile Menu Toggle Button -->
+                <!-- 4. Mobile & Tablet Menu Toggle Button (< 1024px) -->
                 <button id="mobile-toggle" class="lg:hidden p-2 rounded-xl text-slate-300 hover:text-white hover:bg-white/10 focus:outline-none transition-colors" aria-label="Toggle Navigation">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
@@ -90,19 +89,22 @@ tailwind.config = {
             </div>
         </nav>
 
-        <!-- 4. Mobile & Tablet Drawer Menu (Fixed Overlap Issue) -->
-        <div id="mobile-menu" class="hidden lg:hidden mt-3 bg-[#080C14]/95 backdrop-blur-2xl rounded-2xl p-5 border border-white/10 shadow-2xl transition-all">
+        <!-- 5. Mobile & Tablet Drawer Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden mt-3 glass-card rounded-2xl p-5 border border-white/10 shadow-2xl transition-all">
+
+            <!-- Navigation Links -->
             <div class="flex flex-col space-y-2">
                 <a href="index.html" class="px-4 py-2.5 rounded-xl text-sm font-semibold text-white bg-white/10 block">Home</a>
                 <a href="bookpage.html" class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 block">Books</a>
-    
+       
                 <a href="index.html" class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 block">About</a>
                 <a href="blog.html" class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 block">Blog</a>
             </div>
         </div>
     </div>
 </header>
-
+<br>
+<br>
 <section id="miracle-morning-summary" class="relative pt-28 pb-12 sm:pt-32 lg:py-20 bg-[#080C14] text-slate-100 overflow-hidden">
     
     <!-- Background Ambient Glows -->
