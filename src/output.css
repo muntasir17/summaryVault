@@ -550,6 +550,18 @@
   .mt-20 {
     margin-top: calc(var(--spacing) * 20);
   }
+  .mt-28 {
+    margin-top: calc(var(--spacing) * 28);
+  }
+  .mt-30 {
+    margin-top: calc(var(--spacing) * 30);
+  }
+  .mt-32 {
+    margin-top: calc(var(--spacing) * 32);
+  }
+  .mt-34 {
+    margin-top: calc(var(--spacing) * 34);
+  }
   .mt-36 {
     margin-top: calc(var(--spacing) * 36);
   }
