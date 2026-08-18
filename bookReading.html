@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Summary Vault</title>
+    <link rel="icon" href="summaryValut.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+     <script src="https://cdn.tailwindcss.com"></script>
+     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+     <script>
+tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Hind Siliguri"', '"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+     </script>
+</head>
+<body class="bg-[#0B0F17] text-slate-100 font-sans antialiased overflow-x-hidden selection:bg-amber-400 selection:text-slate-950">
+    
+  <style>
+.glass-card {
+background: rgba(15, 23, 42, 0.7);
+backdrop-filter: blur(16px);
+-webkit-backdrop-filter: blur(16px);
+border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.glow-effect:hover {
+ box-shadow: 0 0 25px -5px rgba(245, 158, 11, 0.3);
+}
+.reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: opacity, transform;
+    }
+
+    /* স্ক্রোলে দেখার সাথে সাথে সুন্দরভাবে ভেসে উঠবে */
+    .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+</style> 
+
+<header class="fixed top-0 left-0 right-0 z-50 p-3 sm:p-4 lg:p-6 transition-all duration-300">
+    <div class="max-w-7xl mx-auto">
+        <nav class="glass-card rounded-2xl px-4 sm:px-5 py-3 flex items-center justify-between shadow-2xl shadow-black/50 border border-white/10 hover:border-white/20">
+            
+            <!-- 1. Brand / Logo -->
+            <a href="#" class="flex items-center gap-2.5 sm:gap-3 group">
+                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-amber-500 via-amber-400 to-yellow-200 flex items-center justify-center text-slate-950 font-black text-lg sm:text-xl shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform duration-300">
+                    SV
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-base sm:text-lg font-extrabold tracking-tight text-white group-hover:text-amber-400 transition-colors leading-tight">
+                        Summary<span class="text-amber-400">Vault</span>
+                    </span>
+                    <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-slate-400 tracking-widest -mt-0.5">
+                        Bengali Summaries
+                    </span>
+                </div>
+            </a>
+
+            <!-- 2. Navigation Links (Desktop: >= 1024px) -->
+            <ul class="hidden lg:flex items-center gap-1 bg-white/[0.03] border border-white/5 p-1.5 rounded-xl backdrop-blur-md">
+                <li>
+                    <a href="index.html" class="px-4 py-2 text-sm font-semibold text-white bg-white/10 rounded-lg shadow-inner block">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="bookpage.html" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-all block">
+                        Books
+                    </a>
+                </li>
+   
+                <li>
+                    <a href="index.html" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-all block">
+                        About
+                    </a>
+                </li>
+                <li>
+                    <a href="blog.html" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-all block">
+                        Blog
+                    </a>
+                </li>
+            </ul>
+            <!-- 3. Right Action Area (Search + CTA) -->
+            <div class="flex items-center gap-2.5 sm:gap-3">
+                <!-- CTA Button -->
+                <a href="index.html" class="glow-effect px-3.5 sm:px-5 py-2 text-xs font-bold text-slate-950 bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-400 rounded-xl transition-all duration-300 hover:scale-105 active:scale-95 shadow-md shadow-amber-500/10 whitespace-nowrap">
+                    Get Started
+            </a>
+
+                <!-- 4. Mobile & Tablet Menu Toggle Button (< 1024px) -->
+                <button id="mobile-toggle" class="lg:hidden p-2 rounded-xl text-slate-300 hover:text-white hover:bg-white/10 focus:outline-none transition-colors" aria-label="Toggle Navigation">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+
+        <!-- 5. Mobile & Tablet Drawer Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden mt-3 glass-card rounded-2xl p-5 border border-white/10 shadow-2xl transition-all">
+
+            <!-- Navigation Links -->
+            <div class="flex flex-col space-y-2">
+                <a href="index.html" class="px-4 py-2.5 rounded-xl text-sm font-semibold text-white bg-white/10 block">Home</a>
+                <a href="bookpage.html" class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 block">Books</a>
+       
+                <a href="index.html" class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 block">About</a>
+                <a href="blog.html" class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 block">Blog</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<article class="max-w-4xl mx-auto space-y-12">
+    
+    <!-- Article Header -->
+    <header class="space-y-4 text-center sm:text-left border-b border-slate-800/80 pb-8">
+      <div class="flex flex-wrap items-center justify-center sm:justify-start gap-3 text-xs font-semibold">
+        <span class="bg-amber-500/10 text-amber-400 border border-amber-500/30 px-3 py-1 rounded-full uppercase tracking-wider font-english">
+          Personal Growth & Mindset
+        </span>
+        <span class="text-slate-400 flex items-center gap-1 font-english">
+          <span>⏱️</span> 10 Min Read
+        </span>
+      </div>
+
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight tracking-tight">
+        বই কেন পড়বেন? <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500">বিজ্ঞানের দৃষ্টিতে এবং সফলদের জীবনের আলোকে</span> ১০ মিনিটের পূর্ণাঙ্গ মাস্টারক্লাস
+      </h1>
+    </header>
+
+    <!-- Intro Text -->
+    <section class="space-y-6 text-base sm:text-lg text-slate-300 leading-relaxed sm:leading-loose">
+      <p>
+        আজকের দ্রুতগতির ডিজিটাল যুগে, যেখানে টিকটক আর রিলসের ১৫ সেকেন্ডের শর্ট-ফর্ম কনটেন্ট আমাদের মনোযোগের পরিধিকে (Attention Span) ধ্বংস করে দিচ্ছে, সেখানে শান্ত হয়ে একটি বই নিয়ে বসা অনেকের কাছেই প্রায় বিলুপ্ত এক শিল্প মনে হতে পারে।
+      </p>
+      <p>
+        কিন্তু বাস্তব সত্য হলো—ইতিহাসের প্রতিটি যুগে সমাজের শীর্ষ ১% সফল মানুষ, বিজ্ঞানী, এবং চিন্তাবিদদের মধ্যে যে একটি বিষয় সবসময় কমন ছিল, তা হলো <strong class="text-amber-400">বই পড়ার অভ্যাস</strong>।
+      </p>
+      <div class="bg-gradient-to-r from-amber-500/10 via-[#0e1526] to-[#0e1526] border-l-4 border-amber-400 p-5 rounded-r-2xl">
+        <p class="text-amber-200 font-medium italic">
+          "বই পড়া কেবল একটি বিনোদন বা অলস সময় কাটানোর মাধ্যম নয়; এটি মস্তিষ্কের জন্য একটি উচ্চমানের ওয়ার্কআউট এবং নিজেকে প্রতিদিন উন্নত করার সবচেয়ে শক্তিশালী অস্ত্র।"
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 1: Science & Research -->
+    <section class="space-y-6">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white flex items-center gap-3">
+        <span class="text-amber-400 font-english">১.</span> বিজ্ঞান কী বলে? (গবেষণা ও রিসার্চ ডাটা)
+      </h2>
+      <p class="text-slate-300 text-base leading-relaxed">
+        বই পড়ার উপকারিতা শুধু বইপ্রেমীদের মুখের কথা নয়, নিউরোসায়েন্স ও বৈজ্ঞানিক গবেষণায় এর স্পষ্ট প্রমাণ রয়েছে। যুক্তরাজ্যের <strong class="text-white">University of Sussex</strong>-এর একটি গবেষণায় দেখা গেছে, মাত্র <strong>৬ মিনিট</strong> বই পড়লে মানসিক চাপের মাত্রা প্রায় <strong>৬৮% পর্যন্ত কমে যায়</strong>।
+      </p>
+
+      <!-- Styled Table -->
+      <div class="overflow-x-auto rounded-2xl border border-slate-800 bg-[#0e1526] shadow-xl">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="bg-slate-900/80 text-amber-400 text-xs sm:text-sm font-bold border-b border-slate-800">
+              <th class="p-4">মাধ্যম</th>
+              <th class="p-4">স্ট্রেস কমানোর হার (%)</th>
+              <th class="p-4">কার্যকারিতা</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-800/60 text-sm">
+            <tr class="bg-amber-500/10 text-white font-semibold">
+              <td class="p-4 flex items-center gap-2">📖 বই পড়া (Reading)</td>
+              <td class="p-4 font-english text-amber-400 font-bold">৬৮%</td>
+              <td class="p-4"><span class="bg-amber-500/20 text-amber-300 text-xs px-2.5 py-1 rounded-full font-bold">🏆 সর্বাধিক কার্যকর</span></td>
+            </tr>
+            <tr>
+              <td class="p-4">🎵 গান শোনা (Listening to Music)</td>
+              <td class="p-4 font-english">৬১%</td>
+              <td class="p-4 text-slate-400">অত্যন্ত কার্যকর</td>
+            </tr>
+            <tr>
+              <td class="p-4">☕ এক কাপ চা/কফি খাওয়া</td>
+              <td class="p-4 font-english">৫৪%</td>
+              <td class="p-4 text-slate-400">মাঝারি</td>
+            </tr>
+            <tr>
+              <td class="p-4">🚶‍♂️ হাঁটতে যাওয়া (Walking)</td>
+              <td class="p-4 font-english">৪২%</td>
+              <td class="p-4 text-slate-400">মাঝারি</td>
+            </tr>
+            <tr>
+              <td class="p-4">🎮 ভিডিও গেম খেলা</td>
+              <td class="p-4 font-english">২১%</td>
+              <td class="p-4 text-slate-400">নিম্ন কার্যকর</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-slate-400 text-sm italic">
+        * এছাড়া, Yale School of Public Health-এর ১২ বছর ব্যাপী ৩,৬৩৫ জন মানুষের গবেষণায় দেখা গেছে—যারা প্রতিদিন গড়ে ৩০ মিনিট বই পড়েন, তারা গড়ে ২ বছর বেশি বাঁচেন।
+      </p>
+    </section>
+
+    <!-- Section 2: Visual Chart -->
+    <section class="space-y-6 bg-[#0e1526] border border-slate-800 p-6 sm:p-8 rounded-3xl shadow-xl">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white flex items-center gap-3">
+        <span class="text-amber-400 font-english">২.</span> ভিজ্যুয়াল রিসার্চ ডাটা: নিউরোলজিক্যাল প্রভাব
+      </h2>
+      <p class="text-slate-300 text-sm sm:text-base">
+        প্রতিদিন অন্তত ২০-৩০ মিনিট বই পড়ার ফলে মস্তিষ্কের কগনিটিভ ক্যাপাসিটি ও ফোকাস লেভেল কীভাবে বৃদ্ধি পায়:
+      </p>
+
+      <!-- Tailwind Bar Chart -->
+      <div class="space-y-4 pt-2">
+        <div class="space-y-1.5">
+          <div class="flex justify-between text-xs font-bold text-slate-300">
+            <span>৬ষ্ঠ মাস (গভীর ফোকাস ও মেমোরি)</span>
+            <span class="font-english text-amber-400">100%</span>
+          </div>
+          <div class="w-full bg-slate-800 h-3 rounded-full overflow-hidden">
+            <div class="bg-gradient-to-r from-amber-500 to-amber-300 h-full w-[100%] rounded-full"></div>
+          </div>
+        </div>
+
+        <div class="space-y-1.5">
+          <div class="flex justify-between text-xs font-bold text-slate-300">
+            <span>৩য় মাস</span>
+            <span class="font-english text-amber-400">80%</span>
+          </div>
+          <div class="w-full bg-slate-800 h-3 rounded-full overflow-hidden">
+            <div class="bg-amber-500/80 h-full w-[80%] rounded-full"></div>
+          </div>
+        </div>
+
+        <div class="space-y-1.5">
+          <div class="flex justify-between text-xs font-bold text-slate-300">
+            <span>২য় মাস</span>
+            <span class="font-english text-amber-400">60%</span>
+          </div>
+          <div class="w-full bg-slate-800 h-3 rounded-full overflow-hidden">
+            <div class="bg-amber-500/60 h-full w-[60%] rounded-full"></div>
+          </div>
+        </div>
+
+        <div class="space-y-1.5">
+          <div class="flex justify-between text-xs font-bold text-slate-300">
+            <span>১ম মাস</span>
+            <span class="font-english text-amber-400">40%</span>
+          </div>
+          <div class="w-full bg-slate-800 h-3 rounded-full overflow-hidden">
+            <div class="bg-amber-500/40 h-full w-[40%] rounded-full"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Successful People -->
+    <section class="space-y-6">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white flex items-center gap-3">
+        <span class="text-amber-400 font-english">৩.</span> বিশ্বসেরা সফল ব্যক্তিদের জীবন থেকে শিক্ষা
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <!-- Warren Buffett -->
+        <div class="bg-[#0e1526] border border-slate-800 p-5 rounded-2xl space-y-2">
+          <div class="text-2xl">📈</div>
+          <h3 class="font-bold text-white text-lg">ওয়ারেন বাফেট</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            ক্যারিয়ারের শুরুতে প্রতিদিন ৫০০ পৃষ্ঠা পড়তেন। তিনি বিশ্বাস করেন—জ্ঞান অলক্ষ্যে চক্রবৃদ্ধি হারে (Compound Interest) বাড়তে থাকে।
+          </p>
+        </div>
+
+        <!-- Bill Gates -->
+        <div class="bg-[#0e1526] border border-slate-800 p-5 rounded-2xl space-y-2">
+          <div class="text-2xl">💻</div>
+          <h3 class="font-bold text-white text-lg">বিল গেটস</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            প্রতি বছর প্রায় ৫০টি বই পড়েন এবং বছরের নির্দিষ্ট একটি সপ্তাহ সব কাজ বন্ধ রেখে 'Think Week'-এ বই পড়তে যান।
+          </p>
+        </div>
+
+        <!-- Elon Musk -->
+        <div class="bg-[#0e1526] border border-slate-800 p-5 rounded-2xl space-y-2">
+          <div class="text-2xl">🚀</div>
+          <h3 class="font-bold text-white text-lg">ইলন মাস্ক</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            রকেট বানানো কীভাবে শিখেছেন জানতে চাইলে তাঁর সোজা উত্তর ছিল— <span class="italic text-amber-300">"I read books."</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: 10 Benefits Grid -->
+    <section class="space-y-6">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white flex items-center gap-3">
+        <span class="text-amber-400 font-english">৪.</span> বই পড়ার মূল ১০টি বৈপ্লবিক উপকারিতা
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        
+        <!-- Benefit 1 -->
+        <div class="bg-[#0e1526] border border-slate-800 hover:border-amber-500/40 p-5 rounded-2xl space-y-2 transition-all">
+          <span class="font-english text-xs font-bold text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded-md">01</span>
+          <h3 class="font-bold text-white text-base">মস্তিষ্কের নিউরোপ্লাস্টিসিটি বৃদ্ধি</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">পড়ার সময় ভিজ্যুয়াল ও ল্যাঙ্গুয়েজ প্রসেসিং নেটওয়ার্ক সক্রিয় হয়, যা নিউরাল কানেকশন মজবুত করে।</p>
+        </div>
+
+        <!-- Benefit 2 -->
+        <div class="bg-[#0e1526] border border-slate-800 hover:border-amber-500/40 p-5 rounded-2xl space-y-2 transition-all">
+          <span class="font-english text-xs font-bold text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded-md">02</span>
+          <h3 class="font-bold text-white text-base">মনোযোগ ও Deep Work উদ্ধার</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">টানা ২০-৩০ মিনিট ফোকাস ধরে রাখার চর্চা পড়াশোনা ও কাজে মনোযোগ ফিরিয়ে আনে।</p>
+        </div>
+
+        <!-- Benefit 3 -->
+        <div class="bg-[#0e1526] border border-slate-800 hover:border-amber-500/40 p-5 rounded-2xl space-y-2 transition-all">
+          <span class="font-english text-xs font-bold text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded-md">03</span>
+          <h3 class="font-bold text-white text-base">আলঝেইমার ও ডিমেনশিয়া প্রতিরোধ</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">বার্ধক্যে মেমোরি লস বা আলঝেইমার রোগের ঝুঁকি সাধারণ মানুষের চেয়ে ২.৫ গুণ কমে যায়।</p>
+        </div>
+
+        <!-- Benefit 4 -->
+        <div class="bg-[#0e1526] border border-slate-800 hover:border-amber-500/40 p-5 rounded-2xl space-y-2 transition-all">
+          <span class="font-english text-xs font-bold text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded-md">04</span>
+          <h3 class="font-bold text-white text-base">শব্দভাণ্ডার ও যোগাযোগ দক্ষতা</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">অজান্তেই হাজার নতুন শব্দ ও বাক্য গঠন অবচেতন মনে জমা হয়, যা প্রকাশের দক্ষতা বাড়ায়।</p>
+        </div>
+
+        <!-- Benefit 5 -->
+        <div class="bg-[#0e1526] border border-slate-800 hover:border-amber-500/40 p-5 rounded-2xl space-y-2 transition-all">
+          <span class="font-english text-xs font-bold text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded-md">05</span>
+          <h3 class="font-bold text-white text-base">ইমোশনাল ইন্টেলিজেন্স (EQ)</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">অন্যের জায়গায় নিজেকে রেখে চিন্তা করার মাধ্যমে সহানুভূতি ও মানুষের অনুভূতি বোঝার ক্ষমতা বাড়ে।</p>
+        </div>
+
+        <!-- Benefit 6 -->
+        <div class="bg-[#0e1526] border border-slate-800 hover:border-amber-500/40 p-5 rounded-2xl space-y-2 transition-all">
+          <span class="font-english text-xs font-bold text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded-md">06</span>
+          <h3 class="font-bold text-white text-base">ক্রিটিক্যাল থিংকিং ও সমস্যা সমাধান</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">লেখকের বছরের পর বছর অর্জিত অভিজ্ঞতা ও ভুলগুলো থেকে জটিল সমস্যা সমাধানের ক্ষমতা আসে।</p>
+        </div>
+
+        <!-- Benefit 7 -->
+        <div class="bg-[#0e1526] border border-slate-800 hover:border-amber-500/40 p-5 rounded-2xl space-y-2 transition-all">
+          <span class="font-english text-xs font-bold text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded-md">07</span>
+          <h3 class="font-bold text-white text-base">ডিজিটাল ডিটক্স ও চমৎকার ঘুম</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">ঘুমানোর আগে স্ক্রিনের বদলে বই পড়লে দ্রুত এবং গভীর ঘুম হতে সাহায্য করে।</p>
+        </div>
+
+        <!-- Benefit 8 -->
+        <div class="bg-[#0e1526] border border-slate-800 hover:border-amber-500/40 p-5 rounded-2xl space-y-2 transition-all">
+          <span class="font-english text-xs font-bold text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded-md">08</span>
+          <h3 class="font-bold text-white text-base">কম খরচে বিশ্বসেরা মেন্টর পাওয়া</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">লেখকের ৪০ বছরের অভিজ্ঞতা ও ভুল মাত্র কয়েকদিনেই একটি বই পড়ার মাধ্যমে আত্মস্থ করা যায়।</p>
+        </div>
+
+        <!-- Benefit 9 -->
+        <div class="bg-[#0e1526] border border-slate-800 hover:border-amber-500/40 p-5 rounded-2xl space-y-2 transition-all">
+          <span class="font-english text-xs font-bold text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded-md">09</span>
+          <h3 class="font-bold text-white text-base">নতুন দৃষ্টিভঙ্গি ও মাইন্ডসেট শিফট</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">পুরানো ভুল ধারণা ভেঙে নতুন চিন্তার দুয়ার উন্মোচিত হয়, যা মানুষকে প্রজ্ঞাবান করে।</p>
+        </div>
+
+        <!-- Benefit 10 -->
+        <div class="bg-[#0e1526] border border-slate-800 hover:border-amber-500/40 p-5 rounded-2xl space-y-2 transition-all">
+          <span class="font-english text-xs font-bold text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded-md">10</span>
+          <h3 class="font-bold text-white text-base">আত্মবিশ্বাস বৃদ্ধি ও একাকিত্ব দূর করা</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">একটি ভালো বই পাশে থাকলে যেকোনো সময় গঠনমূলক আলোচনা করার আত্মবিশ্বাস পাওয়া যায়।</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section 5: 5 Steps to start -->
+    <section class="space-y-6">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white flex items-center gap-3">
+        <span class="text-amber-400 font-english">৫.</span> কীভাবে বই পড়ার অভ্যাস শুরু করবেন?
+      </h2>
+
+      <div class="space-y-3">
+        <div class="flex items-start gap-4 bg-[#0e1526] border border-slate-800 p-4 rounded-xl">
+          <span class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 font-extrabold flex items-center justify-center shrink-0 font-english">1</span>
+          <div>
+            <h4 class="font-bold text-white text-sm">মাইক্রো-হ্যাবিট (Micro-Habits)</h4>
+            <p class="text-xs text-slate-400">প্রতিদিন মাত্র ৫ থেকে ১০ পৃষ্ঠা পড়ার সহজ টার্গেট নিন।</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4 bg-[#0e1526] border border-slate-800 p-4 rounded-xl">
+          <span class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 font-extrabold flex items-center justify-center shrink-0 font-english">2</span>
+          <div>
+            <h4 class="font-bold text-white text-sm">নির্দিষ্ট সময় নির্ধারণ (Trigger)</h4>
+            <p class="text-xs text-slate-400">সকালে চায়ের সাথে অথবা রাতে ঘুমাতে যাওয়ার আগে ১০ মিনিট সময় ফিক্স করুন।</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4 bg-[#0e1526] border border-slate-800 p-4 rounded-xl">
+          <span class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 font-extrabold flex items-center justify-center shrink-0 font-english">3</span>
+          <div>
+            <h4 class="font-bold text-white text-sm">পছন্দের বিষয় দিয়ে শুরু</h4>
+            <p class="text-xs text-slate-400">ভারী ফিলোসফি বাদ দিয়ে গল্প বা নিজের পছন্দের নির্দিষ্ট টপিক বেছে নিন।</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4 bg-[#0e1526] border border-slate-800 p-4 rounded-xl">
+          <span class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 font-extrabold flex items-center justify-center shrink-0 font-english">4</span>
+          <div>
+            <h4 class="font-bold text-white text-sm">অডিওবুক বা সামারি</h4>
+            <p class="text-xs text-slate-400">সময় কম থাকলে বইয়ের সারসংক্ষেপ (Book Summary) দিয়ে মূল ধারণা নেওয়ার অভ্যাস করুন।</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4 bg-[#0e1526] border border-slate-800 p-4 rounded-xl">
+          <span class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 font-extrabold flex items-center justify-center shrink-0 font-english">5</span>
+          <div>
+            <h4 class="font-bold text-white text-sm">ফোন দূরে রাখুন</h4>
+            <p class="text-xs text-slate-400">পড়ার সময় ফোনটিকে অন্য ঘরে রাখুন বা 'Do Not Disturb' চালু রাখুন।</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Banner -->
+    <footer class="bg-gradient-to-r from-amber-500/20 via-slate-900 to-slate-900 border border-amber-500/30 p-8 rounded-3xl text-center space-y-4">
+      <h3 class="text-xl sm:text-2xl font-bold text-white">
+        জ্ঞানই একমাত্র সম্পদ যা কেউ আপনার কাছ থেকে ছিনিয়ে নিতে পারে না
+      </h3>
+      <p class="text-slate-300 text-sm max-w-xl mx-auto">
+        আজ থেকেই মাত্র ১০ মিনিটের জন্য যেকোনো একটি বই নিয়ে বসে পড়ুন—আজকের এই ছোট পদক্ষেপটি আগামী ৫ বছর পর আপনাকে একজন সমৃদ্ধ মানুষে পরিণত করবে!
+      </p>
+    </footer>
+
+  </article>
+
+
+
+
+
+
+
+
+
+
+<footer class="relative bg-[#070A11] text-slate-100 pt-16 pb-10 border-t border-white/10 overflow-hidden">
+
+    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[250px] bg-amber-500/5 blur-[140px] rounded-full pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16">
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+            
+            <!-- Brand Info & Social Icons -->
+            <div class="lg:col-span-2 space-y-4">
+                <a href="#" class="flex items-center gap-3 group ">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 via-amber-400 to-yellow-200 flex items-center justify-center text-slate-950 font-black text-xl shadow-lg shadow-amber-500/20">
+                        SV
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-lg font-extrabold text-white group-hover:text-amber-400 transition-colors">
+                            Summary<span class="text-amber-400">Vault</span>
+                        </span>
+                        <span class="text-[10px] uppercase font-semibold text-slate-400 tracking-widest -mt-1">
+                            Bengali Summaries
+                        </span>
+                    </div>
+                </a>
+
+                <p class="text-xs sm:text-sm text-slate-400 leading-relaxed pr-2">
+                    বিশ্ববিখ্যাত বইগুলোর মূলভাব সহজ ও প্রাঞ্জল বাংলায় সবার কাছে পৌঁছে দেওয়ার একটি আধুনিক ডিজিটাল প্ল্যাটফর্ম।
+                </p>
+
+                <!-- FIXED SOCIAL ICONS (Complete SVG Paths) -->
+                <div class="flex items-center gap-2.5 pt-1">
+                    <!-- Facebook -->
+                    <a href="https://www.facebook.com/profile.php?id=61593334430960" target="_blank" class="w-9 h-9 rounded-xl glass-card flex items-center justify-center text-slate-400 hover:text-amber-400 hover:border-amber-400/40 transition-all">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="space-y-3">
+                <h4 class="text-sm font-bold text-white uppercase tracking-wider">দ্রুত নেভিগেশন</h4>
+                <ul class="space-y-2 text-xs sm:text-sm text-slate-400">
+                    <li><a href="index.html" class="hover:text-amber-400 transition-colors">হোমপেজ</a></li>
+                    <li><a href="bookpage.html" class="hover:text-amber-400 transition-colors">সকল বই</a></li>
+                    <li><a href="index.html" class="hover:text-amber-400 transition-colors">আমাদের সম্পর্কে</a></li>
+                       <li><a href="blog.html" class="hover:text-amber-400 transition-colors">ব্লগ </a></li>
+                </ul>
+            </div>
+
+            <!-- Categories -->
+            <div class="space-y-3">
+                <h4 class="text-sm font-bold text-white uppercase tracking-wider">ক্যাটাগরি</h4>
+                <ul class="space-y-2 text-xs sm:text-sm text-slate-400">
+                    <li><a href="selfhelp.html" class="hover:text-amber-400 transition-colors">সেলফ হেল্প</a></li>
+                    <li><a href="#" class="hover:text-amber-400 transition-colors">বিজনেস ও কেরিয়ার</a></li>
+                    <li><a href="philosophy.html" class="hover:text-amber-400 transition-colors">ফিলোসফি</a></li>
+                    <li><a href="#" class="hover:text-amber-400 transition-colors">প্রোডাক্টিভিটি</a></li>
+                </ul>
+            </div>
+
+            <!-- Policy & Terms -->
+            <div class="space-y-3">
+                <h4 class="text-sm font-bold text-white uppercase tracking-wider">সহায়তা ও নীতি</h4>
+               <ul class="space-y-2 text-xs sm:text-sm text-slate-400">
+                    <li><a href="index.html" class="hover:text-amber-400 transition-colors">প্রাইভেসি পলিসি</a></li>
+                    <li><a href="index.html" class="hover:text-amber-400 transition-colors">টার্মস অব সার্ভিস</a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=61593334430960" class="hover:text-amber-400 transition-colors">যোগাযোগ</a></li>
+                    <li><a href="index.html" class="hover:text-amber-400 transition-colors">FAQ / প্রশ্নাবলী</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- 3. BOTTOM COPYRIGHT BAR -->
+        <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+            <p>© 2026 <strong class="text-slate-200">SummaryVault</strong>. সর্বস্বত্ব সংরক্ষিত।</p>
+            
+            <p class="flex items-center gap-1">
+                Crafted with <span class="text-red-500">❤️</span> for Bengali Readers
+            </p>
+
+            <!-- Working Back to Top Button -->
+            <button 
+                onclick="window.scrollTo({top: 0, behavior: 'smooth'})" 
+                class="glass-card px-3.5 py-1.5 rounded-xl border border-white/10 hover:border-amber-400/40 text-slate-300 hover:text-amber-400 transition-all flex items-center gap-1.5"
+            >
+                <span>উপরে যান</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+            </button>
+        </div>
+
+    </div>
+</footer>
+
+
+  <script src="script.js"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
+</body>
+</html>
