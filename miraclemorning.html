@@ -25,7 +25,7 @@ tailwind.config = {
 <body class="bg-[#0B0F17] text-slate-100 font-sans antialiased overflow-x-hidden selection:bg-amber-400 selection:text-slate-950">
     
 
-<header class="fixed top-0 left-0 right-0 z-50 p-3 sm:p-4 lg:p-6 transition-all duration-300">
+<header class="fixed bg-[#080C14] rounded-3xl top-0 left-0 right-0 z-50 p-3 sm:p-4 lg:p-6 transition-all duration-300">
     <div class="max-w-7xl mx-auto">
         <nav class="glass-card rounded-2xl px-4 sm:px-5 py-3 flex items-center justify-between shadow-2xl shadow-black/50 border border-white/10 hover:border-white/20">
             
@@ -67,13 +67,8 @@ tailwind.config = {
                         Blog
                     </a>
                 </li>
-
-
-
-
             </ul>
 
-            <!-- 3. Right Action Area (Search + CTA) -->
             <div class="flex items-center gap-2.5 sm:gap-3">
                 <!-- CTA Button -->
                 <a href="index.html" class="glow-effect px-3.5 sm:px-5 py-2 text-xs font-bold text-slate-950 bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-400 rounded-xl transition-all duration-300 hover:scale-105 active:scale-95 shadow-md shadow-amber-500/10 whitespace-nowrap">
@@ -103,7 +98,6 @@ tailwind.config = {
         </div>
     </div>
 </header>
-<br>
 <br>
 <section id="miracle-morning-summary" class="relative pt-28 pb-12 sm:pt-32 lg:py-20 bg-[#080C14] text-slate-100 overflow-hidden">
     
@@ -336,7 +330,48 @@ tailwind.config = {
     </div>
 </section>
 
+<div class="flex items-center justify-center p-4 font-sans">
+  <!-- Main Premium Card Wrapper -->
+  <div class="relative max-w-xl w-full bg-slate-900/80 backdrop-blur-2xl border border-slate-800/80 rounded-3xl p-6 sm:p-10 shadow-2xl shadow-indigo-500/10 overflow-hidden">
+    
+    <!-- Ambient Background Glow Effects -->
+    <div class="absolute -top-20 -left-20 w-44 h-44 bg-purple-500/20 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-20 -right-20 w-44 h-44 bg-indigo-500/20 rounded-full blur-3xl pointer-events-none"></div>
+    
+    <!-- Background Decorative Quote Icon -->
+    <div class="absolute -top-2 left-6 text-slate-800/40 pointer-events-none select-none text-9xl font-serif leading-none">
+      “
+    </div>
 
+    <!-- Header Section -->
+    <div class="relative z-10 mb-6">
+      <h1 class="quotes text-center text-xs sm:text-sm font-bold tracking-widest uppercase text-indigo-400 bg-indigo-500/10 py-1.5 px-5 rounded-full w-max mx-auto border border-indigo-500/20 shadow-inner">
+        Quotes
+      </h1>
+    </div>
+
+    <!-- Quote Content Section -->
+    <div class="relative z-10 my-8 px-2">
+      <p class="para text-center text-lg sm:text-xl font-medium text-slate-200 leading-relaxed sm:leading-loose tracking-wide">
+    আপনার সাফল্যের সীমানা কখনোই আপনার ব্যক্তিগত দক্ষতার সীমা ছাড়িয়ে যেতে পারে না। কারণ সফলতা কোনো পাওয়ার জিনিস নয়, বরং নিজেকে সেই যোগ্য মানুষ হিসেবে গড়ে তোলার এক স্বাভাবিক পরিণতি।
+      </p>
+    </div>
+
+    <div class="relative z-10 flex items-center justify-between gap-4 pt-6 border-t border-slate-800/80">
+
+      <button class="left px-6 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white font-medium text-sm transition-all duration-300 hover:-translate-x-1 active:translate-x-0 border border-slate-700/50 flex items-center gap-2 shadow-lg hover:shadow-slate-700/20 cursor-pointer">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+        Prev
+      </button>
+      <button class="right px-6 py-2.5 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white font-semibold text-sm transition-all duration-300 hover:translate-x-1 active:translate-x-0 shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 flex items-center gap-2 cursor-pointer">
+        Next
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+      </button>
+
+    </div>
+
+  </div>
+</div>
 
 
 
@@ -437,7 +472,7 @@ tailwind.config = {
 </footer>
 
 
-      <script src="script.js"></script>
+      <script src="miraclemorning.js"></script>
 <script src="https://unpkg.com/scrollreveal"></script>
 </body>
 </html>
