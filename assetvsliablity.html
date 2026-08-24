@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <title>Summary Vault</title>
+    <link rel="icon" href="summaryValut.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+     <script src="https://cdn.tailwindcss.com"></script>
+     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+     <script>
+tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Hind Siliguri"', '"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+     </script>
+</head>
+<body class="bg-[#0B0F17] text-slate-100 font-sans antialiased overflow-x-hidden selection:bg-amber-400 selection:text-slate-950">
+<style>
+.glass-card {
+background: rgba(15, 23, 42, 0.7);
+backdrop-filter: blur(16px);
+-webkit-backdrop-filter: blur(16px);
+border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.glow-effect:hover {
+ box-shadow: 0 0 25px -5px rgba(245, 158, 11, 0.3);
+}
+.reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: opacity, transform;
+    }
+
+    /* স্ক্রোলে দেখার সাথে সাথে সুন্দরভাবে ভেসে উঠবে */
+    .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+</style> 
+<header class="fixed top-0 left-0 right-0 z-50 p-3 sm:p-4 lg:p-6 transition-all duration-300">
+    <div class="max-w-7xl mx-auto">
+        <nav class="glass-card rounded-2xl px-4 sm:px-5 py-3 flex items-center justify-between shadow-2xl shadow-black/50 border border-white/10 hover:border-white/20">
+            
+            <!-- 1. Brand / Logo -->
+            <a href="#" class="flex items-center gap-2.5 sm:gap-3 group">
+                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-amber-500 via-amber-400 to-yellow-200 flex items-center justify-center text-slate-950 font-black text-lg sm:text-xl shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform duration-300">
+                    SV
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-base sm:text-lg font-extrabold tracking-tight text-white group-hover:text-amber-400 transition-colors leading-tight">
+                        Summary<span class="text-amber-400">Vault</span>
+                    </span>
+                    <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-slate-400 tracking-widest -mt-0.5">
+                        Bengali Summaries
+                    </span>
+                </div>
+            </a>
+
+            <!-- 2. Navigation Links (Desktop: >= 1024px) -->
+            <ul class="hidden lg:flex items-center gap-1 bg-white/[0.03] border border-white/5 p-1.5 rounded-xl backdrop-blur-md">
+                <li>
+                    <a href="index.html" class="px-4 py-2 text-sm font-semibold text-white bg-white/10 rounded-lg shadow-inner block">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="bookpage.html" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-all block">
+                        Books
+                    </a>
+                </li>
+   
+                <li>
+                    <a href="index.html" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-all block">
+                        About
+                    </a>
+                </li>
+                <li>
+                    <a href="blog.html" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-all block">
+                        Blog
+                    </a>
+                </li>
+            </ul>
+            <div class="flex items-center gap-2.5 sm:gap-3">
+                <!-- CTA Button -->
+                <a href="index.html" class="glow-effect px-3.5 sm:px-5 py-2 text-xs font-bold text-slate-950 bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-400 rounded-xl transition-all duration-300 hover:scale-105 active:scale-95 shadow-md shadow-amber-500/10 whitespace-nowrap">
+                    Get Started
+            </a>
+
+                <!-- 4. Mobile & Tablet Menu Toggle Button (< 1024px) -->
+                <button id="mobile-toggle" class="lg:hidden p-2 rounded-xl text-slate-300 hover:text-white hover:bg-white/10 focus:outline-none transition-colors" aria-label="Toggle Navigation">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+
+        <!-- 5. Mobile & Tablet Drawer Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden mt-3 glass-card rounded-2xl p-5 border border-white/10 shadow-2xl transition-all">
+
+            <!-- Navigation Links -->
+            <div class="flex flex-col space-y-2">
+                <a href="index.html" class="px-4 py-2.5 rounded-xl text-sm font-semibold text-white bg-white/10 block">Home</a>
+                <a href="bookpage.html" class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 block">Books</a>
+       
+                <a href="index.html" class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 block">About</a>
+                <a href="blog.html" class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 block">Blog</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<article class="max-w-4xl mx-auto space-y-12">
+    
+    <!-- Article Header -->
+    <header class="space-y-4 text-center sm:text-left border-b border-slate-800/80 pb-8">
+      <div class="flex flex-wrap items-center justify-center sm:justify-start gap-3 text-xs font-semibold">
+        <span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 px-3 py-1 rounded-full uppercase tracking-wider font-english">
+          Personal Finance & Money Mindset
+        </span>
+        <span class="text-slate-400 flex items-center gap-1 font-english">
+          <span>⏱️</span> 8-10 Min Read
+        </span>
+      </div>
+
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight tracking-tight">
+        অ্যাসেট নাকি লায়াবিলিটি? <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-emerald-500">টাকার যে ৫টি গোপন নিয়ম স্কুল আমাদের কখনো শেখায়নি!</span>
+      </h1>
+    </header>
+
+    <!-- Intro Text / Hook Section -->
+    <section class="space-y-6 text-base sm:text-lg text-slate-300 leading-relaxed sm:leading-loose">
+      <p>
+        মাস শেষে বেতন বা পকেটমানি পাওয়ার ৩ দিনের মধ্যে টাকাগুলো ঠিক কোথায় গায়েব হয়ে যায়, কখনো কি হিসেব মিলিয়ে দেখেছেন? আমরা মাসের পর মাস হাড়ভাঙা খাটুনি খাচ্ছি, অথচ দিনশেষে সেই শূন্য ওয়ালেট আর ব্যাংক ব্যালেন্স দেখে হতাশ হতে হচ্ছে।
+      </p>
+      <p>
+        অথচ ভেবে দেখুন, স্কুলে আমাদের ক্যালকুলাস শেখানো হয়েছে, ত্রিভুজের ক্ষেত্রফল বের করা শেখানো হয়েছে, কিংবা ইতিহাসের শত শত জটিল সাল-তারিখ মুখস্থ করানো হয়েছে। কিন্তু জীবনের সবচেয়ে গুরুত্বপূর্ণ লড়াই—<strong class="text-emerald-400">'টাকা কীভাবে কাজ করে এবং কীভাবে টাকা জমাতে হয়'</strong>—তা নিয়ে পুরো ১২ বছরে একটাও ক্লাস নেওয়া হয়নি!
+      </p>
+      <div class="bg-gradient-to-r from-emerald-500/10 via-[#0e1526] to-[#0e1526] border-l-4 border-emerald-400 p-5 rounded-r-2xl">
+        <p class="text-emerald-200 font-medium italic">
+          "আমরা বড় হয়ে উপার্জনের দৌড়ে নামি ঠিকই, কিন্তু আর্থিক সচেতনতার অভাবে ক্রেডিট কার্ডের লোন, EMI আর সামাজিক স্ট্যাটাস দেখানোর ফালতু খরচের ফাঁদে আটকে সারা জীবন পস্তাই।"
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 1: Asset vs Liability Card Breakdown -->
+    <section class="space-y-6">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white flex items-center gap-3">
+        <span class="text-emerald-400 font-english">১.</span> আসল খেলাটা কোথায়? (অ্যাসেট বনাম লায়াবিলিটি)
+      </h2>
+      <p class="text-slate-300 text-base leading-relaxed">
+        অর্থনীতির সবচেয়ে বড় সিক্রেট বুঝতে হলে আপনাকে দুটি শব্দের পার্থক্য হাড়হাড় চিনতে হবে—<strong class="text-white">অ্যাসেট (Asset)</strong> এবং <strong class="text-white">লায়াবিলিটি (Liability)</strong>।
+      </p>
+
+      <!-- Asset & Liability Side-by-Side Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Asset Card -->
+        <div class="bg-[#0e1526] border border-emerald-500/30 p-6 rounded-3xl space-y-4 relative overflow-hidden group hover:border-emerald-500/60 transition-all">
+          <div class="absolute -right-6 -top-6 w-24 h-24 bg-emerald-500/10 rounded-full blur-xl group-hover:bg-emerald-500/20 transition-all"></div>
+          <div class="flex items-center justify-between">
+            <h3 class="text-xl font-bold text-emerald-400 flex items-center gap-2">
+              📈 অ্যাসেট (Asset)
+            </h3>
+            <span class="bg-emerald-500/20 text-emerald-300 text-xs px-2.5 py-1 rounded-full font-bold">পকেটে টাকা আনে</span>
+          </div>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            সহজ কথায়, যা কোনো বাড়তি পরিশ্রম ছাড়াই প্রতিনিয়ত আপনার পকেটে টাকা এনে দেয়।
+          </p>
+          <div class="pt-2 border-t border-slate-800 space-y-1.5 text-xs text-slate-400">
+            <p><strong class="text-slate-200">উদাহরণ:</strong> শেয়ার বাজার, মিউচুয়াল ফান্ড, সাইড বিজনেস, রেন্টাল প্রপার্টি।</p>
+            <p><strong class="text-slate-200">ভবিষ্যৎ মূল্য:</strong> সময়ের সাথে মান ও ইনকাম উভয়ই বাড়ে।</p>
+          </div>
+        </div>
+
+        <!-- Liability Card -->
+        <div class="bg-[#0e1526] border border-rose-500/30 p-6 rounded-3xl space-y-4 relative overflow-hidden group hover:border-rose-500/60 transition-all">
+          <div class="absolute -right-6 -top-6 w-24 h-24 bg-rose-500/10 rounded-full blur-xl group-hover:bg-rose-500/20 transition-all"></div>
+          <div class="flex items-center justify-between">
+            <h3 class="text-xl font-bold text-rose-400 flex items-center gap-2">
+              📉 লায়াবিলিটি (Liability)
+            </h3>
+            <span class="bg-rose-500/20 text-rose-300 text-xs px-2.5 py-1 rounded-full font-bold">পকেট থেকে টাকা নেয়</span>
+          </div>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            যা প্রতি মাসে কোনো না কোনো অজুহাতে আপনার পকেট থেকে টাকা বের করে নিয়ে যায়।
+          </p>
+          <div class="pt-2 border-t border-slate-800 space-y-1.5 text-xs text-slate-400">
+            <p><strong class="text-slate-200">উদাহরণ:</strong> কার লোন, ক্রেডিট কার্ডের সুদ, আইফোনের EMI, অপ্রয়োজনীয় কেনাকাটা।</p>
+            <p><strong class="text-slate-200">ভবিষ্যৎ মূল্য:</strong> সময়ের সাথে মান কমে শূন্যের কাছাকাছি চলে যায়।</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: 5 Golden Money Rules Grid -->
+    <section class="space-y-6">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white flex items-center gap-3">
+        <span class="text-emerald-400 font-english">২.</span> স্কুলেই শেখানো উচিত ছিল—টাকার ৫টি মৌলিক নিয়ম
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        
+        <!-- Rule 1 -->
+        <div class="bg-[#0e1526] border border-slate-800 hover:border-emerald-500/40 p-5 rounded-2xl space-y-3 transition-all">
+          <div class="flex items-center justify-between">
+            <span class="font-english text-xs font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-md">RULE 01</span>
+            <span class="text-xs text-emerald-300 italic font-english">"Keep more, stress less"</span>
+          </div>
+          <h3 class="font-bold text-white text-base">আয়ের চেয়ে কম খরচ করুন</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            আয় বাড়লেই খরচ বাড়িয়ে ফেলার লাইফস্টাইল ফাঁদে পা দেওয়া যাবে না। আয় যতই হোক, সবসময় আয়ের চেয়ে একধাপ নিচে জীবনযাপন করুন।
+          </p>
+        </div>
+
+        <!-- Rule 2 -->
+        <div class="bg-[#0e1526] border border-slate-800 hover:border-emerald-500/40 p-5 rounded-2xl space-y-3 transition-all">
+          <div class="flex items-center justify-between">
+            <span class="font-english text-xs font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-md">RULE 02</span>
+            <span class="text-xs text-emerald-300 italic font-english">"Savings today, freedom tomorrow"</span>
+          </div>
+          <h3 class="font-bold text-white text-base">আগে নিজের জন্য জমান, তারপর খরচ</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            <span class="font-english">`আয় - খরচ = সঞ্চয়`</span> নয়; বরং অনুসরণ করুন <span class="font-english text-emerald-400 font-semibold">`আয় - সঞ্চয় = খরচ`</span>। মাসের শুরুতেই ২০-৩০% টাকা ইনভেস্টমেন্টে নিয়ে নিন।
+          </p>
+        </div>
+
+        <!-- Rule 3 -->
+        <div class="bg-[#0e1526] border border-slate-800 hover:border-emerald-500/40 p-5 rounded-2xl space-y-3 transition-all">
+          <div class="flex items-center justify-between">
+            <span class="font-english text-xs font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-md">RULE 03</span>
+            <span class="text-xs text-emerald-300 italic font-english">"Make money work for you"</span>
+          </div>
+          <h3 class="font-bold text-white text-base">অ্যাসেট তৈরি করুন, লায়াবিলিটি নয়</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            শো-অফ করার বদলে সেই টাকা এমন জায়গায় খাটান যা রিটার্ন দেয়। পরে সেই রিটার্নের টাকায় মনের শখ পূরণ করুন।
+          </p>
+        </div>
+
+        <!-- Rule 4 -->
+        <div class="bg-[#0e1526] border border-slate-800 hover:border-emerald-500/40 p-5 rounded-2xl space-y-3 transition-all">
+          <div class="flex items-center justify-between">
+            <span class="font-english text-xs font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-md">RULE 04</span>
+            <span class="text-xs text-emerald-300 italic font-english">"Debt is a tool, not a lifestyle"</span>
+          </div>
+          <h3 class="font-bold text-white text-base">খারাপ ঋণ বা ডেট থেকে দূরে থাকুন</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            ক্রেডিট কার্ডের উচ্চ সুদ বা অহেতুক ইএমআই আপনাকে একজায়গায় আটকে রাখে। ঋণকে কখনোই লাইফস্টাইল বানাবেন না।
+          </p>
+        </div>
+
+        <!-- Rule 5 (Full Width on MD) -->
+        <div class="bg-[#0e1526] border border-slate-800 hover:border-emerald-500/40 p-5 rounded-2xl space-y-3 transition-all md:col-span-2">
+          <div class="flex items-center justify-between">
+            <span class="font-english text-xs font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-md">RULE 05</span>
+            <span class="text-xs text-emerald-300 italic font-english">"You are your most valuable asset"</span>
+          </div>
+          <h3 class="font-bold text-white text-base">সবচেয়ে বড় ইনভেস্টমেন্ট করুন নিজের ওপর</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            নতুন স্কিল শেখা, স্বাস্থ্যের যত্ন নেওয়া এবং ভালো বই পড়ার পিছনে যে সময় ও অর্থ দেবেন, সেটি আপনাকে জীবনের সেরা রিটার্ন দেবে।
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section 3: Practical 3 Steps -->
+    <section class="space-y-6 bg-[#0e1526] border border-slate-800 p-6 sm:p-8 rounded-3xl shadow-xl">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white flex items-center gap-3">
+        <span class="text-emerald-400 font-english">৩.</span> আজ থেকেই শুরু করার ৩টি প্র্যাকটিক্যাল স্টেপ
+      </h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800 text-center space-y-2">
+          <div class="text-2xl">📊</div>
+          <h4 class="font-bold text-white text-sm">৫০/৩০/২০ রুল</h4>
+          <p class="text-xs text-slate-400">৫০% প্রয়োজনে, ৩০% ইচ্ছায়, এবং ২০% সরাসরি সেভিংস ও ইনভেস্টমেন্টে।</p>
+        </div>
+
+        <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800 text-center space-y-2">
+          <div class="text-2xl">📝</div>
+          <h4 class="font-bold text-white text-sm">ইনকাম ট্র্যাকিং</h4>
+          <p class="text-xs text-slate-400">আগামী ৩০ দিন প্রতিটি খরচের হিসেব অ্যাপ বা খাতায় লিখে রাখুন।</p>
+        </div>
+
+        <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800 text-center space-y-2">
+          <div class="text-2xl">🛡️</div>
+          <h4 class="font-bold text-white text-sm">ইমার্জেন্সি ফান্ড</h4>
+          <p class="text-xs text-slate-400">বিপদের কথা ভেবে ৩ থেকে ৬ মাসের চলার মতো টাকা সেভিংস ফান্সে জমা রাখুন।</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Banner -->
+    <footer class="bg-gradient-to-r from-emerald-500/20 via-slate-900 to-slate-900 border border-emerald-500/30 p-8 rounded-3xl text-center space-y-4">
+      <h3 class="text-xl sm:text-2xl font-bold text-white">
+        আজকের সিদ্ধান্তই নির্ধারণ করবে আপনার আগামী দিনের স্বাধীনতা
+      </h3>
+      <p class="text-slate-300 text-sm max-w-xl mx-auto">
+        আজ থেকেই লায়াবিলিটি কেনা কমান, অ্যাসেট গঠন করুন এবং নিজের ফাইনান্সিয়াল ফিউচারকে সুরক্ষিত করুন!
+      </p>
+    </footer>
+
+  </article>
+
+
+
+
+
+
+
+
+<script src="script.js"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
+</body>
+</html>
