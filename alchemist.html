@@ -335,9 +335,52 @@ border: 1px solid rgba(255, 255, 255, 0.08);
     </div>
 </section>
 
-<h1 class="quotes text-center">Quotes</h1>
+<div class="flex items-center justify-center p-4 font-sans">
+  <!-- Main Premium Card Wrapper -->
+  <div class="relative max-w-xl w-full bg-slate-900/80 backdrop-blur-2xl border border-slate-800/80 rounded-3xl p-6 sm:p-10 shadow-2xl shadow-indigo-500/10 overflow-hidden">
+    
+    <!-- Ambient Background Glow Effects -->
+    <div class="absolute -top-20 -left-20 w-44 h-44 bg-purple-500/20 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-20 -right-20 w-44 h-44 bg-indigo-500/20 rounded-full blur-3xl pointer-events-none"></div>
+    
+    <!-- Background Decorative Quote Icon -->
+    <div class="absolute -top-2 left-6 text-slate-800/40 pointer-events-none select-none text-9xl font-serif leading-none">
+      “
+    </div>
 
+    <!-- Header Section -->
+    <div class="relative z-10 mb-6">
+      <h1 class="quotes text-center text-xs sm:text-sm font-bold tracking-widest uppercase text-indigo-400 bg-indigo-500/10 py-1.5 px-5 rounded-full w-max mx-auto border border-indigo-500/20 shadow-inner">
+        Quotes
+      </h1>
+    </div>
 
+    <!-- Quote Content Section -->
+    <div class="relative z-10 my-8 px-2">
+      <p class="para text-center text-lg sm:text-xl font-medium text-slate-200 leading-relaxed sm:leading-loose tracking-wide">
+        "একটা স্বপ্ন সত্যি হওয়ার পথে একমাত্র বড় বাধা হলো হেরে যাওয়ার ভয়। নিজের মনকে বুঝিয়ে বলো—কষ্ট পাওয়ার ভয়টা আসল কষ্টের চেয়েও অনেক বেশি যন্ত্রণাদায়ক।"
+      </p>
+    </div>
+
+    <!-- Navigation Buttons Section -->
+    <div class="relative z-10 flex items-center justify-between gap-4 pt-6 border-t border-slate-800/80">
+      
+      <!-- Prev Button -->
+      <button class="left px-6 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white font-medium text-sm transition-all duration-300 hover:-translate-x-1 active:translate-x-0 border border-slate-700/50 flex items-center gap-2 shadow-lg hover:shadow-slate-700/20 cursor-pointer">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+        Prev
+      </button>
+
+      <!-- Next Button -->
+      <button class="right px-6 py-2.5 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white font-semibold text-sm transition-all duration-300 hover:translate-x-1 active:translate-x-0 shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 flex items-center gap-2 cursor-pointer">
+        Next
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+      </button>
+
+    </div>
+
+  </div>
+</div>
 
 
 <br>
@@ -435,7 +478,7 @@ border: 1px solid rgba(255, 255, 255, 0.08);
     </div>
 </footer>
 
-  <script src="script.js"></script>
+  <script src="alchemist.js"></script>
 <script src="https://unpkg.com/scrollreveal"></script>
 </body>
 </html>
