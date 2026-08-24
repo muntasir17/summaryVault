@@ -40,8 +40,6 @@ border: 1px solid rgba(255, 255, 255, 0.08);
         transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         will-change: opacity, transform;
     }
-
-    /* স্ক্রোলে দেখার সাথে সাথে সুন্দরভাবে ভেসে উঠবে */
     .reveal.active {
         opacity: 1;
         transform: translateY(0);
@@ -92,13 +90,8 @@ border: 1px solid rgba(255, 255, 255, 0.08);
                         Blog
                     </a>
                 </li>
-
-
-
-
             </ul>
 
-            <!-- 3. Right Action Area (Search + CTA) -->
             <div class="flex items-center gap-2.5 sm:gap-3">
                 <!-- CTA Button -->
                 <a href="index.html" class="glow-effect px-3.5 sm:px-5 py-2 text-xs font-bold text-slate-950 bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-400 rounded-xl transition-all duration-300 hover:scale-105 active:scale-95 shadow-md shadow-amber-500/10 whitespace-nowrap">
@@ -257,7 +250,6 @@ border: 1px solid rgba(255, 255, 255, 0.08);
             </div>
         </div>
 
-        <!-- 4. DEEP LESSONS / MAIN TAKEAWAYS (গভীর শিক্ষা) -->
         <div class="space-y-6">
             <h2 class="text-xl sm:text-2xl font-extrabold text-white flex items-center gap-2">
                 <span class="text-amber-400">💡</span> এই বইয়ের ৪টি মূল জীবনদর্শন
@@ -347,7 +339,48 @@ border: 1px solid rgba(255, 255, 255, 0.08);
     </div>
 </section>
 
+<div class="flex items-center justify-center p-4 font-sans">
+  <!-- Main Premium Card Wrapper -->
+  <div class="relative max-w-xl w-full bg-slate-900/80 backdrop-blur-2xl border border-slate-800/80 rounded-3xl p-6 sm:p-10 shadow-2xl shadow-indigo-500/10 overflow-hidden">
+    
+    <!-- Ambient Background Glow Effects -->
+    <div class="absolute -top-20 -left-20 w-44 h-44 bg-purple-500/20 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-20 -right-20 w-44 h-44 bg-indigo-500/20 rounded-full blur-3xl pointer-events-none"></div>
+    
+    <!-- Background Decorative Quote Icon -->
+    <div class="absolute -top-2 left-6 text-slate-800/40 pointer-events-none select-none text-9xl font-serif leading-none">
+      “
+    </div>
 
+    <!-- Header Section -->
+    <div class="relative z-10 mb-6">
+      <h1 class="quotes text-center text-xs sm:text-sm font-bold tracking-widest uppercase text-indigo-400 bg-indigo-500/10 py-1.5 px-5 rounded-full w-max mx-auto border border-indigo-500/20 shadow-inner">
+        Quotes
+      </h1>
+    </div>
+
+    <!-- Quote Content Section -->
+    <div class="relative z-10 my-8 px-2">
+      <p class="para text-center text-lg sm:text-xl font-medium text-slate-200 leading-relaxed sm:leading-loose tracking-wide">
+  
+      </p>
+    </div>
+
+    <div class="relative z-10 flex items-center justify-between gap-4 pt-6 border-t border-slate-800/80">
+
+      <button class="left px-6 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white font-medium text-sm transition-all duration-300 hover:-translate-x-1 active:translate-x-0 border border-slate-700/50 flex items-center gap-2 shadow-lg hover:shadow-slate-700/20 cursor-pointer">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+        Prev
+      </button>
+      <button class="right px-6 py-2.5 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white font-semibold text-sm transition-all duration-300 hover:translate-x-1 active:translate-x-0 shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 flex items-center gap-2 cursor-pointer">
+        Next
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+      </button>
+
+    </div>
+
+  </div>
+</div>
 
 
 
@@ -447,7 +480,7 @@ border: 1px solid rgba(255, 255, 255, 0.08);
     </div>
 </footer>
 
-  <script src="script.js"></script>
+  <script src="ikigai.js"></script>
 <script src="https://unpkg.com/scrollreveal"></script>
 </body>
 </html>
