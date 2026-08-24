@@ -28,8 +28,7 @@ tailwind.config = {
 <header class="fixed bg-[#080C14] rounded-3xl top-0 left-0 right-0 z-50 p-3 sm:p-4 lg:p-6 transition-all duration-300">
     <div class="max-w-7xl mx-auto">
         <nav class="glass-card rounded-2xl px-4 sm:px-5 py-3 flex items-center justify-between shadow-2xl shadow-black/50 border border-white/10 hover:border-white/20">
-            
-            <!-- 1. Brand / Logo -->
+
             <a href="#" class="flex items-center gap-2.5 sm:gap-3 group">
                 <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-amber-500 via-amber-400 to-yellow-200 flex items-center justify-center text-slate-950 font-black text-lg sm:text-xl shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform duration-300">
                     SV
@@ -44,7 +43,6 @@ tailwind.config = {
                 </div>
             </a>
 
-            <!-- 2. Navigation Links (Desktop: >= 1024px) -->
             <ul class="hidden lg:flex items-center gap-1 bg-white/[0.03] border border-white/5 p-1.5 rounded-xl backdrop-blur-md">
                 <li>
                     <a href="index.html" class="px-4 py-2 text-sm font-semibold text-white bg-white/10 rounded-lg shadow-inner block">
@@ -70,12 +68,11 @@ tailwind.config = {
             </ul>
 
             <div class="flex items-center gap-2.5 sm:gap-3">
-                <!-- CTA Button -->
+
                 <a href="index.html" class="glow-effect px-3.5 sm:px-5 py-2 text-xs font-bold text-slate-950 bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-400 rounded-xl transition-all duration-300 hover:scale-105 active:scale-95 shadow-md shadow-amber-500/10 whitespace-nowrap">
                     Get Started
             </a>
 
-                <!-- 4. Mobile & Tablet Menu Toggle Button (< 1024px) -->
                 <button id="mobile-toggle" class="lg:hidden p-2 rounded-xl text-slate-300 hover:text-white hover:bg-white/10 focus:outline-none transition-colors" aria-label="Toggle Navigation">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
@@ -84,10 +81,8 @@ tailwind.config = {
             </div>
         </nav>
 
-        <!-- 5. Mobile & Tablet Drawer Menu -->
         <div id="mobile-menu" class="hidden lg:hidden mt-3 glass-card rounded-2xl p-5 border border-white/10 shadow-2xl transition-all">
 
-            <!-- Navigation Links -->
             <div class="flex flex-col space-y-2">
                 <a href="index.html" class="px-4 py-2.5 rounded-xl text-sm font-semibold text-white bg-white/10 block">Home</a>
                 <a href="bookpage.html" class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 block">Books</a>
@@ -103,13 +98,11 @@ tailwind.config = {
 
 <section id="tuesdays-with-morrie-summary" class="relative py-12 lg:py-20 bg-[#080C14] text-slate-100 overflow-hidden">
     
-    <!-- Background Ambient Glows -->
     <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-violet-500/10 blur-[180px] rounded-full pointer-events-none"></div>
     <div class="absolute bottom-20 right-10 w-[400px] h-[400px] bg-amber-500/10 blur-[150px] rounded-full pointer-events-none"></div>
 
     <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 space-y-12">
         
-        <!-- 1. BACK BUTTON & TOP BADGES -->
         <div class="flex items-center justify-between gap-4">
             <a href="bookpage.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl glass-card text-xs sm:text-sm font-semibold text-slate-300 hover:text-amber-400 border border-white/10 hover:border-amber-400/30 transition-all">
                 <span>&larr;</span>
@@ -126,11 +119,9 @@ tailwind.config = {
             </div>
         </div>
 
-        <!-- 2. BOOK HERO HEADER -->
         <div class="glass-card rounded-3xl p-6 sm:p-10 border border-white/10 relative overflow-hidden space-y-6">
             <div class="flex flex-col sm:flex-row gap-6 items-center sm:items-start">
-                
-                <!-- Book Title & Meta -->
+
                 <div class="space-y-3 text-center sm:text-left flex-1">
                     <span class="text-xs font-bold uppercase tracking-widest text-amber-400">হৃদয়স্পর্শী কালজয়ী মেমোয়ার</span>
                     <h1 class="text-3xl sm:text-4xl font-black text-white tracking-tight leading-tight">
@@ -140,8 +131,7 @@ tailwind.config = {
                     <p class="text-sm text-slate-300 font-medium">
                         মূল লেখক: <span class="text-white font-semibold">Mitch Albom (মিচ অ্যালবম)</span>
                     </p>
-                    
-                    <!-- Category Tags -->
+
                     <div class="flex flex-wrap justify-center sm:justify-start gap-2 pt-2">
                         <span class="px-3 py-1 rounded-md text-[11px] font-bold bg-violet-500/10 text-violet-300 border border-violet-500/20">মেমোয়ার</span>
                         <span class="px-3.5 py-1 rounded-md text-[11px] font-bold bg-amber-500/10 text-amber-300 border border-amber-500/20">জীবনদর্শন</span>
@@ -150,7 +140,6 @@ tailwind.config = {
                 </div>
             </div>
 
-            <!-- THE HOOK BANNER -->
             <div class="p-5 rounded-2xl bg-gradient-to-r from-violet-500/10 via-amber-400/5 to-transparent border border-violet-400/20">
                 <p class="text-sm sm:text-base text-violet-200 font-semibold italic leading-relaxed text-center sm:text-left">
                     "যদি আপনি জানেন যে আপনার হাতে আর মাত্র কয়েকটা দিন বাকি আছে, তবে আপনি জীবনের কোন বিষয়গুলোকে সবচেয়ে বেশি গুরুত্ব দেবেন? মৃত্যুপথযাত্রী এক বৃদ্ধ শিক্ষকের মৃত্যুর আগের ১৪টি মঙ্গলবারের ক্লাস কীভাবে বদলে দিয়েছিল তার এক ছাত্রের পুরো জীবন দৃষ্টিভঙ্গি?"
@@ -158,13 +147,11 @@ tailwind.config = {
             </div>
         </div>
 
-        <!-- 3. DETAILED STORYLINE BREAKDOWN (৪টি অধ্যায়ে বিস্তারিত সামারি) -->
         <div class="space-y-8">
             <h2 class="text-2xl sm:text-3xl font-extrabold text-white flex items-center gap-3 border-b border-white/10 pb-4">
                 <span class="text-amber-400">📖</span> গল্পের সত্য ঘটনা ও জীবনভিত্তিক আলোচনা
             </h2>
-
-            <!-- PART 1 -->
+    
             <div class="glass-card rounded-3xl p-6 sm:p-8 border border-white/10 space-y-4">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-violet-400/10 text-violet-300 text-xs font-bold">
                     পর্ব ১: ১৬ বছর পর পুনর্মিলন ও শেষ পাঠশালা
@@ -178,7 +165,6 @@ tailwind.config = {
                 </p>
             </div>
 
-            <!-- PART 2 -->
             <div class="glass-card rounded-3xl p-6 sm:p-8 border border-white/10 space-y-4">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-400/10 text-amber-400 text-xs font-bold">
                     পর্ব ২: ১৪টি মঙ্গলবার এবং জীবনের ১৪টি মূল বিষয়
@@ -191,8 +177,6 @@ tailwind.config = {
                     মোরি শেখান যে আমাদের সমাজ মানুষকে ভুল শিক্ষা দেয়—টাকা জমানো, বড় গাড়ি কেনা বা খ্যাতি অর্জন করাই নাকি জীবনের আসল সাফল্য। কিন্তু মরার সময় এগুলো একটাও সাথে যায় না। মোরির মতে, <strong class="text-white">"সংস্কৃতি যদি আপনাকে ভালো মানুষ হতে না শেখায়, তবে নিজের সংস্কৃতি নিজে তৈরি করুন।"</strong>
                 </p>
             </div>
-
-            <!-- PART 3 -->
             <div class="glass-card rounded-3xl p-6 sm:p-8 border border-white/10 space-y-4">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-violet-400/10 text-violet-300 text-xs font-bold">
                     পর্ব ৩: "মৃত্যুকে গ্রহণ করো, তবেই বাঁচতে শিখবে"
@@ -201,12 +185,11 @@ tailwind.config = {
                 <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
                     অধ্যাপক মোরি বিশ্বাস করতেন, অধিকাংশ মানুষ আসলে সত্যি সত্যি বেঁচে নেই! তারা এমনভাবে ঘুমন্ত অবস্থায় জীবন কাটায় যেন তারা কখনোই মরবে না। যখন মানুষ অনুধাবন করে যে তাকে যেকোনো মুহূর্তে চলে যেতে হতে পারে, তখনই সে অপ্রয়োজনীয় জঞ্জাল বাদ দিয়ে আসল কাজে মনোযোগ দেয়।
                 </p>
-                <p class="text-sm sm:text-base text-slate-300 leading-relaxed font-semibold text-slate-200">
+                <p class="text-sm sm:text-base text-slate-300 leading-relaxed font-semibold ">
                     মোরি বলেন: <em class="text-amber-200">"Once you learn how to die, you learn how to live" (আপনি যখন মৃত্যুকে সানন্দে গ্রহণ করতে শিখবেন, তখনই আপনি কীভাবে বাঁচতে হয় তা শিখবেন)</em>। তিনি নিজেকে এবং অন্যদের সম্পূর্ণ ক্ষমা করে দিয়ে মুক্ত মনে বিদায় নেওয়ার আকুল আহ্বান জানান।
                 </p>
             </div>
 
-            <!-- PART 4 -->
             <div class="glass-card rounded-3xl p-6 sm:p-8 border border-white/10 space-y-4">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-400/10 text-amber-400 text-xs font-bold">
                     পর্ব ৪: শেষ বিদায় ও এক জীবনের রূপান্তর
@@ -221,15 +204,12 @@ tailwind.config = {
             </div>
         </div>
 
-        <!-- 4. DEEP LESSONS / MAIN TAKEAWAYS (গভীর শিক্ষা) -->
         <div class="space-y-6">
             <h2 class="text-xl sm:text-2xl font-extrabold text-white flex items-center gap-2">
                 <span class="text-amber-400">💡</span> এই বইয়ের ৪টি মূল জীবনদর্শন
             </h2>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                
-                <!-- Lesson 1 -->
                 <div class="glass-card p-6 rounded-2xl border border-white/10 hover:border-amber-400/40 transition-all space-y-2">
                     <div class="flex items-center gap-3">
                         <span class="w-8 h-8 rounded-xl bg-violet-400/10 text-violet-300 font-black flex items-center justify-center text-sm border border-violet-400/20">১</span>
@@ -239,8 +219,6 @@ tailwind.config = {
                         "Love each other or perish." একে অপরকে ভালোবাসুন নতুবা নিঃশেষ হয়ে যান। বস্তুগত ধন-সম্পদ নয়, কেবল প্রিয়জনের ভালোবাসাই মানুষের শেষ বয়সে পাশে থাকে।
                     </p>
                 </div>
-
-                <!-- Lesson 2 -->
                 <div class="glass-card p-6 rounded-2xl border border-white/10 hover:border-amber-400/40 transition-all space-y-2">
                     <div class="flex items-center gap-3">
                         <span class="w-8 h-8 rounded-xl bg-violet-400/10 text-violet-300 font-black flex items-center justify-center text-sm border border-violet-400/20">২</span>
@@ -251,7 +229,6 @@ tailwind.config = {
                     </p>
                 </div>
 
-                <!-- Lesson 3 -->
                 <div class="glass-card p-6 rounded-2xl border border-white/10 hover:border-amber-400/40 transition-all space-y-2">
                     <div class="flex items-center gap-3">
                         <span class="w-8 h-8 rounded-xl bg-violet-400/10 text-violet-300 font-black flex items-center justify-center text-sm border border-violet-400/20">৩</span>
@@ -262,7 +239,6 @@ tailwind.config = {
                     </p>
                 </div>
 
-                <!-- Lesson 4 -->
                 <div class="glass-card p-6 rounded-2xl border border-white/10 hover:border-amber-400/40 transition-all space-y-2">
                     <div class="flex items-center gap-3">
                         <span class="w-8 h-8 rounded-xl bg-violet-400/10 text-violet-300 font-black flex items-center justify-center text-sm border border-violet-400/20">৪</span>
@@ -276,7 +252,6 @@ tailwind.config = {
             </div>
         </div>
 
-        <!-- 5. ACTIONABLE TAKEAWAY (বাস্তব জীবনে প্রয়োগ) -->
         <div class="glass-card rounded-3xl p-6 sm:p-8 border border-violet-400/30 bg-gradient-to-r from-violet-500/10 via-slate-900/90 to-slate-900/90 space-y-4">
             <h2 class="text-lg sm:text-xl font-bold text-violet-300 flex items-center gap-2">
                 <span>🎯</span> আজ থেকেই জীবনে যা প্রয়োগ করবেন:
@@ -297,7 +272,6 @@ tailwind.config = {
             </ul>
         </div>
 
-        <!-- 6. FINAL CONCLUSION / QUOTE BANNER -->
         <div class="p-6 sm:p-8 rounded-3xl bg-slate-900/80 border border-white/10 text-center space-y-3 shadow-2xl">
             <span class="text-xs font-bold uppercase tracking-widest text-violet-300">বইয়ের সবচেয়ে হৃদয়স্পর্শী উক্তি</span>
             <blockquote class="text-lg sm:text-2xl font-extrabold text-white italic leading-snug max-w-2xl mx-auto">
@@ -312,26 +286,22 @@ tailwind.config = {
 </section>
 
 <div class="flex items-center justify-center p-4 font-sans">
-  <!-- Main Premium Card Wrapper -->
+
   <div class="relative max-w-xl w-full bg-slate-900/80 backdrop-blur-2xl border border-slate-800/80 rounded-3xl p-6 sm:p-10 shadow-2xl shadow-indigo-500/10 overflow-hidden">
     
-    <!-- Ambient Background Glow Effects -->
     <div class="absolute -top-20 -left-20 w-44 h-44 bg-purple-500/20 rounded-full blur-3xl pointer-events-none"></div>
     <div class="absolute -bottom-20 -right-20 w-44 h-44 bg-indigo-500/20 rounded-full blur-3xl pointer-events-none"></div>
     
-    <!-- Background Decorative Quote Icon -->
     <div class="absolute -top-2 left-6 text-slate-800/40 pointer-events-none select-none text-9xl font-serif leading-none">
       “
     </div>
 
-    <!-- Header Section -->
     <div class="relative z-10 mb-6">
       <h1 class="quotes text-center text-xs sm:text-sm font-bold tracking-widest uppercase text-indigo-400 bg-indigo-500/10 py-1.5 px-5 rounded-full w-max mx-auto border border-indigo-500/20 shadow-inner">
         Quotes
       </h1>
     </div>
 
-    <!-- Quote Content Section -->
     <div class="relative z-10 my-8 px-2">
       <p class="para text-center text-lg sm:text-xl font-medium text-slate-200 leading-relaxed sm:leading-loose tracking-wide">
         জীবনের সবচেয়ে গুরুত্বপূর্ণ কাজ হলো কীভাবে অন্যকে ভালোবাসা দিতে হয় তা শেখা, এবং সেই ভালোবাসাকে নিজের হৃদয়ে গ্রহণ করার পথটা খোলা রাখা।

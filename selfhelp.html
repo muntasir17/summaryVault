@@ -39,8 +39,6 @@ border: 1px solid rgba(255, 255, 255, 0.08);
         transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         will-change: opacity, transform;
     }
-
-    /* স্ক্রোলে দেখার সাথে সাথে সুন্দরভাবে ভেসে উঠবে */
     .reveal.active {
         opacity: 1;
         transform: translateY(0);
@@ -51,8 +49,7 @@ border: 1px solid rgba(255, 255, 255, 0.08);
 <header class="fixed top-0 left-0 right-0 z-50 p-3 sm:p-4 lg:p-6 transition-all duration-300">
     <div class="max-w-7xl mx-auto">
         <nav class="glass-card rounded-2xl px-4 sm:px-5 py-3 flex items-center justify-between shadow-2xl shadow-black/50 border border-white/10 hover:border-white/20">
-            
-            <!-- 1. Brand / Logo -->
+ 
             <a href="#" class="flex items-center gap-2.5 sm:gap-3 group">
                 <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-amber-500 via-amber-400 to-yellow-200 flex items-center justify-center text-slate-950 font-black text-lg sm:text-xl shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform duration-300">
                     SV
@@ -66,8 +63,6 @@ border: 1px solid rgba(255, 255, 255, 0.08);
                     </span>
                 </div>
             </a>
-
-            <!-- 2. Navigation Links (Desktop: >= 1024px) -->
             <ul class="hidden lg:flex items-center gap-1 bg-white/[0.03] border border-white/5 p-1.5 rounded-xl backdrop-blur-md">
                 <li>
                     <a href="index.html" class="px-4 py-2 text-sm font-semibold text-white bg-white/10 rounded-lg shadow-inner block">
@@ -92,14 +87,10 @@ border: 1px solid rgba(255, 255, 255, 0.08);
                 </li>
             </ul>
 
-            <!-- 3. Right Action Area (Search + CTA) -->
             <div class="flex items-center gap-2.5 sm:gap-3">
-                <!-- CTA Button -->
                 <a href="index.html" class="glow-effect px-3.5 sm:px-5 py-2 text-xs font-bold text-slate-950 bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-400 rounded-xl transition-all duration-300 hover:scale-105 active:scale-95 shadow-md shadow-amber-500/10 whitespace-nowrap">
                     Get Started
             </a>
-
-                <!-- 4. Mobile & Tablet Menu Toggle Button (< 1024px) -->
                 <button id="mobile-toggle" class="lg:hidden p-2 rounded-xl text-slate-300 hover:text-white hover:bg-white/10 focus:outline-none transition-colors" aria-label="Toggle Navigation">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
@@ -107,11 +98,7 @@ border: 1px solid rgba(255, 255, 255, 0.08);
                 </button>
             </div>
         </nav>
-
-        <!-- 5. Mobile & Tablet Drawer Menu -->
         <div id="mobile-menu" class="hidden lg:hidden mt-3 glass-card rounded-2xl p-5 border border-white/10 shadow-2xl transition-all">
-
-            <!-- Navigation Links -->
             <div class="flex flex-col space-y-2">
                 <a href="index.html" class="px-4 py-2.5 rounded-xl text-sm font-semibold text-white bg-white/10 block">Home</a>
                 <a href="bookpage.html" class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 block">Books</a>
@@ -129,25 +116,19 @@ border: 1px solid rgba(255, 255, 255, 0.08);
 <div class="grid grid-cols-1 gap-[5px] md:grid-cols-2 justify-self-center justify-items-center lg:grid-cols-3 xl:grid-cols-4 mt-20">
 <!-- Miracle Moring -->
 <div class="glass-card rounded-3xl p-5 border border-white/10 hover:border-amber-400/50 transition-all duration-500 w-full max-w-[320px] mx-auto flex flex-col gap-4 shadow-2xl relative overflow-hidden group">
-    
-    <!-- Ambient Glow Effect -->
+
     <div class="absolute -top-16 -right-16 w-36 h-36 bg-amber-500/10 rounded-full blur-3xl group-hover:bg-amber-400/20 transition-all duration-700 pointer-events-none"></div>
 
-    <!-- 1. BOOK COVER IMAGE -->
     <div class="w-full h-64 rounded-2xl overflow-hidden shadow-xl border border-white/10 relative group/img cursor-pointer flex-shrink-0">
-        <!-- আপনার ইমেজের লিংক এখানে দিন -->
         <img 
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReXCPt-KBL43TS7VFl8e6kjPFtfFP7DiljmOq68mPtKao8SjhMEEoMeJ1O&s=10" 
             alt="The Miracle Morning Cover" 
             class="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-700 ease-out"
         />
-        
-        <!-- Reading Time Badge -->
         <span class="absolute top-3 left-3 px-2.5 py-1 bg-amber-400/90 text-slate-950 text-[10px] font-black uppercase tracking-wider rounded-lg shadow-md backdrop-blur-md">
             ⏱️ ৫ মিনিট পাঠ
         </span>
 
-        <!-- Hover Overlay -->
         <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
             <div class="w-10 h-10 rounded-full bg-amber-400 text-slate-950 flex items-center justify-center font-bold shadow-lg shadow-amber-400/30 transform scale-75 group-hover/img:scale-100 transition-transform duration-300">
                 ➔
@@ -155,28 +136,23 @@ border: 1px solid rgba(255, 255, 255, 0.08);
         </div>
     </div>
 
-    <!-- 2. BOOK DETAILS CONTENT -->
     <div class="space-y-3 w-full text-left">
-        
-        <!-- Title & Rating -->
+
         <div class="flex items-center justify-between gap-2">
             <h3 class="text-lg font-black text-white tracking-tight group-hover:text-amber-400 transition-colors truncate">
                 The Miracle Morning
             </h3>
 
-            <!-- Rating Badge -->
             <div class="flex items-center gap-1 px-2 py-0.5 bg-slate-900/80 border border-amber-400/30 rounded-full text-xs font-extrabold text-amber-400 shadow-inner flex-shrink-0">
                 <svg class="w-3 h-3 fill-amber-400" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                 <span>4.7</span>
             </div>
         </div>
 
-        <!-- Author Name -->
         <p class="text-xs text-slate-400 font-medium truncate">
             লেখক: <span class="text-slate-200 font-semibold">Hal Elrod (হ্যাল এলরড)</span>
         </p>
 
-        <!-- Category Badges -->
         <div class="flex flex-wrap gap-1.5">
             <span class="px-2.5 py-0.5 rounded-md text-[10px] font-bold bg-amber-500/10 text-amber-300 border border-amber-500/20">
                Self-help
@@ -189,12 +165,9 @@ border: 1px solid rgba(255, 255, 255, 0.08);
             </span>
         </div>
 
-        <!-- Summary Excerpt -->
         <p class="text-xs text-slate-300 leading-relaxed italic line-clamp-2 bg-white/[0.02] p-2.5 rounded-xl border border-white/5">
             "সকাল ৮টার আগেই নিজের জীবন বদলে দেওয়ার ৬টি জাদুকরী অভ্যাস ।"
         </p>
-
-        <!-- CTA Button -->
         <div class="pt-1">
             <a href="miraclemorning.html" class="w-full block text-center py-2.5 rounded-xl bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-400 text-slate-950 text-xs font-bold hover:scale-[1.02] active:scale-95 transition-all shadow-md shadow-amber-500/10">
                  সারসংক্ষেপ পড়ুন →
@@ -206,24 +179,19 @@ border: 1px solid rgba(255, 255, 255, 0.08);
 <!-- Ikigai  -->
 <div class="glass-card rounded-3xl p-5 border border-white/10 hover:border-amber-400/50 transition-all duration-500 w-full max-w-[320px] mx-auto flex flex-col gap-4 shadow-2xl relative overflow-hidden group">
     
-    <!-- Ambient Glow Effect -->
     <div class="absolute -top-16 -right-16 w-36 h-36 bg-amber-500/10 rounded-full blur-3xl group-hover:bg-amber-400/20 transition-all duration-700 pointer-events-none"></div>
 
-    <!-- 1. BOOK COVER IMAGE -->
     <div class="w-full h-64 rounded-2xl overflow-hidden shadow-xl border border-white/10 relative group/img cursor-pointer flex-shrink-0">
-        <!-- আপনার ইমেজের লিংক এখানে দিন -->
         <img 
             src="https://m.media-amazon.com/images/I/81l3rZK4lnL._AC_UF1000,1000_QL80_.jpg" 
             alt="Ikigai Cover" 
             class="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-700 ease-out"
         />
         
-        <!-- Reading Time Badge -->
         <span class="absolute top-3 left-3 px-2.5 py-1 bg-amber-400/90 text-slate-950 text-[10px] font-black uppercase tracking-wider rounded-lg shadow-md backdrop-blur-md">
             ⏱️ ৫ মিনিট পাঠ
         </span>
 
-        <!-- Hover Overlay -->
         <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
             <div class="w-10 h-10 rounded-full bg-amber-400 text-slate-950 flex items-center justify-center font-bold shadow-lg shadow-amber-400/30 transform scale-75 group-hover/img:scale-100 transition-transform duration-300">
                 ➔
@@ -231,28 +199,23 @@ border: 1px solid rgba(255, 255, 255, 0.08);
         </div>
     </div>
 
-    <!-- 2. BOOK DETAILS CONTENT -->
     <div class="space-y-3 w-full text-left">
         
-        <!-- Title & Rating -->
         <div class="flex items-center justify-between gap-2">
             <h3 class="text-lg font-black text-white tracking-tight group-hover:text-amber-400 transition-colors truncate">
                 Ikigai
             </h3>
 
-            <!-- Rating Badge -->
             <div class="flex items-center gap-1 px-2 py-0.5 bg-slate-900/80 border border-amber-400/30 rounded-full text-xs font-extrabold text-amber-400 shadow-inner flex-shrink-0">
                 <svg class="w-3 h-3 fill-amber-400" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                 <span>4.8</span>
             </div>
         </div>
 
-        <!-- Author Name -->
         <p class="text-xs text-slate-400 font-medium truncate">
             লেখক: <span class="text-slate-200 font-semibold">Héctor García & F. Miralles</span>
         </p>
 
-        <!-- Category Badges -->
         <div class="flex flex-wrap gap-1.5">
             <span class="px-2.5 py-0.5 rounded-md text-[10px] font-bold bg-teal-500/10 text-teal-300 border border-teal-500/20">
                 Self-help
@@ -264,13 +227,9 @@ border: 1px solid rgba(255, 255, 255, 0.08);
                 Long Life
             </span>
         </div>
-
-        <!-- Summary Excerpt -->
         <p class="text-xs text-slate-300 leading-relaxed italic line-clamp-2 bg-white/[0.02] p-2.5 rounded-xl border border-white/5">
             "দীর্ঘ ও আনন্দময় জীবন যাপনের জাপানি গোপন রহস্য এবং জীবনের আসল উদ্দেশ্য খুঁজে বের করার উপায়।"
         </p>
-
-        <!-- CTA Button -->
         <div class="pt-1">
             <a href="ikigai.html" class="w-full block text-center py-2.5 rounded-xl bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-400 text-slate-950 text-xs font-bold hover:scale-[1.02] active:scale-95 transition-all shadow-md shadow-amber-500/10">
                 সারসংক্ষেপ পড়ুন &rarr;
@@ -281,25 +240,20 @@ border: 1px solid rgba(255, 255, 255, 0.08);
 </div>
 <!-- As a Man Thinketh  -->
 <div class="glass-card rounded-3xl p-5 border border-white/10 hover:border-amber-400/50 transition-all duration-500 w-full max-w-[320px] mx-auto flex flex-col gap-4 shadow-2xl relative overflow-hidden group">
-    
-    <!-- Ambient Glow Effect -->
-    <div class="absolute -top-16 -right-16 w-36 h-36 bg-amber-500/10 rounded-full blur-3xl group-hover:bg-amber-400/20 transition-all duration-700 pointer-events-none"></div>
 
-    <!-- 1. BOOK COVER IMAGE -->
+    <div class="absolute -top-16 -right-16 w-36 h-36 bg-amber-500/10 rounded-full blur-3xl group-hover:bg-amber-400/20 transition-all duration-700 pointer-events-none"></div>
     <div class="w-full h-64 rounded-2xl overflow-hidden shadow-xl border border-white/10 relative group/img cursor-pointer flex-shrink-0">
-        <!-- আপনার ইমেজের লিংক এখানে দিন -->
+
         <img 
             src="https://m.media-amazon.com/images/I/71zlhHlWOzL._AC_UF1000,1000_QL80_.jpg" 
             alt="As a Man Thinketh Cover" 
             class="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-700 ease-out"
         />
-        
-        <!-- Reading Time Badge -->
+
         <span class="absolute top-3 left-3 px-2.5 py-1 bg-amber-400/90 text-slate-950 text-[10px] font-black uppercase tracking-wider rounded-lg shadow-md backdrop-blur-md">
             ⏱️ ৫ মিনিট পাঠ
         </span>
 
-        <!-- Hover Overlay -->
         <div class="absolute inset-0 bg-slate-950/60 opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-sm">
             <div class="w-10 h-10 rounded-full bg-amber-400 text-slate-950 flex items-center justify-center font-bold shadow-lg shadow-amber-400/30 transform scale-75 group-hover/img:scale-100 transition-transform duration-300">
                 ➔
@@ -307,28 +261,23 @@ border: 1px solid rgba(255, 255, 255, 0.08);
         </div>
     </div>
 
-    <!-- 2. BOOK DETAILS CONTENT -->
     <div class="space-y-3 w-full text-left">
-        
-        <!-- Title & Rating -->
+
         <div class="flex items-center justify-between gap-2">
             <h3 class="text-lg font-black text-white tracking-tight group-hover:text-amber-400 transition-colors truncate">
                 As a Man Thinketh
             </h3>
 
-            <!-- Rating Badge -->
             <div class="flex items-center gap-1 px-2 py-0.5 bg-slate-900/80 border border-amber-400/30 rounded-full text-xs font-extrabold text-amber-400 shadow-inner flex-shrink-0">
                 <svg class="w-3 h-3 fill-amber-400" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                 <span>4.8</span>
             </div>
         </div>
 
-        <!-- Author Name -->
         <p class="text-xs text-slate-400 font-medium truncate">
             লেখক: <span class="text-slate-200 font-semibold">James Allen (জেমস অ্যালেন)</span>
         </p>
 
-        <!-- Category Badges -->
         <div class="flex flex-wrap gap-1.5">
             <span class="px-2.5 py-0.5 rounded-md text-[10px] font-bold bg-purple-500/10 text-purple-300 border border-purple-500/20">
                 Mindset
@@ -342,12 +291,10 @@ border: 1px solid rgba(255, 255, 255, 0.08);
             </span>
         </div>
 
-        <!-- Summary Excerpt -->
         <p class="text-xs text-slate-300 leading-relaxed italic line-clamp-2 bg-white/[0.02] p-2.5 rounded-xl border border-white/5">
             "মানুষের চিন্তা ভাবনাই তার চরিত্র, ভাগ্য ও জীবনের গতিপথ তৈরি করে।"
         </p>
 
-        <!-- CTA Button -->
         <div class="pt-1">
             <a href="#as-a-man-thinketh-summary" class="w-full block text-center py-2.5 rounded-xl bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-400 text-slate-950 text-xs font-bold hover:scale-[1.02] active:scale-95 transition-all shadow-md shadow-amber-500/10">
                Upcomming &rarr;

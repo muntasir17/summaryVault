@@ -23,7 +23,7 @@ tailwind.config = {
      </script>
 </head>
 <body class="bg-[#080C14] text-slate-100 font-sans antialiased selection:bg-amber-400 selection:text-slate-950 min-h-screen relative overflow-x-hidden">
-   <style>
+<style>
 .glass-card {
 background: rgba(15, 23, 42, 0.7);
 backdrop-filter: blur(16px);
@@ -39,8 +39,6 @@ border: 1px solid rgba(255, 255, 255, 0.08);
         transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         will-change: opacity, transform;
     }
-
-    /* স্ক্রোলে দেখার সাথে সাথে সুন্দরভাবে ভেসে উঠবে */
     .reveal.active {
         opacity: 1;
         transform: translateY(0);
@@ -52,8 +50,7 @@ border: 1px solid rgba(255, 255, 255, 0.08);
 <header class="fixed top-0 left-0 right-0 z-50 p-3 sm:p-4 lg:p-6 transition-all duration-300">
     <div class="max-w-7xl mx-auto">
         <nav class="glass-card rounded-2xl px-4 sm:px-5 py-3 flex items-center justify-between shadow-2xl shadow-black/50 border border-white/10 hover:border-white/20">
-            
-            <!-- 1. Brand / Logo -->
+    
             <a href="#" class="flex items-center gap-2.5 sm:gap-3 group">
                 <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-amber-500 via-amber-400 to-yellow-200 flex items-center justify-center text-slate-950 font-black text-lg sm:text-xl shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform duration-300">
                     SV
@@ -68,7 +65,6 @@ border: 1px solid rgba(255, 255, 255, 0.08);
                 </div>
             </a>
 
-            <!-- 2. Navigation Links (Desktop: >= 1024px) -->
             <ul class="hidden lg:flex items-center gap-1 bg-white/[0.03] border border-white/5 p-1.5 rounded-xl backdrop-blur-md">
                 <li>
                     <a href="index.html" class="px-4 py-2 text-sm font-semibold text-white bg-white/10 rounded-lg shadow-inner block">
@@ -91,20 +87,13 @@ border: 1px solid rgba(255, 255, 255, 0.08);
                         Blog
                     </a>
                 </li>
-
-
-
-
             </ul>
 
-            <!-- 3. Right Action Area (Search + CTA) -->
             <div class="flex items-center gap-2.5 sm:gap-3">
-                <!-- CTA Button -->
                 <a href="index.html" class="glow-effect px-3.5 sm:px-5 py-2 text-xs font-bold text-slate-950 bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-400 rounded-xl transition-all duration-300 hover:scale-105 active:scale-95 shadow-md shadow-amber-500/10 whitespace-nowrap">
                     Get Started
             </a>
 
-                <!-- 4. Mobile & Tablet Menu Toggle Button (< 1024px) -->
                 <button id="mobile-toggle" class="lg:hidden p-2 rounded-xl text-slate-300 hover:text-white hover:bg-white/10 focus:outline-none transition-colors" aria-label="Toggle Navigation">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
@@ -113,10 +102,7 @@ border: 1px solid rgba(255, 255, 255, 0.08);
             </div>
         </nav>
 
-        <!-- 5. Mobile & Tablet Drawer Menu -->
         <div id="mobile-menu" class="hidden lg:hidden mt-3 glass-card rounded-2xl p-5 border border-white/10 shadow-2xl transition-all">
-
-            <!-- Navigation Links -->
             <div class="flex flex-col space-y-2">
                 <a href="index.html" class="px-4 py-2.5 rounded-xl text-sm font-semibold text-white bg-white/10 block">Home</a>
                 <a href="bookpage.html" class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 block">Books</a>
@@ -131,13 +117,11 @@ border: 1px solid rgba(255, 255, 255, 0.08);
 
 <section id="eat-that-frog-summary" class="relative py-12 lg:py-20 bg-[#080C14] text-slate-100 overflow-hidden">
     
-    <!-- Background Ambient Glows -->
     <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-amber-500/10 blur-[180px] rounded-full pointer-events-none"></div>
     <div class="absolute bottom-20 right-10 w-[400px] h-[400px] bg-emerald-500/10 blur-[150px] rounded-full pointer-events-none"></div>
 
     <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 space-y-12">
         
-        <!-- 1. BACK BUTTON & TOP BADGES -->
         <div class="flex items-center justify-between gap-4">
             <a href="bookpage.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl glass-card text-xs sm:text-sm font-semibold text-slate-300 hover:text-amber-400 border border-white/10 hover:border-amber-400/30 transition-all">
                 <span>&larr;</span>
@@ -154,11 +138,8 @@ border: 1px solid rgba(255, 255, 255, 0.08);
             </div>
         </div>
 
-        <!-- 2. BOOK HERO HEADER -->
         <div class="glass-card rounded-3xl p-6 sm:p-10 border border-white/10 relative overflow-hidden space-y-6">
             <div class="flex flex-col sm:flex-row gap-6 items-center sm:items-start">
-                
-                <!-- Book Title & Meta -->
                 <div class="space-y-3 text-center sm:text-left flex-1">
                     <span class="text-xs font-bold uppercase tracking-widest text-amber-400">প্রোডাক্টিভিটির কালজয়ী বই</span>
                     <h1 class="text-3xl sm:text-4xl font-black text-white tracking-tight leading-tight">
@@ -169,7 +150,6 @@ border: 1px solid rgba(255, 255, 255, 0.08);
                         মূল লেখক: <span class="text-white font-semibold">Brian Tracy (ব্রায়ান ট্রেসি)</span>
                     </p>
                     
-                    <!-- Category Tags -->
                     <div class="flex flex-wrap justify-center sm:justify-start gap-2 pt-2">
                         <span class="px-3 py-1 rounded-md text-[11px] font-bold bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">প্রোডাক্টিভিটি</span>
                         <span class="px-3.5 py-1 rounded-md text-[11px] font-bold bg-amber-500/10 text-amber-300 border border-amber-500/20">সময় ব্যবস্থাপনা</span>
@@ -178,7 +158,6 @@ border: 1px solid rgba(255, 255, 255, 0.08);
                 </div>
             </div>
 
-            <!-- THE HOOK BANNER -->
             <div class="p-5 rounded-2xl bg-gradient-to-r from-amber-500/10 via-amber-400/5 to-transparent border border-amber-400/20">
                 <p class="text-sm sm:text-base text-amber-200 font-semibold italic leading-relaxed text-center sm:text-left">
                     "দিনের শুরুতেই যদি আপনাকে একটা জ্যান্ত ব্যাঙ খেতে বলা হয়, তবে পুরো দিনে আপনার সাথে এরচেয়ে খারাপ কিছু আর ঘটতে পারে না! ব্রায়ান ট্রেসির এই ব্যাঙ খাওয়ার নীতি কীভাবে আপনার আলসেমি দূর করে সফলতার দুয়ার খুলে দেবে?"
@@ -186,13 +165,11 @@ border: 1px solid rgba(255, 255, 255, 0.08);
             </div>
         </div>
 
-        <!-- 3. DETAILED STORYLINE BREAKDOWN (৪টি অধ্যায়ে বিস্তারিত সামারি) -->
         <div class="space-y-8">
             <h2 class="text-2xl sm:text-3xl font-extrabold text-white flex items-center gap-3 border-b border-white/10 pb-4">
                 <span class="text-amber-400">📖</span> মূল বিষয়বস্তু ও অধ্যায়ভিত্তিক আলোচনা
             </h2>
 
-            <!-- PART 1 -->
             <div class="glass-card rounded-3xl p-6 sm:p-8 border border-white/10 space-y-4">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-400/10 text-amber-400 text-xs font-bold">
                     পর্ব ১: আসল 'ব্যাঙ' (Frog) আসলে কী?
@@ -205,8 +182,6 @@ border: 1px solid rgba(255, 255, 255, 0.08);
                     ব্রায়ান ট্রেসি বলেন, সফল মানুষেরা প্রতিদিন সকালে উঠে প্রথমেই সেই বড় ‘ব্যাঙটি খেয়ে নেন’ (অর্থাৎ সবচেয়ে গুরুত্বপূর্ণ কাজটি আগে শেষ করেন)। আর সাধারণ মানুষেরা সারাদিন ছোটখাটো সহজ কাজ করে ব্যস্ততা দেখায়, কিন্তু মূল কাজটি জমিয়ে রেখে মানসিক চাপে ভোগে।
                 </p>
             </div>
-
-            <!-- PART 2 -->
             <div class="glass-card rounded-3xl p-6 sm:p-8 border border-white/10 space-y-4">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-400/10 text-amber-400 text-xs font-bold">
                     পর্ব ২: ৮০/২০ নিয়ম এবং লক্ষ্যের স্পষ্টতা
@@ -220,7 +195,6 @@ border: 1px solid rgba(255, 255, 255, 0.08);
                 </p>
             </div>
 
-            <!-- PART 3 -->
             <div class="glass-card rounded-3xl p-6 sm:p-8 border border-white/10 space-y-4">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-400/10 text-amber-400 text-xs font-bold">
                     পর্ব ৩: কাজের অগ্রাধিকারের 'ABCDE' মেথড
@@ -238,7 +212,6 @@ border: 1px solid rgba(255, 255, 255, 0.08);
                 </ul>
             </div>
 
-            <!-- PART 4 -->
             <div class="glass-card rounded-3xl p-6 sm:p-8 border border-white/10 space-y-4">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-400/10 text-amber-400 text-xs font-bold">
                     পর্ব ৪: একমুখী ফোকাস ও স্লাইস-অ্যান্ড-ডাইস
@@ -247,21 +220,19 @@ border: 1px solid rgba(255, 255, 255, 0.08);
                 <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
                     যখন আপনি কোনো একটি 'A' ক্যাটাগরির কাজ শুরু করবেন, তখন ১০০% ফোকাস দিয়ে সেই কাজটি সম্পূর্ণ শেষ না হওয়া পর্যন্ত অন্য কোনো কাজে মন দেবেন না। এটাকে বলা হয় <strong class="text-slate-100">Single Handling</strong>। বারবার মনোযোগ সরালে কাজের সময় দ্বিগুণ লেগে যায়।
                 </p>
-                <p class="text-sm sm:text-base text-slate-300 leading-relaxed font-semibold text-slate-200">
+                <p class="text-sm sm:text-base text-slate-300 leading-relaxed font-semibold ">
                     যদি ব্যাঙটি অনেক বড় হয় (কাজটি বিশাল ও কঠিন মনে হয়), তবে <strong>'Salami Slice' (সালামি স্লাইস)</strong> টেকনিক ব্যবহার করুন। অর্থাৎ পুরো কাজটি একবারে না ভেবে সেটিকে ছোট ছোট টুকরোতে কেটে ফেলুন এবং একটি একটি করে স্লাইস শেষ করতে থাকুন।
                 </p>
             </div>
         </div>
 
-        <!-- 4. DEEP LESSONS / MAIN TAKEAWAYS (গভীর শিক্ষা) -->
         <div class="space-y-6">
             <h2 class="text-xl sm:text-2xl font-extrabold text-white flex items-center gap-2">
                 <span class="text-amber-400">💡</span> এই বইয়ের ৪টি মূল টেকঅ্যাওয়ে
             </h2>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                
-                <!-- Lesson 1 -->
+    
                 <div class="glass-card p-6 rounded-2xl border border-white/10 hover:border-amber-400/40 transition-all space-y-2">
                     <div class="flex items-center gap-3">
                         <span class="w-8 h-8 rounded-xl bg-amber-400/10 text-amber-400 font-black flex items-center justify-center text-sm border border-amber-400/20">১</span>
@@ -272,7 +243,6 @@ border: 1px solid rgba(255, 255, 255, 0.08);
                     </p>
                 </div>
 
-                <!-- Lesson 2 -->
                 <div class="glass-card p-6 rounded-2xl border border-white/10 hover:border-amber-400/40 transition-all space-y-2">
                     <div class="flex items-center gap-3">
                         <span class="w-8 h-8 rounded-xl bg-amber-400/10 text-amber-400 font-black flex items-center justify-center text-sm border border-amber-400/20">২</span>
@@ -283,7 +253,6 @@ border: 1px solid rgba(255, 255, 255, 0.08);
                     </p>
                 </div>
 
-                <!-- Lesson 3 -->
                 <div class="glass-card p-6 rounded-2xl border border-white/10 hover:border-amber-400/40 transition-all space-y-2">
                     <div class="flex items-center gap-3">
                         <span class="w-8 h-8 rounded-xl bg-amber-400/10 text-amber-400 font-black flex items-center justify-center text-sm border border-amber-400/20">৩</span>
@@ -294,7 +263,6 @@ border: 1px solid rgba(255, 255, 255, 0.08);
                     </p>
                 </div>
 
-                <!-- Lesson 4 -->
                 <div class="glass-card p-6 rounded-2xl border border-white/10 hover:border-amber-400/40 transition-all space-y-2">
                     <div class="flex items-center gap-3">
                         <span class="w-8 h-8 rounded-xl bg-amber-400/10 text-amber-400 font-black flex items-center justify-center text-sm border border-amber-400/20">৪</span>
@@ -308,7 +276,6 @@ border: 1px solid rgba(255, 255, 255, 0.08);
             </div>
         </div>
 
-        <!-- 5. ACTIONABLE TAKEAWAY (বাস্তব জীবনে প্রয়োগ) -->
         <div class="glass-card rounded-3xl p-6 sm:p-8 border border-amber-400/30 bg-gradient-to-r from-amber-500/10 via-slate-900/90 to-slate-900/90 space-y-4">
             <h2 class="text-lg sm:text-xl font-bold text-amber-400 flex items-center gap-2">
                 <span>🎯</span> আগামীকাল সকাল থেকেই যা প্রয়োগ করবেন:
@@ -329,7 +296,6 @@ border: 1px solid rgba(255, 255, 255, 0.08);
             </ul>
         </div>
 
-        <!-- 6. FINAL CONCLUSION / QUOTE BANNER -->
         <div class="p-6 sm:p-8 rounded-3xl bg-slate-900/80 border border-white/10 text-center space-y-3 shadow-2xl">
             <span class="text-xs font-bold uppercase tracking-widest text-amber-400">বইয়ের কালজয়ী উক্তি</span>
             <blockquote class="text-lg sm:text-2xl font-extrabold text-white italic leading-snug max-w-2xl mx-auto">
