@@ -2578,6 +2578,12 @@
   .pt-44 {
     padding-top: calc(var(--spacing) * 44);
   }
+  .pt-46 {
+    padding-top: calc(var(--spacing) * 46);
+  }
+  .pt-52 {
+    padding-top: calc(var(--spacing) * 52);
+  }
   .pt-56 {
     padding-top: calc(var(--spacing) * 56);
   }
@@ -4001,6 +4007,16 @@
   .sm\:pt-32 {
     @media (width >= 40rem) {
       padding-top: calc(var(--spacing) * 32);
+    }
+  }
+  .sm\:pt-36 {
+    @media (width >= 40rem) {
+      padding-top: calc(var(--spacing) * 36);
+    }
+  }
+  .sm\:pt-46 {
+    @media (width >= 40rem) {
+      padding-top: calc(var(--spacing) * 46);
     }
   }
   .sm\:text-left {
