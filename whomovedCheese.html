@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary Vault</title>
+    <link rel="icon" href="summaryValut.png" type="image/png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script>
+tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Hind Siliguri"', '"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+</script>
+</head>
+<body class="bg-[#0B0F17] text-slate-100 font-sans antialiased overflow-x-hidden selection:bg-amber-400 selection:text-slate-950">
+<style>
+.glass-card {
+background: rgba(15, 23, 42, 0.7);
+backdrop-filter: blur(16px);
+-webkit-backdrop-filter: blur(16px);
+border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.glow-effect:hover {
+ box-shadow: 0 0 25px -5px rgba(245, 158, 11, 0.3);
+}
+.reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: opacity, transform;
+    }
+    .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+</style>
+
+<header class="fixed top-0 left-0 right-0 z-50 p-3 sm:p-4 lg:p-6 transition-all duration-300">
+    <div class="max-w-7xl mx-auto">
+        <nav class="glass-card rounded-2xl px-4 sm:px-5 py-3 flex items-center justify-between shadow-2xl shadow-black/50 border border-white/10 hover:border-white/20">
+
+            <a href="#" class="flex items-center gap-2.5 sm:gap-3 group">
+                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-amber-500 via-amber-400 to-yellow-200 flex items-center justify-center text-slate-950 font-black text-lg sm:text-xl shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform duration-300">
+                    SV
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-base sm:text-lg font-extrabold tracking-tight text-white group-hover:text-amber-400 transition-colors leading-tight">
+                        Summary<span class="text-amber-400">Vault</span>
+                    </span>
+                    <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-slate-400 tracking-widest -mt-0.5">
+                        Bengali Summaries
+                    </span>
+                </div>
+            </a>
+            <ul class="hidden lg:flex items-center gap-1 bg-white/[0.03] border border-white/5 p-1.5 rounded-xl backdrop-blur-md">
+                <li>
+                    <a href="index.html" class="px-4 py-2 text-sm font-semibold text-white bg-white/10 rounded-lg shadow-inner block">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="bookpage.html" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-all block">
+                        Books
+                    </a>
+                </li>
+   
+                <li>
+                    <a href="index.html" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-all block">
+                        About
+                    </a>
+                </li>
+                <li>
+                    <a href="blog.html" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-all block">
+                        Blog
+                    </a>
+                </li>
+            </ul>
+
+            <div class="flex items-center gap-2.5 sm:gap-3">
+  
+                <a href="index.html" class="glow-effect px-3.5 sm:px-5 py-2 text-xs font-bold text-slate-950 bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-400 rounded-xl transition-all duration-300 hover:scale-105 active:scale-95 shadow-md shadow-amber-500/10 whitespace-nowrap">
+                    Get Started
+            </a>
+
+                <button id="mobile-toggle" class="lg:hidden p-2 rounded-xl text-slate-300 hover:text-white hover:bg-white/10 focus:outline-none transition-colors" aria-label="Toggle Navigation">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+
+        <div id="mobile-menu" class="hidden lg:hidden mt-3 glass-card rounded-2xl p-5 border border-white/10 shadow-2xl transition-all">
+
+            <div class="flex flex-col space-y-2">
+                <a href="index.html" class="px-4 py-2.5 rounded-xl text-sm font-semibold text-white bg-white/10 block">Home</a>
+                <a href="bookpage.html" class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 block">Books</a>
+       
+                <a href="index.html" class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 block">About</a>
+                <a href="blog.html" class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 block">Blog</a>
+            </div>
+        </div>
+    </div>
+</header>    
+
+
+
+
+
+
+
+
+<footer class="relative bg-[#070A11] text-slate-100 pt-16 pb-10 border-t border-white/10 overflow-hidden">
+
+    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[250px] bg-amber-500/5 blur-[140px] rounded-full pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16">
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+            <div class="lg:col-span-2 space-y-4">
+                <a href="#" class="flex items-center gap-3 group ">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 via-amber-400 to-yellow-200 flex items-center justify-center text-slate-950 font-black text-xl shadow-lg shadow-amber-500/20">
+                        SV
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-lg font-extrabold text-white group-hover:text-amber-400 transition-colors">
+                            Summary<span class="text-amber-400">Vault</span>
+                        </span>
+                        <span class="text-[10px] uppercase font-semibold text-slate-400 tracking-widest -mt-1">
+                            Bengali Summaries
+                        </span>
+                    </div>
+                </a>
+
+                <p class="text-xs sm:text-sm text-slate-400 leading-relaxed pr-2">
+                    বিশ্ববিখ্যাত বইগুলোর মূলভাব সহজ ও প্রাঞ্জল বাংলায় সবার কাছে পৌঁছে দেওয়ার একটি আধুনিক ডিজিটাল প্ল্যাটফর্ম।
+                </p>
+                <div class="flex items-center gap-2.5 pt-1">
+                    <!-- Facebook -->
+                    <a href="https://www.facebook.com/profile.php?id=61593334430960" target="_blank" class="w-9 h-9 rounded-xl glass-card flex items-center justify-center text-slate-400 hover:text-amber-400 hover:border-amber-400/40 transition-all">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+
+                </div>
+            </div>
+            <div class="space-y-3">
+                <h4 class="text-sm font-bold text-white uppercase tracking-wider">দ্রুত নেভিগেশন</h4>
+                <ul class="space-y-2 text-xs sm:text-sm text-slate-400">
+                    <li><a href="index.html" class="hover:text-amber-400 transition-colors">হোমপেজ</a></li>
+                    <li><a href="bookpage.html" class="hover:text-amber-400 transition-colors">সকল বই</a></li>
+                    <li><a href="index.html" class="hover:text-amber-400 transition-colors">আমাদের সম্পর্কে</a></li>
+                       <li><a href="blog.html" class="hover:text-amber-400 transition-colors">ব্লগ </a></li>
+                </ul>
+            </div>
+            <div class="space-y-3">
+                <h4 class="text-sm font-bold text-white uppercase tracking-wider">ক্যাটাগরি</h4>
+                <ul class="space-y-2 text-xs sm:text-sm text-slate-400">
+                    <li><a href="selfhelp.html" class="hover:text-amber-400 transition-colors">সেলফ হেল্প</a></li>
+                    <li><a href="#" class="hover:text-amber-400 transition-colors">বিজনেস ও কেরিয়ার</a></li>
+                    <li><a href="philosophy.html" class="hover:text-amber-400 transition-colors">ফিলোসফি</a></li>
+                    <li><a href="#" class="hover:text-amber-400 transition-colors">প্রোডাক্টিভিটি</a></li>
+                </ul>
+            </div>
+            <div class="space-y-3">
+                <h4 class="text-sm font-bold text-white uppercase tracking-wider">সহায়তা ও নীতি</h4>
+               <ul class="space-y-2 text-xs sm:text-sm text-slate-400">
+                    <li><a href="index.html" class="hover:text-amber-400 transition-colors">প্রাইভেসি পলিসি</a></li>
+                    <li><a href="index.html" class="hover:text-amber-400 transition-colors">টার্মস অব সার্ভিস</a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=61593334430960" class="hover:text-amber-400 transition-colors">যোগাযোগ</a></li>
+                    <li><a href="index.html" class="hover:text-amber-400 transition-colors">FAQ / প্রশ্নাবলী</a></li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+            <p>© 2026 <strong class="text-slate-200">SummaryVault</strong>. সর্বস্বত্ব সংরক্ষিত।</p>
+            
+            <p class="flex items-center gap-1">
+                Crafted with <span class="text-red-500">❤️</span> for Bengali Readers
+            </p>
+            <button 
+                onclick="window.scrollTo({top: 0, behavior: 'smooth'})" 
+                class="glass-card px-3.5 py-1.5 rounded-xl border border-white/10 hover:border-amber-400/40 text-slate-300 hover:text-amber-400 transition-all flex items-center gap-1.5"
+            >
+                <span>উপরে যান</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+            </button>
+        </div>
+
+    </div>
+</footer>
+
+  <script src="script.js"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
+</body>
+</html>
