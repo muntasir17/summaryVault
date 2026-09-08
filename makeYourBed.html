@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Summary Vault</title>
+    <link rel="icon" href="summaryValut.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+     <script src="https://cdn.tailwindcss.com"></script>
+     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+     <script>
+tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Hind Siliguri"', '"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+     </script>
+</head>
+<body class="bg-[#0B0F17] text-slate-100 font-sans antialiased overflow-x-hidden selection:bg-amber-400 selection:text-slate-950">
+  <br>
+  <br> 
+<header class="fixed bg-[#0B0F17] rounded-2xl top-0 left-0 right-0 z-50 p-3 sm:p-4 lg:p-6 transition-all duration-300">
+    <div class="max-w-7xl mx-auto">
+        <nav class="glass-card rounded-2xl px-4 sm:px-5 py-3 flex items-center justify-between shadow-2xl shadow-black/50 border border-white/10 hover:border-white/20">
+            <a href="#" class="flex items-center gap-2.5 sm:gap-3 group">
+                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-amber-500 via-amber-400 to-yellow-200 flex items-center justify-center text-slate-950 font-black text-lg sm:text-xl shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform duration-300">
+                    SV
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-base sm:text-lg font-extrabold tracking-tight text-white group-hover:text-amber-400 transition-colors leading-tight">
+                        Summary<span class="text-amber-400">Vault</span>
+                    </span>
+                    <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-slate-400 tracking-widest -mt-0.5">
+                        Bengali Summaries
+                    </span>
+                </div>
+            </a>
+            <ul class="hidden lg:flex items-center gap-1 bg-white/[0.03] border border-white/5 p-1.5 rounded-xl backdrop-blur-md">
+                <li>
+                    <a href="index.html" class="px-4 py-2 text-sm font-semibold text-white bg-white/10 rounded-lg shadow-inner block">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="bookpage.html" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-all block">
+                        Books
+                    </a>
+                </li>
+   
+                <li>
+                    <a href="index.html" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-all block">
+                        About
+                    </a>
+                </li>
+                <li>
+                    <a href="blog.html" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-all block">
+                        Blog
+                    </a>
+                </li>
+            </ul>
+            <div class="flex items-center gap-2.5 sm:gap-3">
+
+                <a href="index.html" class="glow-effect px-3.5 sm:px-5 py-2 text-xs font-bold text-slate-950 bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-400 rounded-xl transition-all duration-300 hover:scale-105 active:scale-95 shadow-md shadow-amber-500/10 whitespace-nowrap">
+                    Get Started
+            </a>
+                <button id="mobile-toggle" class="lg:hidden p-2 rounded-xl text-slate-300 hover:text-white hover:bg-white/10 focus:outline-none transition-colors" aria-label="Toggle Navigation">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden lg:hidden mt-3 glass-card rounded-2xl p-5 border border-white/10 shadow-2xl transition-all">
+            <div class="flex flex-col space-y-2">
+                <a href="index.html" class="px-4 py-2.5 rounded-xl text-sm font-semibold text-white bg-white/10 block">Home</a>
+                <a href="bookpage.html" class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 block">Books</a>
+       
+                <a href="index.html" class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 block">About</a>
+                <a href="blog.html" class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 block">Blog</a>
+            </div>
+        </div>
+    </div>
+</header>
+<section id="make-your-bed-summary" class="relative pt-28 pb-12 sm:pt-32 lg:py-20 bg-[#080C14] text-slate-100 overflow-hidden">
+
+    <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-sky-500/10 blur-[180px] rounded-full pointer-events-none"></div>
+    <div class="absolute bottom-20 right-10 w-[400px] h-[400px] bg-indigo-500/10 blur-[150px] rounded-full pointer-events-none"></div>
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 space-y-12">
+        <div class="flex items-center justify-between gap-4">
+            <a href="bookpage.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl glass-card text-xs sm:text-sm font-semibold text-slate-300 hover:text-sky-400 border border-white/10 hover:border-sky-400/30 transition-all">
+                <span>&larr;</span>
+                <span>সকল বইয়ে ফিরে যান</span>
+            </a>
+
+            <div class="flex items-center gap-2">
+                <span class="px-3 py-1 bg-sky-400/10 text-sky-400 text-xs font-bold rounded-lg border border-sky-400/20">
+                    ⏱️ ৪ মিনিট পূর্ণাঙ্গ পাঠ
+                </span>
+                <span class="px-3 py-1 bg-indigo-500/10 text-indigo-300 text-xs font-bold rounded-lg border border-indigo-500/20">
+                    ★ ৪.৭ রেটিং
+                </span>
+            </div>
+        </div>
+        <div class="glass-card rounded-3xl p-6 sm:p-10 border border-white/10 relative overflow-hidden space-y-6">
+            <div class="flex flex-col sm:flex-row gap-6 items-center sm:items-start">
+                <div class="space-y-3 text-center sm:text-left flex-1">
+                    <span class="text-xs font-bold uppercase tracking-widest text-sky-400">ডিসিপ্লিন ও আত্মউন্নয়নের চিরন্তন পাঠ</span>
+                    <h1 class="text-3xl sm:text-4xl font-black text-white tracking-tight leading-tight">
+                        মেক ইউর বেড <br class="hidden sm:inline"/>
+                        <span class="text-slate-400 font-normal text-2xl sm:text-3xl">(Make Your Bed)</span>
+                    </h1>
+                    <p class="text-sm text-slate-300 font-medium">
+                        মূল লেখক: <span class="text-white font-semibold">Admiral William H. McRaven (উইলিয়াম এইচ. ম্যাকরেভেন)</span>
+                    </p>
+                    <div class="flex flex-wrap justify-center sm:justify-start gap-2 pt-2">
+                        <span class="px-3 py-1 rounded-md text-[11px] font-bold bg-sky-500/10 text-sky-300 border border-sky-500/20">ডিসিপ্লিন</span>
+                        <span class="px-3.5 py-1 rounded-md text-[11px] font-bold bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">মাইন্ডসেট</span>
+                        <span class="px-3.5 py-1 rounded-md text-[11px] font-bold bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">লিডারশিপ</span>
+                    </div>
+                </div>
+            </div>
+            <div class="p-5 rounded-2xl bg-gradient-to-r from-sky-500/10 via-indigo-500/5 to-transparent border border-sky-400/20">
+                <p class="text-sm sm:text-base text-sky-200 font-semibold italic leading-relaxed text-center sm:text-left">
+                    "আপনি কি বিশ্বকে পরিবর্তন করতে চান? তবে শুরুটা করুন আজ সকালে আপনার নিজের বিছানা গুছিয়ে নেয়ার মতো অতি ছোট কাজ দিয়ে! মার্কিন নেভি সিলের (US Navy SEAL) কঠোর ট্রেনিংয়ের বাস্তব অভিজ্ঞতা থেকে পাওয়া ১০টি সহজ কিন্তু শক্তিশালী জীবন শিক্ষা যা আপনাকে যেকোনো পরিস্থিতিতে ঘুরে দাঁড়াতে সাহায্য করবে।"
+                </p>
+            </div>
+        </div>
+        <div class="glass-card rounded-3xl p-6 sm:p-8 border border-white/10 space-y-4">
+            <h2 class="text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
+                <span class="text-sky-400">⚓</span> বইয়ের মূল প্রেক্ষাপট
+            </h2>
+            <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+                অ্যাডমিরাল উইলিয়াম এইচ. ম্যাকরেভেন ২০১৪ সালে টেক্সাস বিশ্ববিদ্যালয়ের সমাবর্তনে একটি ঐতিহাসিক ভাষণ দেন, যা বিশ্বজুড়ে লাখ লাখ মানুষের হৃদয় ছুঁয়ে যায়। সেই বক্তব্যের ওপর ভিত্তি করেই লেখা এই বই। মার্কিন নেভি সিলের কঠিনতম ট্রেনিং বা Basic Underwater Demolition/SEAL (BUD/S) চলাকালীন তিনি যে ১০টি গুরুত্বপূর্ণ জীবনমুখী শিক্ষা পেয়েছিলেন, তা এখানে উপস্থাপন করা হয়েছে।
+            </p>
+        </div>
+        <div class="space-y-8">
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white flex items-center gap-3 border-b border-white/10 pb-4">
+                <span class="text-sky-400">📜</span> নেভি সিলের জীবন থেকে ১০টি স্বর্ণালী নীতি (10 Principles)
+            </h2>
+
+            <div class="grid grid-cols-1 gap-6">
+                <div class="glass-card rounded-2xl p-6 border border-white/10 space-y-3 hover:border-sky-400/40 transition-all">
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-xl bg-sky-400/10 text-sky-400 font-black flex items-center justify-center text-sm border border-sky-400/20">১</span>
+                        <h3 class="font-bold text-white text-lg">দিনের সূচনা করুন ছোট একটি সাফল্য দিয়ে (Make Your Bed)</h3>
+                    </div>
+                    <p class="text-sm text-slate-300 leading-relaxed pl-11">
+                        প্রতিদিন সকালে উঠে বিছানা গোছানোর কাজটি অতি সামান্য মনে হলেও, এটি আপনাকে দিনের শুরুতেই প্রথম একটি কাজ সফলভাবে সম্পন্ন করার আত্মতুষ্টি দেয়। এটি আপনাকে পরের আরেকটি কাজ সম্পন্ন করার অনুপ্রেরণা জোগায়। এমনকি আপনার দিনটি খুব বাজে কাটলেও, রাতে ঘরে ফিরে একটি পরিচ্ছন্ন বিছানা আপনাকে আশা দেবে যে আগামীকাল দিনটি ভালো হতে পারে।
+                    </p>
+                </div>
+                <div class="glass-card rounded-2xl p-6 border border-white/10 space-y-3 hover:border-sky-400/40 transition-all">
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-xl bg-sky-400/10 text-sky-400 font-black flex items-center justify-center text-sm border border-sky-400/20">২</span>
+                        <h3 class="font-bold text-white text-lg">একা একা জীবন জয় করা অসম্ভব (Find Someone to Help You Paddle)</h3>
+                    </div>
+                    <p class="text-sm text-slate-300 leading-relaxed pl-11">
+                        নেভি সিল ট্রেনিংয়ে বিশাল বিশাল ঢেউ পাড়ি দিতে একাই একা প্যাডেল চালানো যায় না; একজন বিশ্বস্ত পার্টনার লাগে। জীবনে লক্ষ্য অর্জন বা বাধা অতিক্রম করতে একা চলা সম্ভব নয়। আপনার বন্ধু, পরিবার বা সহকর্মীদের সহযোগিতা গ্রহণ করুন এবং সঠিক সঙ্গী খুঁজে নিন।
+                    </p>
+                </div>
+                <div class="glass-card rounded-2xl p-6 border border-white/10 space-y-3 hover:border-sky-400/40 transition-all">
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-xl bg-sky-400/10 text-sky-400 font-black flex items-center justify-center text-sm border border-sky-400/20">৩</span>
+                        <h3 class="font-bold text-white text-lg">মানুষকে বিচার করুন মনের শক্তিতে, বাহ্যিক রূপ দেখে নয় (Measure a Person by the Size of Their Heart)</h3>
+                    </div>
+                    <p class="text-sm text-slate-300 leading-relaxed pl-11">
+                        কারো শারীরিক উচ্চতা, গায়ের রঙ বা ধনসম্পদ তার সফলতা নির্ধারণ করে না। নেভি সিলে অনেক লম্বা ও সুঠাম দেহের সৈনিকেরা ট্রেনিং ছেড়ে পালিয়েছিল, অথচ অনেক কম উচ্চতার মানুষ কেবল হৃদয়ের প্রবল ইচ্ছাশক্তির জোরে সফল সিল হয়েছিল।
+                    </p>
+                </div>
+                <div class="glass-card rounded-2xl p-6 border border-white/10 space-y-3 hover:border-sky-400/40 transition-all">
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-xl bg-sky-400/10 text-sky-400 font-black flex items-center justify-center text-sm border border-sky-400/20">৪</span>
+                        <h3 class="font-bold text-white text-lg">জীবন সবসময় ন্যায্য নয়—অভিযোগ না করে এগিয়ে যান (Get Over Being a Sugar Cookie)</h3>
+                    </div>
+                    <p class="text-sm text-slate-300 leading-relaxed pl-11">
+                        ট্রেনিংয়ে কোনো অপরাধ না করলেও ক্যাডেটদের সমুদ্রে ভিজিয়ে বালুতে গড়িয়ে <strong class="text-sky-300">'সুগার কুকি'</strong> বানানো হতো। জীবন সবসময় আপনার সাথে ন্যায্য আচরণ করবে না। অন্যায় বা দুর্ভাগ্য হলে তা নিয়ে অভিযোগ না করে মাথা উঁচিয়ে সামনে এগিয়ে চলাই আসল বীরত্ব।
+                    </p>
+                </div>
+                <div class="glass-card rounded-2xl p-6 border border-white/10 space-y-3 hover:border-sky-400/40 transition-all">
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-xl bg-sky-400/10 text-sky-400 font-black flex items-center justify-center text-sm border border-sky-400/20">৫</span>
+                        <h3 class="font-bold text-white text-lg">ব্যর্থতাকে ভয় পাবেন না, এটি আপনাকে শক্তিশালী করে (Don't Be Afraid of the Circus)</h3>
+                    </div>
+                    <p class="text-sm text-slate-300 leading-relaxed pl-11">
+                        যেসব ক্যাডেট শারীরিক পরিশ্রমে পিছিয়ে পড়তো, তাদের অতিরিক্ত শাস্তিমূলক শরীরচর্চার তালিকায় পাঠানো হতো যাকে বলা হতো <strong class="text-sky-300">'সার্কাস'</strong>। এটি অত্যন্ত বেদনাদায়ক হলেও, এই অতিরিক্ত অনুশীলনের কারণেই তারা একসময় সবচেয়ে শক্তিশালী সৈনিক হয়ে উঠেছিল। ব্যর্থতা আপনাকে শাণিত করে।
+                    </p>
+                </div>
+                <div class="glass-card rounded-2xl p-6 border border-white/10 space-y-3 hover:border-sky-400/40 transition-all">
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-xl bg-sky-400/10 text-sky-400 font-black flex items-center justify-center text-sm border border-sky-400/20">৬</span>
+                        <h3 class="font-bold text-white text-lg">বড় কিছু অর্জনে ঝুঁকি নিতে দ্বিধা করবেন না (Slide Down the Obstacle Headfirst)</h3>
+                    </div>
+                    <p class="text-sm text-slate-300 leading-relaxed pl-11">
+                        বাধা পার হওয়ার প্রতিযোগিতায় লেখকের এক সহপাঠী প্রথাগত উপায়ে ধীরে ধীরে নামার বদলে সোজা মাথার ভর দিয়ে দড়ি বেয়ে নিচে নেমে রেকর্ড ভেঙে দিয়েছিল। জীবনে বড় কোনো সাফল্য অর্জন করতে হলে হিসাব-নিকাশ করে সাহসী ঝুঁকি বা Calculated Risk নিতেই হবে।
+                    </p>
+                </div>
+                <div class="glass-card rounded-2xl p-6 border border-white/10 space-y-3 hover:border-sky-400/40 transition-all">
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-xl bg-sky-400/10 text-sky-400 font-black flex items-center justify-center text-sm border border-sky-400/20">৭</span>
+                        <h3 class="font-bold text-white text-lg">ভয় বা হাঙরের মুখে পিছপা হবেন না (Don't Back Down from the Sharks)</h3>
+                    </div>
+                    <p class="text-sm text-slate-300 leading-relaxed pl-11">
+                        নাইট সুইমিং অনুশীলনের সময় সদের হাঙর আকৃতির পানির নিচে সাঁতার কাটতে হতো। সিলের নিয়ম ছিল—হাঙর আক্রমণ করতে আসলে পালিয়ে না গিয়ে সোজা তার নাকের ওপর ঘুষি মারা। জীবনের ভয় বা বাধার মুখোমুখি হলে ভয় পেয়ে না পালিয়ে সাহসের সাথে দাঁড়িয়ে প্রতিযোগিতা করুন।
+                    </p>
+                </div>
+                <div class="glass-card rounded-2xl p-6 border border-white/10 space-y-3 hover:border-sky-400/40 transition-all">
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-xl bg-sky-400/10 text-sky-400 font-black flex items-center justify-center text-sm border border-sky-400/20">৮</span>
+                        <h3 class="font-bold text-white text-lg">কঠিনতম মুহূর্তে নিজের সেরাটা প্রকাশ করুন (Be Your Best in the Darkest Moment)</h3>
+                    </div>
+                    <p class="text-sm text-slate-300 leading-relaxed pl-11">
+                        শত্রু জাহাজের নিচে অন্ধকারে ডুব দিয়ে মাইন বসানোর মিশন সিলের সবচেয়ে বিপজ্জনক কাজ। যখন চারপাশ একদম অন্ধকার ও নিঃসঙ্গ হয়ে যায়, তখনই শান্ত থেকে মনের সব শক্তি দিয়ে নিজের সেরা পারফর্মেন্সটা বের করে আনতে হয়।
+                    </p>
+                </div>
+                <div class="glass-card rounded-2xl p-6 border border-white/10 space-y-3 hover:border-sky-400/40 transition-all">
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-xl bg-sky-400/10 text-sky-400 font-black flex items-center justify-center text-sm border border-sky-400/20">৯</span>
+                        <h3 class="font-bold text-white text-lg">হতাশার চরম মুহূর্তে অন্যকে আশা দেখান (Start Singing When You're Up to Your Neck in Mud)</h3>
+                    </div>
+                    <p class="text-sm text-slate-300 leading-relaxed pl-11">
+                        'হেল উইক'-এর সময় ঠান্ডায় ও হাঁটু সমান কাদায় ১৫ ঘণ্টা দাঁড়িয়ে থাকা অবস্থায় এক সৈনিক হঠাৎ করে গান গাওয়া শুরু করে। সেই একটি কণ্ঠ পুরো দলকে ভেঙে পড়ার হাত থেকে বাঁচিয়ে দিয়েছিল। একজন মানুষের ইতিবাচক মনোভাব ও আশা পুরো দলকে নতুন জীবন দিতে পারে।
+                    </p>
+                </div>
+                <div class="glass-card rounded-2xl p-6 border border-white/10 space-y-3 hover:border-sky-400/40 transition-all">
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-xl bg-sky-400/10 text-sky-400 font-black flex items-center justify-center text-sm border border-sky-400/20">১০</span>
+                        <h3 class="font-bold text-white text-lg">কখনো, কোনো অবস্থাতেই হাল ছাড়বেন না (Never, Ever Quit!)</h3>
+                    </div>
+                    <p class="text-sm text-slate-300 leading-relaxed pl-11">
+                        নেভি সিল ক্যাম্পের মাঝে একটি পিতলের ঘণ্টা ঝুলানো থাকে। সেই ঘণ্টা ৩ বার বাজালেই ক্যাডেটদের ট্রেনিং শেষ বা কুইট ঘোষণা করা হতো। জীবনে যেকোনো ঝড়ের মুখোমুখি হোন না কেন—সেই ঘণ্টাটি কখনো বাজাবেন না। হাল না ছাড়ার মানসিকতাই আপনাকে বিজয়ী করবে।
+                    </p>
+                </div>
+
+            </div>
+        </div>
+        <div class="glass-card rounded-3xl p-6 sm:p-8 border border-sky-400/30 bg-gradient-to-r from-sky-500/10 via-slate-900/90 to-slate-900/90 space-y-4">
+            <h2 class="text-lg sm:text-xl font-bold text-sky-300 flex items-center gap-2">
+                <span>🎯</span> আপনার বাস্তব জীবনে প্রয়োগের উপায়:
+            </h2>
+            <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
+                <li class="flex items-start gap-2.5">
+                    <span class="w-2 h-2 rounded-full bg-sky-400 mt-1.5 flex-shrink-0"></span>
+                    <span><strong>মর্নিং রুটিন তৈরি করুন:</strong> প্রতিদিন সকালে ঘুম থেকে উঠে বিছানা পরিষ্কার করার অভ্যাস গড়ে তুলুন। এটি আপনাকে প্রতিদিন ছোট জয়ের অনুভূতি দেবে।</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                    <span class="w-2 h-2 rounded-full bg-sky-400 mt-1.5 flex-shrink-0"></span>
+                    <span><strong>টিমওয়ার্কে বিশ্বাসী হোন:</strong> পড়াশোনা বা প্রজেক্টে ভালো পার্টনার খুঁজুন এবং একা সব করার প্রবণতা থেকে বের হন।</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                    <span class="w-2 h-2 rounded-full bg-sky-400 mt-1.5 flex-shrink-0"></span>
+                    <span><strong>অভিযোগ বন্ধ করুন:</strong> কঠিন পরিস্থিতিতে "কেন আমার সাথেই এমন হলো" না ভেবে "এখন আমার করণীয় কী" সেদিকে মনোযোগ দিন।</span>
+                </li>
+            </ul>
+        </div>
+        <div class="p-6 sm:p-8 rounded-3xl bg-slate-900/80 border border-white/10 text-center space-y-3 shadow-2xl">
+            <span class="text-xs font-bold uppercase tracking-widest text-sky-400">বইয়ের চিরন্তন কথা</span>
+            <blockquote class="text-lg sm:text-2xl font-extrabold text-white italic leading-snug max-w-2xl mx-auto">
+                "If you want to change the world, start off by making your bed."
+            </blockquote>
+            <p class="text-xs sm:text-sm text-slate-400">
+                — অ্যাডমিরাল উইলিয়াম এইচ. ম্যাকরেভেন (মেক ইউর বেড)
+            </p>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+<footer class="relative bg-[#070A11] text-slate-100 pt-16 pb-10 border-t border-white/10 overflow-hidden">
+
+    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[250px] bg-amber-500/5 blur-[140px] rounded-full pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16">
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+            <div class="lg:col-span-2 space-y-4">
+                <a href="#" class="flex items-center gap-3 group ">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 via-amber-400 to-yellow-200 flex items-center justify-center text-slate-950 font-black text-xl shadow-lg shadow-amber-500/20">
+                        SV
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-lg font-extrabold text-white group-hover:text-amber-400 transition-colors">
+                            Summary<span class="text-amber-400">Vault</span>
+                        </span>
+                        <span class="text-[10px] uppercase font-semibold text-slate-400 tracking-widest -mt-1">
+                            Bengali Summaries
+                        </span>
+                    </div>
+                </a>
+
+                <p class="text-xs sm:text-sm text-slate-400 leading-relaxed pr-2">
+                    বিশ্ববিখ্যাত বইগুলোর মূলভাব সহজ ও প্রাঞ্জল বাংলায় সবার কাছে পৌঁছে দেওয়ার একটি আধুনিক ডিজিটাল প্ল্যাটফর্ম।
+                </p>
+                <div class="flex items-center gap-2.5 pt-1">
+                    <!-- Facebook -->
+                    <a href="https://www.facebook.com/profile.php?id=61593334430960" target="_blank" class="w-9 h-9 rounded-xl glass-card flex items-center justify-center text-slate-400 hover:text-amber-400 hover:border-amber-400/40 transition-all">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+
+                </div>
+            </div>
+            <div class="space-y-3">
+                <h4 class="text-sm font-bold text-white uppercase tracking-wider">দ্রুত নেভিগেশন</h4>
+                <ul class="space-y-2 text-xs sm:text-sm text-slate-400">
+                    <li><a href="index.html" class="hover:text-amber-400 transition-colors">হোমপেজ</a></li>
+                    <li><a href="bookpage.html" class="hover:text-amber-400 transition-colors">সকল বই</a></li>
+                    <li><a href="index.html" class="hover:text-amber-400 transition-colors">আমাদের সম্পর্কে</a></li>
+                       <li><a href="blog.html" class="hover:text-amber-400 transition-colors">ব্লগ </a></li>
+                </ul>
+            </div>
+            <div class="space-y-3">
+                <h4 class="text-sm font-bold text-white uppercase tracking-wider">ক্যাটাগরি</h4>
+                <ul class="space-y-2 text-xs sm:text-sm text-slate-400">
+                    <li><a href="selfhelp.html" class="hover:text-amber-400 transition-colors">সেলফ হেল্প</a></li>
+                    <li><a href="#" class="hover:text-amber-400 transition-colors">বিজনেস ও কেরিয়ার</a></li>
+                    <li><a href="philosophy.html" class="hover:text-amber-400 transition-colors">ফিলোসফি</a></li>
+                    <li><a href="#" class="hover:text-amber-400 transition-colors">প্রোডাক্টিভিটি</a></li>
+                </ul>
+            </div>
+            <div class="space-y-3">
+                <h4 class="text-sm font-bold text-white uppercase tracking-wider">সহায়তা ও নীতি</h4>
+               <ul class="space-y-2 text-xs sm:text-sm text-slate-400">
+                    <li><a href="index.html" class="hover:text-amber-400 transition-colors">প্রাইভেসি পলিসি</a></li>
+                    <li><a href="index.html" class="hover:text-amber-400 transition-colors">টার্মস অব সার্ভিস</a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=61593334430960" class="hover:text-amber-400 transition-colors">যোগাযোগ</a></li>
+                    <li><a href="index.html" class="hover:text-amber-400 transition-colors">FAQ / প্রশ্নাবলী</a></li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+            <p>© 2026 <strong class="text-slate-200">SummaryVault</strong>. সর্বস্বত্ব সংরক্ষিত।</p>
+            
+            <p class="flex items-center gap-1">
+                Crafted with <span class="text-red-500">❤️</span> for Bengali Readers
+            </p>
+            <button 
+                onclick="window.scrollTo({top: 0, behavior: 'smooth'})" 
+                class="glass-card px-3.5 py-1.5 rounded-xl border border-white/10 hover:border-amber-400/40 text-slate-300 hover:text-amber-400 transition-all flex items-center gap-1.5"
+            >
+                <span>উপরে যান</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+            </button>
+        </div>
+
+    </div>
+</footer>
+
+
+
+
+  <script src="script.js"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
+</body>
+</html>
