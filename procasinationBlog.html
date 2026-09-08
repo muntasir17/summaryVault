@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Summary Vault</title>
+    <link rel="icon" href="summaryValut.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+     <script src="https://cdn.tailwindcss.com"></script>
+     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+     <script>
+tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Hind Siliguri"', '"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+     </script>
+</head>
+<body class="bg-[#0B0F17] text-slate-100 font-sans antialiased overflow-x-hidden selection:bg-amber-400 selection:text-slate-950">
+    <style>
+.glass-card {
+background: rgba(15, 23, 42, 0.7);
+backdrop-filter: blur(16px);
+-webkit-backdrop-filter: blur(16px);
+border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.glow-effect:hover {
+ box-shadow: 0 0 25px -5px rgba(245, 158, 11, 0.3);
+}
+.reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: opacity, transform;
+    }
+    .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+</style>
+<header class="fixed top-0 left-0 right-0 z-50 p-3 sm:p-4 lg:p-6 transition-all duration-300">
+    <div class="max-w-7xl mx-auto">
+        <nav class="glass-card rounded-2xl px-4 sm:px-5 py-3 flex items-center justify-between shadow-2xl shadow-black/50 border border-white/10 hover:border-white/20">
+    
+            <a href="#" class="flex items-center gap-2.5 sm:gap-3 group">
+                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-amber-500 via-amber-400 to-yellow-200 flex items-center justify-center text-slate-950 font-black text-lg sm:text-xl shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform duration-300">
+                    SV
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-base sm:text-lg font-extrabold tracking-tight text-white group-hover:text-amber-400 transition-colors leading-tight">
+                        Summary<span class="text-amber-400">Vault</span>
+                    </span>
+                    <span class="text-[9px] sm:text-[10px] uppercase font-semibold text-slate-400 tracking-widest -mt-0.5">
+                        Bengali Summaries
+                    </span>
+                </div>
+            </a>
+            <ul class="hidden lg:flex items-center gap-1 bg-white/[0.03] border border-white/5 p-1.5 rounded-xl backdrop-blur-md">
+                <li>
+                    <a href="index.html" class="px-4 py-2 text-sm font-semibold text-white bg-white/10 rounded-lg shadow-inner block">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="bookpage.html" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-all block">
+                        Books
+                    </a>
+                </li>
+   
+                <li>
+                    <a href="index.html" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-all block">
+                        About
+                    </a>
+                </li>
+                <li>
+                    <a href="blog.html" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-all block">
+                        Blog
+                    </a>
+                </li>
+            </ul>
+
+            <div class="flex items-center gap-2.5 sm:gap-3">
+                <a href="index.html" class="glow-effect px-3.5 sm:px-5 py-2 text-xs font-bold text-slate-950 bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-400 rounded-xl transition-all duration-300 hover:scale-105 active:scale-95 shadow-md shadow-amber-500/10 whitespace-nowrap">
+                    Get Started
+            </a>
+                <button id="mobile-toggle" class="lg:hidden p-2 rounded-xl text-slate-300 hover:text-white hover:bg-white/10 focus:outline-none transition-colors" aria-label="Toggle Navigation">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden lg:hidden mt-3 glass-card rounded-2xl p-5 border border-white/10 shadow-2xl transition-all">
+
+            <!-- Navigation Links -->
+            <div class="flex flex-col space-y-2">
+                <a href="index.html" class="px-4 py-2.5 rounded-xl text-sm font-semibold text-white bg-white/10 block">Home</a>
+                <a href="bookpage.html" class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 block">Books</a>
+       
+                <a href="index.html" class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 block">About</a>
+                <a href="blog.html" class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 block">Blog</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<article class="max-w-4xl mx-auto space-y-12">
+    
+    <!-- Article Header -->
+    <header class="space-y-4 text-center sm:text-left border-b border-slate-800/80 pb-8">
+      <div class="flex flex-wrap items-center justify-center sm:justify-start gap-3 text-xs font-semibold">
+        <span class="bg-violet-500/10 text-violet-400 border border-violet-500/30 px-3 py-1 rounded-full uppercase tracking-wider font-english">
+          Productivity & Time Management
+        </span>
+        <span class="text-slate-400 flex items-center gap-1 font-english">
+          <span>⏱️</span> 7-8 Min Read
+        </span>
+      </div>
+
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight tracking-tight">
+        অলসতা কাটানোর মাস্টারক্লাস: <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-indigo-300 to-violet-500">'Eat That Frog' কৌশল এবং দ্বিগুণ গতিতে কাজ শেষ করার সিক্রেট!</span>
+      </h1>
+    </header>
+
+    <!-- Intro Text / Hook Section -->
+    <section class="space-y-6 text-base sm:text-lg text-slate-300 leading-relaxed sm:leading-loose">
+      <p>
+        সকালে ঘুম থেকে উঠেই ভাবলেন—আজকে সবচেয়ে গুরুত্বপূর্ণ প্রজেক্ট বা পড়াটা একদম শেষ করে ফেলবেন। কিন্তু কাজের টেবিলে বা ল্যাপটপের সামনে বসার আগেই মনে হলো, "একটু সোশ্যাল মিডিয়াটা দেখে নিই", "আগে ঘরটা একটু গুছিয়ে নিই" বা "এক কাপ চা খেয়ে রিল্যাক্স হয়ে শুরু করি"। দেখতে দেখতে দুপুর গড়িয়ে রাত হলো, আর দিনশেষে একটাই তীব্র অনুভূতি জমা হলো—<strong class="text-violet-400">অপরাধবোধ (Guilt)</strong>।
+      </p>
+      <p>
+        যদি আপনার সাথেও এমনটা নিয়মিত হতে থাকে, তবে জেনে রাখুন—আপনি একা নন। এটি মানব মস্তিষ্কের অত্যন্ত স্বাভাবিক এক মনস্তাত্ত্বিক ফাঁদ, যাকে আমরা বলি <strong class="text-white">প্রোক্রাস্টিনেশন (Procrastination)</strong> বা কাজ জমিয়ে রাখার কুঅভ্যাস।
+      </p>
+      <p>
+        কিন্তু কীভাবে বিশ্বের শীর্ষ সফল মানুষ এবং চরম উৎপাদনশীল ব্যক্তিরা এই অলসতাকে জয় করে প্রতিদিন সাধারণ মানুষের চেয়ে দ্বিগুণ কাজ বের করে নেন? উত্তরটা লুকিয়ে আছে ব্রায়ান ট্রেসির বিখ্যাত কালজয়ী বই <strong class="text-violet-300">"Eat That Frog!"</strong>-এর মূল দর্শনে।
+      </p>
+    </section>
+
+    <!-- Section 1: What is Eat That Frog? -->
+    <section class="space-y-6">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white flex items-center gap-3">
+        <span class="text-violet-400 font-english">১.</span> 'ব্যাঙ খাওয়া' (Eat That Frog) বলতে কী বোঝায়?
+      </h2>
+
+      <!-- Mark Twain Quote Block -->
+      <div class="bg-gradient-to-r from-violet-500/10 via-[#0e1526] to-[#0e1526] border-l-4 border-violet-400 p-6 rounded-r-2xl space-y-2">
+        <p class="text-violet-200 font-medium italic text-base sm:text-lg">
+          "যদি আপনার প্রতিদিন সকালে উঠে একটি জ্যান্ত ব্যাঙ গিলতে হয়, তবে দিনের শুরুতেই তা গিলে ফেলা ভালো। কারণ বাকিটা দিন আপনার মাথায় এই স্বস্তি থাকবে যে, দিনের সবচেয়ে বাজে কাজটি আপনি ইতিমধ্যে শেষ করে ফেলেছেন!"
+        </p>
+        <span class="block text-xs font-bold text-violet-400 uppercase tracking-widest font-english">— Mark Twain</span>
+      </div>
+
+      <p class="text-slate-300 text-base leading-relaxed">
+        এখানে <strong class="text-white">'ব্যাঙ' (Frog)</strong> হলো আপনার দিনের <strong class="text-violet-400">সবচেয়ে কঠিন, সবচেয়ে গুরুত্বপূর্ণ এবং সবচেয়ে বড় কাজটি</strong>—যা শেষ করলে আপনার পড়াশোনা, ক্যারিয়ার বা জীবনে সবচেয়ে বড় পজিটিভ পরিবর্তন আসবে, কিন্তু যে কাজটি শুরু করতেই আপনার সবচেয়ে বেশি আলসেমি লাগে!
+      </p>
+
+      <div class="bg-[#0e1526] border border-slate-800 p-5 rounded-2xl">
+        <p class="text-xs sm:text-sm text-slate-300">
+          💡 <strong class="text-white">গোল্ডেন রুল:</strong> যদি আপনার কাজের তালিকায় এমন দুটি ব্যাঙ থাকে, তবে নিয়ম হলো—যে ব্যাঙটি সবচেয়ে বড় ও কুৎসিত (সবচেয়ে কঠিন কাজ), সেটিকে আগে খাওয়া!
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 2: Why Do We Procrastinate? -->
+    <section class="space-y-6">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white flex items-center gap-3">
+        <span class="text-violet-400 font-english">২.</span> আমরা কেন কাজ জমিয়ে রাখি? (বিজ্ঞান ও সাইকোলজি)
+      </h2>
+      <p class="text-slate-300 text-base">
+        আমাদের মস্তিষ্ক সবসময় কম কষ্টের কাজ পছন্দ করে (Path of Least Resistance)। ব্রেইন মূলত ৩টি কারণে প্রোকাস্টিনেট করে:
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <!-- Cause 1 -->
+        <div class="bg-[#0e1526] border border-slate-800 p-5 rounded-2xl space-y-2 hover:border-violet-500/40 transition-all">
+          <div class="text-2xl">🧠</div>
+          <h3 class="font-bold text-white text-base">ডোপামাইন লুপ</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            সোশ্যাল মিডিয়া বা রিলস স্ক্রোল করলে ব্রেইন তাৎক্ষণিক ডোপামাইন (আনন্দ হরমোন) পায়। কিন্তু কঠিন প্রজেক্ট দীর্ঘ পরিশ্রম চায়, যা ব্রেইন এড়াতে চায়।
+          </p>
+        </div>
+
+        <!-- Cause 2 -->
+        <div class="bg-[#0e1526] border border-slate-800 p-5 rounded-2xl space-y-2 hover:border-violet-500/40 transition-all">
+          <div class="text-2xl">🎯</div>
+          <h3 class="font-bold text-white text-base">পারফেকশনিজমের ভয়</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            "কাজটা একদম নিখুঁত হবে তো?"—এই ভুল ভয়ে বা ব্যর্থ হওয়ার আতঙ্কে আমরা অনেক সময় গুরুত্বপূর্ণ কাজ শুরুই করি না।
+          </p>
+        </div>
+
+        <!-- Cause 3 -->
+        <div class="bg-[#0e1526] border border-slate-800 p-5 rounded-2xl space-y-2 hover:border-violet-500/40 transition-all">
+          <div class="text-2xl">📦</div>
+          <h3 class="font-bold text-white text-base">কাজের সাইজ বড় হওয়া</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            কাজটি অনেক বড় বা জটিল মনে হলে মস্তিষ্ক ওভারহেল্মড (Overwhelmed) হয়ে পড়ে এবং সিদ্ধান্তহীনতায় ভোগে।
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: 4 Golden Rules Table -->
+    <section class="space-y-6">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white flex items-center gap-3">
+        <span class="text-violet-400 font-english">৩.</span> প্রোক্রাস্টিনেশন দূর করার ৪টি 'গোল্ডেন রুলস'
+      </h2>
+
+      <!-- Styled Table -->
+      <div class="overflow-x-auto rounded-2xl border border-slate-800 bg-[#0e1526] shadow-xl">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="bg-slate-900/80 text-violet-400 text-xs sm:text-sm font-bold border-b border-slate-800">
+              <th class="p-4">রুলস</th>
+              <th class="p-4">কৌশল</th>
+              <th class="p-4">কীভাবে প্রয়োগ করবেন</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-800/60 text-xs sm:text-sm">
+            <tr>
+              <td class="p-4 font-bold text-white flex items-center gap-2">
+                <span class="bg-violet-500/20 text-violet-300 text-[10px] px-2 py-0.5 rounded font-english">RULE 1</span> ABCDE মেথড
+              </td>
+              <td class="p-4 text-violet-300 font-medium">কাজের অগ্রাধিকার নির্ধারণ</td>
+              <td class="p-4 text-slate-300">'A' টাইপ কাজ হলো সবচেয়ে বড় ব্যাঙ (কঠিন ও জরুরি), 'E' হলো বাদ দেওয়ার মতো কাজ। প্রতিদিন A-টাইপ কাজ আগে করুন।</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-bold text-white flex items-center gap-2">
+                <span class="bg-violet-500/20 text-violet-300 text-[10px] px-2 py-0.5 rounded font-english">RULE 2</span> রাতেই পরের দিনের প্ল্যান
+              </td>
+              <td class="p-4 text-violet-300 font-medium">সিদ্ধান্তহীনতা দূর করা</td>
+              <td class="p-4 text-slate-300">ঘুমানোর আগেই আগামীকালের ৩টি প্রধান কাজ বা ব্যাঙ ডায়েরিতে লিখে রাখুন।</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-bold text-white flex items-center gap-2">
+                <span class="bg-violet-500/20 text-violet-300 text-[10px] px-2 py-0.5 rounded font-english">RULE 3</span> স্লাইসিং দা ফ্রগ
+              </td>
+              <td class="p-4 text-violet-300 font-medium">কাজকে ছোট টুকরো করা</td>
+              <td class="p-4 text-slate-300">বড় কোনো কাজকে ১০-১৫ মিনিটের ছোট ছোট সাব-টাস্কে (Micro-tasks) ভাগ করে ফেলুন।</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-bold text-white flex items-center gap-2">
+                <span class="bg-violet-500/20 text-violet-300 text-[10px] px-2 py-0.5 rounded font-english">RULE 4</span> সিঙ্গেল হ্যান্ডলিং
+              </td>
+              <td class="p-4 text-violet-300 font-medium">মাল্টিটাস্কিং বন্ধ করা</td>
+              <td class="p-4 text-slate-300">ব্যাঙটি খাওয়া শেষ না হওয়া পর্যন্ত অন্য কোনো কাজে (ফোন বা ইমেইল) নজর দেবেন না।</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 4: Habit Building 4 Neurological Steps -->
+    <section class="space-y-6">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white flex items-center gap-3">
+        <span class="text-violet-400 font-english">৪.</span> স্থায়ী অভ্যাস বা 'Habit Building'-এর ৪টি নিউরোলজিক্যাল ধাপ
+      </h2>
+      <p class="text-slate-300 text-sm sm:text-base">
+        অলসতা একদিনে দূর হয় না; এটিকে একটি স্থায়ী অভ্যাসে রূপান্তর করতে হয়। <em class="text-violet-300">Atomic Habits</em> বইয়ের বিখ্যাত ফ্রেমওয়ার্ক অনুযায়ী অভ্যাস গড়ে ওঠে ৪টি ধাপে:
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <!-- Step 1 -->
+        <div class="bg-[#0e1526] border border-slate-800 hover:border-violet-500/40 p-5 rounded-2xl space-y-2 transition-all">
+          <div class="flex items-center justify-between">
+            <span class="font-english text-xs font-bold text-violet-400 bg-violet-500/10 px-2.5 py-1 rounded-md">STEP 01</span>
+            <span class="text-xs text-slate-400">Trigger</span>
+          </div>
+          <h3 class="font-bold text-white text-base">১. সংকেত (Cue)</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">পড়ার টেবিল পরিষ্কার রাখা বা সকালে নির্দিষ্ট সময়ে পড়তে বা কোড করতে বসা, যা ব্রেইনকে সিগন্যাল দেয়।</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="bg-[#0e1526] border border-slate-800 hover:border-violet-500/40 p-5 rounded-2xl space-y-2 transition-all">
+          <div class="flex items-center justify-between">
+            <span class="font-english text-xs font-bold text-violet-400 bg-violet-500/10 px-2.5 py-1 rounded-md">STEP 02</span>
+            <span class="text-xs text-slate-400">Motivation</span>
+          </div>
+          <h3 class="font-bold text-white text-base">২. আকাঙ্ক্ষা (Craving)</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">কাজ শেষ করার পর পাওয়ার মতো মানসিক শান্তি ও স্বস্তির অনুভূতি অবচেতন মনে কল্পনা করা।</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="bg-[#0e1526] border border-slate-800 hover:border-violet-500/40 p-5 rounded-2xl space-y-2 transition-all">
+          <div class="flex items-center justify-between">
+            <span class="font-english text-xs font-bold text-violet-400 bg-violet-500/10 px-2.5 py-1 rounded-md">STEP 03</span>
+            <span class="text-xs text-slate-400">Action</span>
+          </div>
+          <h3 class="font-bold text-white text-base">৩. সাড়া (Response)</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">অন্তত <strong>২ মিনিট</strong> হলেও কাজটিতে হাত দেওয়া (The 2-Minute Rule)। শুরু করাটাই আসল বাধা।</p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="bg-[#0e1526] border border-slate-800 hover:border-violet-500/40 p-5 rounded-2xl space-y-2 transition-all">
+          <div class="flex items-center justify-between">
+            <span class="font-english text-xs font-bold text-violet-400 bg-violet-500/10 px-2.5 py-1 rounded-md">STEP 04</span>
+            <span class="text-xs text-slate-400">Satisfaction</span>
+          </div>
+          <h3 class="font-bold text-white text-base">৪. পুরস্কার (Reward)</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">কঠিন কাজ শেষ করার পর নিজেকে ছোট রিওয়ার্ড দেওয়া (যেমন: এক কাপ চা/কফি বা পছন্দের গান শোনা)।</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: 3 Action Steps -->
+    <section class="space-y-6">
+      <h2 class="text-2xl sm:text-3xl font-bold text-white flex items-center gap-3">
+        <span class="text-violet-400 font-english">৫.</span> আজ থেকেই শুরু করার ৩টি সহজ স্টেপ
+      </h2>
+
+      <div class="space-y-3">
+        <div class="flex items-start gap-4 bg-[#0e1526] border border-slate-800 p-4 rounded-xl">
+          <span class="w-8 h-8 rounded-lg bg-violet-500/20 text-violet-400 font-extrabold flex items-center justify-center shrink-0 font-english">1</span>
+          <div>
+            <h4 class="font-bold text-white text-sm">সবচেয়ে কঠিন কাজ বেছে নিন</h4>
+            <p class="text-xs text-slate-400">আজকে রাতেই আপনার আগামীকালের সবচেয়ে বড় ব্যাঙ (The Biggest Frog) খাতায় চিহ্নিত করে রাখুন।</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4 bg-[#0e1526] border border-slate-800 p-4 rounded-xl">
+          <span class="w-8 h-8 rounded-lg bg-violet-500/20 text-violet-400 font-extrabold flex items-center justify-center shrink-0 font-english">2</span>
+          <div>
+            <h4 class="font-bold text-white text-sm">প্রথম ৯০ মিনিট নোটিফিকেশন অফ</h4>
+            <p class="text-xs text-slate-400">সকালে ঘুম থেকে উঠে প্রথম ৪৫ থেকে ৯০ মিনিট ফোন সাইলেন্ট রেখে শুধুমাত্র সেই কাজটিতে শতভাগ ফোকাস দিন।</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4 bg-[#0e1526] border border-slate-800 p-4 rounded-xl">
+          <span class="w-8 h-8 rounded-lg bg-violet-500/20 text-violet-400 font-extrabold flex items-center justify-center shrink-0 font-english">3</span>
+          <div>
+            <h4 class="font-bold text-white text-sm">মানসিক শান্তিতে দিন কাটান</h4>
+            <p class="text-xs text-slate-400">কাজ শেষ করার পর টু-ডু লিস্ট থেকে তা কেটে দিন এবং দিনের বাকি সময়টা বিন্দুমাত্র অপরাধবোধ ছাড়াই উপভোগ করুন!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Banner -->
+    <footer class="bg-gradient-to-r from-violet-500/20 via-slate-900 to-slate-900 border border-violet-500/30 p-8 rounded-3xl text-center space-y-4">
+      <h3 class="text-xl sm:text-2xl font-bold text-white">
+        প্রতিদিন সকালে কঠিন কাজ আগে শেষ করার আত্মবিশ্বাসই আপনাকে অনন্য করে তুলবে
+      </h3>
+      <p class="text-slate-300 text-sm max-w-xl mx-auto">
+        অলসতাকে জয় করুন, নিজের সময়কে নিয়ন্ত্রণ করুন এবং প্রতিদিন নিজেকে ১% হলেও সামনের দিকে এগিয়ে নিয়ে যান!
+      </p>
+    </footer>
+
+  </article>
+
+
+
+
+
+
+
+
+<footer class="relative bg-[#070A11] text-slate-100 pt-16 pb-10 border-t border-white/10 overflow-hidden">
+
+    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[250px] bg-amber-500/5 blur-[140px] rounded-full pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-16">
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+            <div class="lg:col-span-2 space-y-4">
+                <a href="#" class="flex items-center gap-3 group ">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 via-amber-400 to-yellow-200 flex items-center justify-center text-slate-950 font-black text-xl shadow-lg shadow-amber-500/20">
+                        SV
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-lg font-extrabold text-white group-hover:text-amber-400 transition-colors">
+                            Summary<span class="text-amber-400">Vault</span>
+                        </span>
+                        <span class="text-[10px] uppercase font-semibold text-slate-400 tracking-widest -mt-1">
+                            Bengali Summaries
+                        </span>
+                    </div>
+                </a>
+
+                <p class="text-xs sm:text-sm text-slate-400 leading-relaxed pr-2">
+                    বিশ্ববিখ্যাত বইগুলোর মূলভাব সহজ ও প্রাঞ্জল বাংলায় সবার কাছে পৌঁছে দেওয়ার একটি আধুনিক ডিজিটাল প্ল্যাটফর্ম।
+                </p>
+                <div class="flex items-center gap-2.5 pt-1">
+                    <!-- Facebook -->
+                    <a href="https://www.facebook.com/profile.php?id=61593334430960" target="_blank" class="w-9 h-9 rounded-xl glass-card flex items-center justify-center text-slate-400 hover:text-amber-400 hover:border-amber-400/40 transition-all">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+
+                </div>
+            </div>
+            <div class="space-y-3">
+                <h4 class="text-sm font-bold text-white uppercase tracking-wider">দ্রুত নেভিগেশন</h4>
+                <ul class="space-y-2 text-xs sm:text-sm text-slate-400">
+                    <li><a href="index.html" class="hover:text-amber-400 transition-colors">হোমপেজ</a></li>
+                    <li><a href="bookpage.html" class="hover:text-amber-400 transition-colors">সকল বই</a></li>
+                    <li><a href="index.html" class="hover:text-amber-400 transition-colors">আমাদের সম্পর্কে</a></li>
+                       <li><a href="blog.html" class="hover:text-amber-400 transition-colors">ব্লগ </a></li>
+                </ul>
+            </div>
+            <div class="space-y-3">
+                <h4 class="text-sm font-bold text-white uppercase tracking-wider">ক্যাটাগরি</h4>
+                <ul class="space-y-2 text-xs sm:text-sm text-slate-400">
+                    <li><a href="selfhelp.html" class="hover:text-amber-400 transition-colors">সেলফ হেল্প</a></li>
+                    <li><a href="#" class="hover:text-amber-400 transition-colors">বিজনেস ও কেরিয়ার</a></li>
+                    <li><a href="philosophy.html" class="hover:text-amber-400 transition-colors">ফিলোসফি</a></li>
+                    <li><a href="#" class="hover:text-amber-400 transition-colors">প্রোডাক্টিভিটি</a></li>
+                </ul>
+            </div>
+            <div class="space-y-3">
+                <h4 class="text-sm font-bold text-white uppercase tracking-wider">সহায়তা ও নীতি</h4>
+               <ul class="space-y-2 text-xs sm:text-sm text-slate-400">
+                    <li><a href="index.html" class="hover:text-amber-400 transition-colors">প্রাইভেসি পলিসি</a></li>
+                    <li><a href="index.html" class="hover:text-amber-400 transition-colors">টার্মস অব সার্ভিস</a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=61593334430960" class="hover:text-amber-400 transition-colors">যোগাযোগ</a></li>
+                    <li><a href="index.html" class="hover:text-amber-400 transition-colors">FAQ / প্রশ্নাবলী</a></li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+            <p>© 2026 <strong class="text-slate-200">SummaryVault</strong>. সর্বস্বত্ব সংরক্ষিত।</p>
+            
+            <p class="flex items-center gap-1">
+                Crafted with <span class="text-red-500">❤️</span> for Bengali Readers
+            </p>
+            <button 
+                onclick="window.scrollTo({top: 0, behavior: 'smooth'})" 
+                class="glass-card px-3.5 py-1.5 rounded-xl border border-white/10 hover:border-amber-400/40 text-slate-300 hover:text-amber-400 transition-all flex items-center gap-1.5"
+            >
+                <span>উপরে যান</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+            </button>
+        </div>
+
+    </div>
+</footer>
+
+
+  <script src="script.js"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
+</body>
+</html>

@@ -39,8 +39,6 @@ border: 1px solid rgba(255, 255, 255, 0.08);
         transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         will-change: opacity, transform;
     }
-
-    /* স্ক্রোলে দেখার সাথে সাথে সুন্দরভাবে ভেসে উঠবে */
     .reveal.active {
         opacity: 1;
         transform: translateY(0);
@@ -50,8 +48,7 @@ border: 1px solid rgba(255, 255, 255, 0.08);
 <header class="fixed top-0 left-0 right-0 z-50 p-3 sm:p-4 lg:p-6 transition-all duration-300">
     <div class="max-w-7xl mx-auto">
         <nav class="glass-card rounded-2xl px-4 sm:px-5 py-3 flex items-center justify-between shadow-2xl shadow-black/50 border border-white/10 hover:border-white/20">
-            
-            <!-- 1. Brand / Logo -->
+          
             <a href="#" class="flex items-center gap-2.5 sm:gap-3 group">
                 <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-amber-500 via-amber-400 to-yellow-200 flex items-center justify-center text-slate-950 font-black text-lg sm:text-xl shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform duration-300">
                     SV
@@ -65,8 +62,6 @@ border: 1px solid rgba(255, 255, 255, 0.08);
                     </span>
                 </div>
             </a>
-
-            <!-- 2. Navigation Links (Desktop: >= 1024px) -->
             <ul class="hidden lg:flex items-center gap-1 bg-white/[0.03] border border-white/5 p-1.5 rounded-xl backdrop-blur-md">
                 <li>
                     <a href="index.html" class="px-4 py-2 text-sm font-semibold text-white bg-white/10 rounded-lg shadow-inner block">
@@ -89,20 +84,11 @@ border: 1px solid rgba(255, 255, 255, 0.08);
                         Blog
                     </a>
                 </li>
-
-
-
-
             </ul>
-
-            <!-- 3. Right Action Area (Search + CTA) -->
             <div class="flex items-center gap-2.5 sm:gap-3">
-                <!-- CTA Button -->
                 <a href="index.html" class="glow-effect px-3.5 sm:px-5 py-2 text-xs font-bold text-slate-950 bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-400 rounded-xl transition-all duration-300 hover:scale-105 active:scale-95 shadow-md shadow-amber-500/10 whitespace-nowrap">
                     Get Started
             </a>
-
-                <!-- 4. Mobile & Tablet Menu Toggle Button (< 1024px) -->
                 <button id="mobile-toggle" class="lg:hidden p-2 rounded-xl text-slate-300 hover:text-white hover:bg-white/10 focus:outline-none transition-colors" aria-label="Toggle Navigation">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
@@ -110,11 +96,7 @@ border: 1px solid rgba(255, 255, 255, 0.08);
                 </button>
             </div>
         </nav>
-
-        <!-- 5. Mobile & Tablet Drawer Menu -->
         <div id="mobile-menu" class="hidden lg:hidden mt-3 glass-card rounded-2xl p-5 border border-white/10 shadow-2xl transition-all">
-
-            <!-- Navigation Links -->
             <div class="flex flex-col space-y-2">
                 <a href="index.html" class="px-4 py-2.5 rounded-xl text-sm font-semibold text-white bg-white/10 block">Home</a>
                 <a href="bookpage.html" class="px-4 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 block">Books</a>
@@ -140,10 +122,7 @@ border: 1px solid rgba(255, 255, 255, 0.08);
       <div class="absolute inset-0 bg-gradient-to-t from-[#111726] via-[#111726]/30 to-black/50"></div>
       
       <div class="absolute top-3 left-3 right-3 flex justify-between items-center z-10">
-     
-      
       </div>
-
       <div class="absolute bottom-3 left-3 right-3 z-10">
         <h3 class="text-xl font-extrabold text-white leading-tight drop-shadow-md">
           Want to Achieve Greatness?
@@ -194,7 +173,7 @@ border: 1px solid rgba(255, 255, 255, 0.08);
     </div>
 
   </article>
-  <!-- book reading benifit -->
+
 <article class="group relative w-full max-w-sm bg-[#111726] rounded-3xl p-3.5 border border-slate-800/80 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.7)] hover:border-amber-500/40 transition-all duration-500">
     
     <div class="relative h-60 w-full rounded-2xl overflow-hidden">
@@ -384,7 +363,7 @@ border: 1px solid rgba(255, 255, 255, 0.08);
         </div>
       </div>
 
-      <a href="#" class="bg-gradient-to-r from-violet-500 to-indigo-400 hover:from-violet-400 hover:to-indigo-300 text-slate-950 font-extrabold text-xs px-4 py-2.5 rounded-xl shadow-lg shadow-violet-500/10 transition-all duration-300 transform active:scale-95 flex items-center gap-1">
+      <a href="procasinationBlog.html" class="bg-gradient-to-r from-violet-500 to-indigo-400 hover:from-violet-400 hover:to-indigo-300 text-slate-950 font-extrabold text-xs px-4 py-2.5 rounded-xl shadow-lg shadow-violet-500/10 transition-all duration-300 transform active:scale-95 flex items-center gap-1">
         Upcomming
         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
       </a>
